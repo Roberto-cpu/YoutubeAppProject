@@ -110,4 +110,7 @@
     <string name="profile_image_upload_success">Immagine Salvata</string>
     <string name="profile_image_title_text">Email richiesta</string>
     <string name="profile_image_dialog_button">Continua</string>
+    <string name="profile_image_gallery_text">Seleziona Immagine</string>
+    <string name="profile_image_image_miss">Inserire un\'immagine per continuare</string>
+    <string name="profile_image_upload_failed">Immagine Non Caricata</string>
 </resources>

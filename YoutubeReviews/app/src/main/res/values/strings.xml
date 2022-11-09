@@ -120,5 +120,8 @@
     <string name="profile_image_dialog_text">Enter your email</string>
     <string name="profile_image_title_text">Email required</string>
     <string name="profile_image_upload_success">Image Uploaded</string>
+    <string name="profile_image_upload_failed">Image Not Uploaded</string>
     <string name="profile_image_dialog_button">Continue</string>
+    <string name="profile_image_gallery_text">Select Picture</string>
+    <string name="profile_image_image_miss">Please enter an image to continue</string>
 </resources>
