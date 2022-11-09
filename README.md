@@ -1,4 +1,4 @@
-# Mobile-Application-Porject
+# YoutubeAppProject
 This repository will be used to manage the application for Mobile Application and Cloud Computing course
 
 The application is based on the youtube reviews concept.
