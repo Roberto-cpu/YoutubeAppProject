@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_text_sizes">
+        <item>Big</item>
+        <item>Normal</item>
+        <item>Small</item>
+    </string-array>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlue">#0057E7</color>
+    <color name="colorGreen">#00CC66</color>
+    <color name="colorLightGray">#999999</color>
+    <color name="colorLightGreen">#78EF3E</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorRed">#F7362D</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorYellow">#E5EB2C</color>
+    <string name="add_comment_dialog_creator">Write your email address</string>
+    <string name="add_comment_dialog_message">Write your comment</string>
+    <string name="add_comment_dialog_text">Write a comment</string>
+    <string name="add_comment_dialog_title">Add Comment</string>
+    <string name="app_name">Youtube Reviews</string>
+    <string name="back_button">Back</string>
+    <string name="channel_1_message">A new review has been added</string>
+    <string name="channel_1_name">New Review</string>
+    <string name="channel_1_title">New review</string>
+    <string name="channel_2_ID" translatable="false">Channel 2</string>
+    <string name="channel_2_message">You haven\'t been in a while</string>
+    <string name="channel_2_name">Come back</string>
+    <string name="channel_2_title">Come back</string>
+    <string name="check_box_hide_password">Hide password</string>
+    <string name="check_box_show_password">Show password</string>
+    <string name="checking_connection">Checking connection</string>
+    <string name="default_web_client_id" translatable="false">521477315396-nv0jjgj569ojssp59gricii6i32gddkl.apps.googleusercontent.com</string>
+    <string name="delete_button">Delete</string>
+    <string name="dialog_allow">Allow</string>
+    <string name="dialog_deny">Deny</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_ok" translatable="false">Ok</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="email_error">Email is required</string>
+    <string name="firebase_database_url" translatable="false">https://reviews-12a54.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">521477315396</string>
+    <string name="google_api_key" translatable="false">AIzaSyCrp5Ef3QfKgoX1mB5yRbFF7Ntc6Pr68m4</string>
+    <string name="google_app_id" translatable="false">1:521477315396:android:ebe9df666b4380ec4e5511</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCrp5Ef3QfKgoX1mB5yRbFF7Ntc6Pr68m4</string>
+    <string name="google_storage_bucket" translatable="false">reviews-12a54.appspot.com</string>
+    <string name="guest_button">Guest</string>
+    <string name="login_button">Login</string>
+    <string name="login_email">Write your email</string>
+    <string name="login_error">Email or password wrong</string>
+    <string name="login_guest_dialog_message">If you enter as a guest you will not be able to review or add comments.\\nDo you want to log like a guest?</string>
+    <string name="login_guest_dialog_title">Guest</string>
+    <string name="login_password">Write your password</string>
+    <string name="login_title">Login</string>
+    <string name="new_review_band_name">Write the name of the band/artist</string>
+    <string name="new_review_band_name_error">Band/Artist is required</string>
+    <string name="new_review_dialog_message">The rescue was successfully completed</string>
+    <string name="new_review_dialog_title">Save completed</string>
+    <string name="new_review_genre">Write song genre</string>
+    <string name="new_review_genre_error">Genre is required</string>
+    <string name="new_review_name_song">Write the name of the song</string>
+    <string name="new_review_name_song_error">Song name is required</string>
+    <string name="new_review_progress_dialog_message">Wai a few seconds</string>
+    <string name="new_review_progress_dialog_title">Reviews saving</string>
+    <string name="new_review_save">Save</string>
+    <string name="new_review_save_review">Review saved</string>
+    <string name="new_review_save_song">Song saved</string>
+    <string name="new_review_song_link">Copy the youtube link of the song</string>
+    <string name="new_review_song_link_error">Link of the song is required</string>
+    <string name="new_review_text">Write the text of the review</string>
+    <string name="new_review_text_error">Review is required</string>
+    <string name="new_review_text_view">New Review</string>
+    <string name="new_review_title">Write the title of the review</string>
+    <string name="new_review_title_error">Review title is required</string>
+    <string name="no_connection">You\'re offline</string>
+    <string name="password_error">Password is required</string>
+    <string name="project_id" translatable="false">reviews-12a54</string>
+    <string name="review_item">Add comment</string>
+    <string name="reviews_list_link">Click the link to listen the song</string>
+    <string name="reviews_list_number_comments">Number of comments: </string>
+    <string name="reviews_list_option_item">Watch on Youtube</string>
+    <string name="settings_dark_mode">Dark mode</string>
+    <string name="settings_save">Save</string>
+    <string name="settings_saving_complete">Settings saved</string>
+    <string name="settings_text_size">Text size</string>
+    <string name="settings_text_style">Text style</string>
+    <string name="settings_toggle_button_off">Off</string>
+    <string name="settings_toggle_button_on">On</string>
+    <string name="settings_view">Settings</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_in_confirm_password">Confirm your password</string>
+    <string name="sign_in_email">Write your email</string>
+    <string name="sign_in_failed">Error while registering</string>
+    <string name="sign_in_password">Write your password</string>
+    <string name="sign_in_password_contains_error">Password must be contain at least a capital letter and a number</string>
+    <string name="sign_in_password_different_to_confirm_password">Password and confirm password are different</string>
+    <string name="sign_in_password_length_error">Password must be long at least 8 characters and at most 16 characters</string>
+    <string name="sign_in_title">Sign In</string>
+    <string name="songs_list_all">ALL</string>
+    <string name="songs_list_back_pressed_message">Press again to leave</string>
+    <string name="songs_list_search">Write the title of a song</string>
+    <string name="songs_list_view">Songs List</string>
+    <string name="tracks_list_empty">There aren\'t songs reviewed</string>
+    <string name="tracks_list_option_menu_back">Back</string>
+    <string name="tracks_list_option_menu_logout">Logout</string>
+    <string name="tracks_list_option_menu_new_review">New Review</string>
+    <string name="tracks_list_show_genres">Show genres</string>
+    <string name="try_again">Check your internet connection and try again</string>
+    <string name="try_again_button">Try again</string>
+    <string name="update_failed">Update Failed</string>
+    <string name="update_performed">Update Performed</string>
+    <string name="youtbe_player_error">Error initializing Youtube player: %s</string>
+    <string name="youtbe_seek_to">Jump To</string>
+    <string name="youtbe_seek_to_hint">Seconds</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="android:windowBackground">@drawable/splash_screen_theme</item>
+
+    </style>
+    <style name="Theme.YoutubeReviews" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        
+    </style>
+</resources>

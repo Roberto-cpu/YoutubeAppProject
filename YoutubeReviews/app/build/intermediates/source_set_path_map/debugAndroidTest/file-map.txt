@@ -1,0 +1,7 @@
+roberto.garzone.youtubereviews.test.app-androidTest-0 C:\Users\utente\Desktop\Mobile-Application-Porject-main\YoutubeReviews\app\build\generated\res\resValues\androidTest\debug
+roberto.garzone.youtubereviews.test.app-androidTest-1 C:\Users\utente\Desktop\Mobile-Application-Porject-main\YoutubeReviews\app\build\generated\res\rs\androidTest\debug
+roberto.garzone.youtubereviews.test.app-mergeDebugAndroidTestResources-2 C:\Users\utente\Desktop\Mobile-Application-Porject-main\YoutubeReviews\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+roberto.garzone.youtubereviews.test.app-mergeDebugAndroidTestResources-3 C:\Users\utente\Desktop\Mobile-Application-Porject-main\YoutubeReviews\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+roberto.garzone.youtubereviews.test.app-merged_res-4 C:\Users\utente\Desktop\Mobile-Application-Porject-main\YoutubeReviews\app\build\intermediates\merged_res\debugAndroidTest
+roberto.garzone.youtubereviews.test.app-androidTest-5 C:\Users\utente\Desktop\Mobile-Application-Porject-main\YoutubeReviews\app\src\androidTest\res
+roberto.garzone.youtubereviews.test.app-androidTestDebug-6 C:\Users\utente\Desktop\Mobile-Application-Porject-main\YoutubeReviews\app\src\androidTestDebug\res

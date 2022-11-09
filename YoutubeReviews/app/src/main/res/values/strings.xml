@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Youtube Reviews</string>
+
+    <string name="permission_request">You must accept permissions to continue</string>
+
+    <string name="sign_in_title">Welcome in Sign In Page</string>
+    <string name="sign_in_username">Write your username</string>
+    <string name="sign_in_username_empty">Username required</string>
+    <string name="sign_in_email">Write your email</string>
+    <string name="sign_in_password">Write your password</string>
+    <string name="sign_in_confirm_password">Confirm your password</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_in_email_format_error">Email must have this format: "local-part@domain"</string>
+    <string name="sign_in_password_format_error">Password must contain at least a capital letter and a number and must be long at least 8 characters and at most 16 characters</string>
+    <string name="sign_in_password_different_to_confirm_password">Password and confirm password are different</string>
+    <string name="sign_in_failed">Error while registering</string>
+
+    <string name="delete_button">Delete</string>
+    <string name="check_box_show_password">Show password</string>
+    <string name="check_box_hide_password">Hide password</string>
+    <string name="email_error">Email is required</string>
+    <string name="password_error">Password is required</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_allow">Allow</string>
+    <string name="dialog_deny">Deny</string>
+    <string name="back_button">Back</string>
+    <string name="update_performed">Update Performed</string>
+    <string name="update_failed">Update Failed</string>
+    <string name="dialog_ok" translatable="false">Ok</string>
+
+    <string name="login_title">Welcome in Login Page</string>
+    <string name="login_email">Write your email</string>
+    <string name="login_password">Write your password</string>
+    <string name="login_button">Auth</string>
+    <string name="guest_button">Guest</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="login_error">Email or password wrong</string>
+    <string name="not_signed">Do you not have an account yet?</string>
+    <string name="login_as">Who do you want to be?</string>
+    <string name="login_guest_dialog_title">Guest</string>
+    <string name="login_guest_dialog_message">If you enter as a guest you will not be able to review or add comments.\\nDo you want to log like a guest?</string>
+
+    <string name="tracks_list_option_menu_new_review">New Review</string>
+    <string name="tracks_list_option_menu_logout">Logout</string>
+    <string name="tracks_list_option_menu_back">Back</string>
+    <string name="tracks_list_empty">There aren\'t songs reviewed</string>
+    <string name="tracks_list_show_genres">Show genres</string>
+
+    <string name="songs_list_search">Write the title of a song</string>
+    <string name="songs_list_all">ALL</string>
+    <string name="songs_list_view">Songs List</string>
+    <string name="songs_list_back_pressed_message">Press again to leave</string>
+
+    <string name="reviews_list_link">Click the link to listen the song</string>
+    <string name="reviews_list_number_comments">Number of comments: </string>
+    <string name="reviews_list_option_item">Watch on Youtube</string>
+
+    <string name="review_item">Add comment</string>
+    <string name="add_comment_dialog_title">Add Comment</string>
+    <string name="add_comment_dialog_message">Write your comment</string>
+    <string name="add_comment_dialog_creator">Write your email address</string>
+    <string name="add_comment_dialog_text">Write a comment</string>
+
+    <string name="new_review_text_view">New Review</string>
+    <string name="new_review_title">Write the title of the review</string>
+    <string name="new_review_genre">Write song genre</string>
+    <string name="new_review_text">Write the text of the review</string>
+    <string name="new_review_name_song">Write the name of the song</string>
+    <string name="new_review_band_name">Write the name of the band/artist</string>
+    <string name="new_review_song_link">Copy the youtube link of the song</string>
+    <string name="new_review_save">Save</string>
+    <string name="new_review_title_error">Review title is required</string>
+    <string name="new_review_genre_error">Genre is required</string>
+    <string name="new_review_text_error">Review is required</string>
+    <string name="new_review_name_song_error">Song name is required</string>
+    <string name="new_review_band_name_error">Band/Artist is required</string>
+    <string name="new_review_song_link_error">Link of the song is required</string>
+    <string name="new_review_save_song">Song saved</string>
+    <string name="new_review_save_review">Review saved</string>
+    <string name="new_review_progress_dialog_title">Reviews saving</string>
+    <string name="new_review_progress_dialog_message">Wai a few seconds</string>
+    <string name="new_review_dialog_title">Save completed</string>
+    <string name="new_review_dialog_message">The rescue was successfully completed</string>
+
+    <string name="youtbe_seek_to">Jump To</string>
+    <string name="youtbe_seek_to_hint">Seconds</string>
+    <string name="youtbe_player_error">Error initializing Youtube player: %s</string>
+
+    <string name="channel_1_name">New Review</string>
+    <string name="channel_1_title">New review</string>
+    <string name="channel_1_message">A new review has been added</string>
+
+    <string name="channel_2_ID" translatable="false">Channel 2</string>
+    <string name="channel_2_name">Come back</string>
+    <string name="channel_2_title">Come back</string>
+    <string name="channel_2_message">You haven\'t been in a while</string>
+
+    <string name="no_connection">You\'re offline</string>
+    <string name="try_again">Check your internet connection and try again</string>
+    <string name="try_again_button">Try again</string>
+
+    <string name="checking_connection">CHECKING CONNECTION</string>
+
+    <string name="settings_view">Settings</string>
+    <string name="settings_dark_mode">Dark mode</string>
+    <string name="settings_text_size">Text size</string>
+    <string name="settings_text_style">Text style</string>
+    <string name="settings_change_email">Change Email</string>
+    <string name="settings_change_pwd">Change Password</string>
+    <string name="settings_change_pfImage">Change Profile Image</string>
+    <string name="settings_save">Save</string>
+    <string name="settings_toggle_button_on">On</string>
+    <string name="settings_toggle_button_off">Off</string>
+    <string name="settings_saving_complete">Settings saved</string>
+
+    <string name="profile_image_take_photo">Take</string>
+    <string name="profile_image_gallery">Gallery</string>
+    <string name="profile_image_upload">Upload</string>
+    <string name="profile_image_dialog_text">Enter your email</string>
+    <string name="profile_image_title_text">Email required</string>
+    <string name="profile_image_upload_success">Image Uploaded</string>
+    <string name="profile_image_dialog_button">Continue</string>
+</resources>
