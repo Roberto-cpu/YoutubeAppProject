@@ -1,58 +1,62 @@
 [
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/songs_list_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/songs_list_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\reviews_list_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\reviews_list_layout.xml"
     },
     {
         "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/login_layout.xml",
         "source": "roberto.garzone.youtubereviews.app-main-34:/layout/login_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/profile_image_dialog_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/profile_image_dialog_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\songs_list_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\songs_list_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/settings_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/settings_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\sign_in_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\sign_in_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/reviews_list_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/reviews_list_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\add_comment_dialog_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\add_comment_dialog_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/add_comment_dialog_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/add_comment_dialog_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\login_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\login_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/checking_connection_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/checking_connection_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\comments_list_item.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\comments_list_item.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/comments_list_item.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/comments_list_item.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\profile_image_dialog_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\profile_image_dialog_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/new_review_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/new_review_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\reviews_list_item.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\reviews_list_item.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/sign_in_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/sign_in_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\youtube_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\youtube_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/reviews_list_item.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/reviews_list_item.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\checking_connection_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\checking_connection_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/review_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/review_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\profile_image_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\profile_image_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/youtube_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/youtube_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\new_review_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\new_review_layout.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/profile_image_layout.xml",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/profile_image_layout.xml"
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\review_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\review_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-mergeDebugResources-31:\\layout\\settings_layout.xml",
+        "source": "C:\\Users\\utente\\.gradle\\daemon\\7.4\\roberto.garzone.youtubereviews.app-main-34:\\layout\\settings_layout.xml"
     }
 ]

@@ -20,6 +20,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.firestore.FirebaseFirestore
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.ProfileImageEmailDialog
@@ -86,6 +87,7 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
         if (user.getEmail() != "") mEmail.setText(user.getEmail())
 
         if (imageUri != null) mImage.setImageURI(imageUri)
+        else mImage.setImageDrawable(ResourcesCompat.getDrawable(resources, R.drawable.app_logo, null))
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""

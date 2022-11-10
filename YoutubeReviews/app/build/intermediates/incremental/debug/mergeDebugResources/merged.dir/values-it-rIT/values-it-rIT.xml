@@ -31,7 +31,7 @@
     <string name="login_button">Autenticato</string>
     <string name="login_email">Scrivi la mail</string>
     <string name="login_error">Email o password sbagliate</string>
-    <string name="login_guest_dialog_message">Se entri come ospite non potrai recensire o commentare</string>
+    <string name="login_guest_dialog_message">Se entri come ospite non potrai recensire o commentare.<br/>\nVuoi entrare come ospite?</string>
     <string name="login_guest_dialog_title">Ospite</string>
     <string name="login_password">Scrivi la password</string>
     <string name="login_title">Benvenuto nella Pagina di Login</string>

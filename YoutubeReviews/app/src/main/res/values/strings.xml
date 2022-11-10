@@ -39,7 +39,7 @@
     <string name="not_signed">Do you not have an account yet?</string>
     <string name="login_as">Who do you want to be?</string>
     <string name="login_guest_dialog_title">Guest</string>
-    <string name="login_guest_dialog_message">If you enter as a guest you will not be able to review or add comments.\\nDo you want to log like a guest?</string>
+    <string name="login_guest_dialog_message">If you enter as a guest you will not be able to review or add comments.<br />\nDo you want to log like a guest?</string>
 
     <string name="tracks_list_option_menu_new_review">New Review</string>
     <string name="tracks_list_option_menu_logout">Logout</string>

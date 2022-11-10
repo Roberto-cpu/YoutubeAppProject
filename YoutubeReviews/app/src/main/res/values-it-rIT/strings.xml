@@ -30,7 +30,7 @@
     <string name="not_signed">Non hai un account?</string>
     <string name="login_as">Come vuoi entrare?</string>
     <string name="login_guest_dialog_title">Ospite</string>
-    <string name="login_guest_dialog_message">Se entri come ospite non potrai recensire o commentare</string>
+    <string name="login_guest_dialog_message">Se entri come ospite non potrai recensire o commentare.<br />\nVuoi entrare come ospite?</string>
     <string name="tracks_list_option_menu_new_review">Nuova Recensione</string>
     <string name="tracks_list_option_menu_logout">Esci</string>
     <string name="tracks_list_option_menu_back">Indietro</string>

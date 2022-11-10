@@ -16,6 +16,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.auth.FirebaseAuth
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.LoginGuestDialog
@@ -78,6 +79,14 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         if (email != "No Email Stored" && password != "") {
             mEmail.setText(email)
             mPassword.setText(password)
+        }
+
+        mEmail.setOnClickListener {
+            mEmail.hint = ""
+        }
+
+        mPassword.setOnClickListener {
+            mPassword.hint = ""
         }
 
         mLogin.setOnClickListener {
@@ -199,36 +208,39 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
     private fun setPageStyle() {
         if (night == "checked") {
             mNightMode.isChecked = true
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-            mTitle.setTextColor(resources.getColor(R.color.colorRed))
-            mTitle.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
-            mEmail.setTextColor(resources.getColor(R.color.colorBlack))
-            mEmail.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mEmail.setBackgroundColor(resources.getColor(R.color.colorWhite))
-            mPassword.setTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setBackgroundColor(resources.getColor(R.color.colorWhite))
-            mLoginText.setTextColor(resources.getColor(R.color.colorWhite))
-            mLogin.setTextColor(resources.getColor(R.color.colorWhite))
-            mSignin.setTextColor(resources.getColor(R.color.colorWhite))
-            mGuest.setTextColor(resources.getColor(R.color.colorWhite))
-            mSignInText.setTextColor(resources.getColor(R.color.colorWhite))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mTitle.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_dark_mode, null)
+            mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmail.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmail.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mPassword.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mLoginText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mLogin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSignin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mGuest.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSignInText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mRememberMe.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
         } else {
             mNightMode.isChecked = false
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-            mTitle.setTextColor(resources.getColor(R.color.colorRed))
-            mTitle.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
-            mEmail.setTextColor(resources.getColor(R.color.colorBlack))
-            mEmail.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mLogin.setTextColor(resources.getColor(R.color.colorBlack))
-            mSignin.setTextColor(resources.getColor(R.color.colorBlack))
-            mGuest.setTextColor(resources.getColor(R.color.colorBlack))
-            mLoginText.setTextColor(resources.getColor(R.color.colorBlack))
-            mSignInText.setTextColor(resources.getColor(R.color.colorBlack))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null))
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mTitle.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_light_mode, null)
+            mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmail.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mLogin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSignin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mGuest.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mLoginText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSignInText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mRememberMe.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
         }
     }
 
@@ -236,36 +248,39 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
      * This method sets the page style on the base of toolbar's checkbox saved information
      */
     private fun setPageStyle(night_mode : String) {
+        night = night_mode
         if (night_mode == "checked") {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-            mTitle.setTextColor(resources.getColor(R.color.colorRed))
-            mTitle.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
-            mEmail.setTextColor(resources.getColor(R.color.colorBlack))
-            mEmail.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mEmail.setBackgroundColor(resources.getColor(R.color.colorWhite))
-            mPassword.setTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setBackgroundColor(resources.getColor(R.color.colorWhite))
-            mLoginText.setTextColor(resources.getColor(R.color.colorWhite))
-            mLogin.setTextColor(resources.getColor(R.color.colorWhite))
-            mSignin.setTextColor(resources.getColor(R.color.colorWhite))
-            mGuest.setTextColor(resources.getColor(R.color.colorWhite))
-            mSignInText.setTextColor(resources.getColor(R.color.colorWhite))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mTitle.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_dark_mode, null)
+            mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmail.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmail.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mPassword.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mLoginText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mLogin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSignin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mGuest.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSignInText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mRememberMe.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
         } else {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-            mTitle.setTextColor(resources.getColor(R.color.colorRed))
-            mTitle.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
-            mEmail.setTextColor(resources.getColor(R.color.colorBlack))
-            mEmail.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setTextColor(resources.getColor(R.color.colorBlack))
-            mPassword.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mLogin.setTextColor(resources.getColor(R.color.colorBlack))
-            mSignin.setTextColor(resources.getColor(R.color.colorBlack))
-            mGuest.setTextColor(resources.getColor(R.color.colorBlack))
-            mLoginText.setTextColor(resources.getColor(R.color.colorBlack))
-            mSignInText.setTextColor(resources.getColor(R.color.colorBlack))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null))
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mTitle.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_light_mode, null)
+            mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmail.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mPassword.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mLogin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSignin.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mGuest.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mLoginText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSignInText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mRememberMe.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
         }
     }
 }
