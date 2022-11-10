@@ -13,7 +13,7 @@ class YoutubeConfiguration() {
 
     // Instance variable
     companion object {
-        val YOUTUBE_API_KEY : String = "AIzaSyBfWsDOxfohRxc-lDeulcNO-2imE3rhfeo"
+        const val YOUTUBE_API_KEY : String = "AIzaSyBfWsDOxfohRxc-lDeulcNO-2imE3rhfeo"
     }
 
     /**

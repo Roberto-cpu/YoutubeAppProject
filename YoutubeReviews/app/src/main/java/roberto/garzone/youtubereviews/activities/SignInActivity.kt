@@ -6,10 +6,8 @@ package roberto.garzone.youtubereviews.activities
  */
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.WindowManager
@@ -33,21 +31,22 @@ import roberto.garzone.youtubereviews.models.User
 class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogInterface {
 
     // Instance variables
-    private var mLayout : ConstraintLayout = TODO()
-    private var mTitle : TextView = TODO()
-    private var mImage : ImageView = TODO()
-    private var mEmail : EditText = TODO()
-    private var mPassword : EditText = TODO()
-    private var mConfPassword : EditText = TODO()
-    private var mPasswordBtn : CheckBox = TODO()
-    private var mConfPasswordBtn : CheckBox = TODO()
-    private var mSignIn : Button = TODO()
-    private var mDelete : Button = TODO()
-    private var mToolbar : Toolbar = TODO()
-    private var mUsername : EditText = TODO()
+    private lateinit var mLayout : ConstraintLayout
+    private lateinit var mTitle : TextView
+    private lateinit var mImage : ImageView
+    private lateinit var mEmail : EditText
+    private lateinit var mPassword : EditText
+    private lateinit var mConfPassword : EditText
+    private lateinit var mPasswordBtn : CheckBox
+    private lateinit var mConfPasswordBtn : CheckBox
+    private lateinit var mSignIn : Button
+    private lateinit var mDelete : Button
+    private lateinit var mToolbar : Toolbar
+    private lateinit var mUsername : EditText
 
     private var night : String = ""
-    private var imageUri : Uri
+    private var imageUri : Uri? = null
+    private lateinit var user : User
 
     /**
      * This method creates the activity layout
@@ -74,28 +73,41 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
         val getIntent = intent
 
         if (getIntent != null) {
-            // TODO("From login activity must be sent a null user instance")
             night = getIntent.getStringExtra("night mode").toString()
+            user = getIntent.getSerializableExtra("user") as User
 
             if (getIntent.getStringExtra("image uri") != "") {
                 imageUri = Uri.parse(getIntent.getStringExtra("image uri").toString())
             }
         }
 
-        val imageBitmap : Bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
-        if (imageBitmap != null) mImage.setImageBitmap(imageBitmap)
+        if (user.getUsername() != "") mUsername.setText(user.getUsername())
+
+        if (user.getEmail() != "") mEmail.setText(user.getEmail())
+
+        if (imageUri != null) mImage.setImageURI(imageUri)
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
 
         mImage.setOnClickListener {
-            // TODO("User instance must be implemented and exchanged from pages with intents")
+            user = if (mEmail.text.isEmpty() && mUsername.text.isEmpty()) {
+                User("", "", "")
+            } else if (mEmail.text.isEmpty() && mUsername.text.isNotEmpty()) {
+                User(mUsername.text.toString(), "", "")
+            } else if (mEmail.text.isNotEmpty() && mUsername.text.isEmpty()) {
+                User("", mEmail.text.toString(), "")
+            } else {
+                User(mUsername.text.toString(), mEmail.text.toString(), "")
+            }
+
             if (mEmail.text.toString().isEmpty()) {
                 val dialog = ProfileImageEmailDialog()
                 dialog.show(supportFragmentManager, "email dialog")
             } else {
                 val piIntent = Intent(this@SignInActivity, ProfileImageActivity::class.java)
                 piIntent.putExtra("email", mEmail.text.toString())
+                piIntent.putExtra("user", user)
                 startActivity(piIntent)
                 finish()
             }
@@ -194,6 +206,10 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
         finish()
     }
 
+    /**
+     * This method defines what to do when the ok button on the dialog is pressed
+     * @param email : String
+     */
     override fun onContinueClicked(email: String) {
         val piIntent = Intent(this@SignInActivity, ProfileImageActivity::class.java)
         piIntent.putExtra("email", email)

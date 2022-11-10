@@ -24,9 +24,9 @@ import java.util.*
 class CheckingConnectionActivity : AppCompatActivity(), InternetConnectionReceiver.InternetConnectionReceiverInterface {
 
     // Instance variables
-    private var mNoConnection : TextView = TODO()
-    private var mConnectBtn : Button = TODO()
-    private var mConnImage : ImageView = TODO()
+    private lateinit var mNoConnection : TextView
+    private lateinit var mConnectBtn : Button
+    private lateinit var mConnImage : ImageView
 
     /**
      * This method creates the activity layout

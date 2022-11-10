@@ -19,17 +19,17 @@ import roberto.garzone.youtubereviews.R
 class AddCommentDialog : AppCompatDialogFragment() {
 
     // Instance variables
-    private var mText : EditText = TODO()
-    private var listener : AddCommentDialogInterface
+    private lateinit var mText : EditText
+    private lateinit var listener : AddCommentDialogInterface
 
     /**
      * This method creates the dialog layout
      * @param savedInstanceState : Bundle
      */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        var builder = AlertDialog.Builder(activity)
-        var inflater = requireActivity().layoutInflater
-        var view = inflater.inflate(R.layout.add_comment_dialog_layout, null)
+        val builder = AlertDialog.Builder(activity)
+        val inflater = requireActivity().layoutInflater
+        val view = inflater.inflate(R.layout.add_comment_dialog_layout, null)
 
         mText = view.findViewById(R.id.add_comment_text)
 

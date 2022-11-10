@@ -22,9 +22,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.FileProvider
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
 import roberto.garzone.youtubereviews.BuildConfig
 import roberto.garzone.youtubereviews.R
+import roberto.garzone.youtubereviews.models.User
 import java.io.File
 import java.io.IOException
 import java.util.UUID
@@ -35,27 +35,28 @@ import java.util.UUID
 class ProfileImageActivity : AppCompatActivity() {
 
     // Instance variables
-    private var mToolbar : Toolbar = TODO()
-    private var mLayout : ConstraintLayout = TODO()
-    private var mBack : Button = TODO()
-    private var mTitle : TextView = TODO()
-    private var mImage : ImageView = TODO()
-    private var mTake : Button = TODO()
-    private var mGallery : Button = TODO()
-    private var mSave : Button = TODO()
+    private lateinit var mToolbar : Toolbar 
+    private lateinit var mLayout : ConstraintLayout 
+    private lateinit var mBack : Button 
+    private lateinit var mTitle : TextView 
+    private lateinit var mImage : ImageView 
+    private lateinit var mTake : Button 
+    private lateinit var mGallery : Button 
+    private lateinit var mSave : Button 
 
     companion object {
         private const val START_CAMERA = 0
         private const val SELECT_PICTURE = 200
     }
 
-    private var outputUri : Uri
+    private lateinit var outputUri : Uri
     private var night : String = ""
     private var email : String = ""
     private var imageFileName : String = ""
-    private var photoFile : File?
-    private var storage : FirebaseStorage
-    private var mStorageRef : StorageReference
+    private lateinit var photoFile : File
+    private lateinit var storage : FirebaseStorage
+    private lateinit var mStorageRef : StorageReference
+    private lateinit var user : User
 
     /**
      * This method defines the activity actions at its start
@@ -88,26 +89,25 @@ class ProfileImageActivity : AppCompatActivity() {
 
         val getIntent : Intent = intent
 
-        if (getIntent != null) {
-            night = getIntent.getStringExtra("night mode").toString()
-            email = getIntent.getStringExtra("email").toString()
-        }
+        night = getIntent.getStringExtra("night mode").toString()
+        email = getIntent.getStringExtra("email").toString()
+        user = getIntent.getSerializableExtra("user") as User
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
 
         mTake.setOnClickListener {
-            val cameraIntent : Intent = Intent()
+            val cameraIntent = Intent()
             cameraIntent.action = MediaStore.ACTION_IMAGE_CAPTURE
 
-            photoFile = null
+            //photoFile = null
             try {
                 photoFile = createImageFile()
             } catch (e : IOException) {
                 e.printStackTrace()
             }
 
-            outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "${BuildConfig.APPLICATION_ID}.provider", photoFile!!)
+            outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "${BuildConfig.APPLICATION_ID}.provider", photoFile)
 
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri)
             cameraIntent.flags = Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION
@@ -129,21 +129,20 @@ class ProfileImageActivity : AppCompatActivity() {
      * @param resultCode : Int
      * @param data : Intent?
      */
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == START_CAMERA && resultCode == RESULT_OK) {
             try {
-                val imageBitmap : Bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, outputUri)
-                mImage.setImageBitmap(imageBitmap)
+                mImage.setImageURI(outputUri)
             } catch (e : IOException) {
                 e.printStackTrace()
             }
         } else if (requestCode == SELECT_PICTURE && resultCode == RESULT_OK) {
             outputUri = data!!.data!!
             try {
-                val bitmap : Bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, outputUri)
-                mImage.setImageBitmap(bitmap)
+                mImage.setImageURI(outputUri)
             } catch (e : IOException) {
                 e.printStackTrace()
             }
@@ -157,7 +156,7 @@ class ProfileImageActivity : AppCompatActivity() {
     private fun createImageFile() : File {
         imageFileName = "IMAGE_${email}.jpg"
         val externalDir : File = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-        return File("${externalDir.toString()}/${imageFileName}")
+        return File("${externalDir}/${imageFileName}")
     }
 
     /**
@@ -181,6 +180,8 @@ class ProfileImageActivity : AppCompatActivity() {
 
                 val backIntent = Intent(this@ProfileImageActivity, SignInActivity::class.java)
                 backIntent.putExtra("image uri", outputUri.toString())
+                backIntent.putExtra("night mode", night)
+                backIntent.putExtra("user", user)
                 startActivity(backIntent)
                 finish()
             }
@@ -195,6 +196,8 @@ class ProfileImageActivity : AppCompatActivity() {
 
         val backIntent = Intent(this@ProfileImageActivity, SignInActivity::class.java)
         backIntent.putExtra("image uri", "")
+        backIntent.putExtra("night mode", night)
+        backIntent.putExtra("user", user)
         startActivity(backIntent)
         finish()
     }

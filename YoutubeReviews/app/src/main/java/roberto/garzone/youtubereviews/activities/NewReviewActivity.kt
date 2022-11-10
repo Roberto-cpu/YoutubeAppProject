@@ -30,21 +30,21 @@ import roberto.garzone.youtubereviews.models.Song
 class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogInterface {
 
     // Instance variables
-    private var mLayout : ConstraintLayout = TODO()
-    private var mToolbar : Toolbar = TODO()
-    private var mView : TextView = TODO()
-    private var mSave : Button = TODO()
-    private var mBack : Button = TODO()
-    private var mTitle : EditText = TODO()
-    private var mText : EditText = TODO()
-    private var mSongName : EditText = TODO()
-    private var mLink : EditText = TODO()
-    private var mBand : EditText = TODO()
-    private var mGenre : EditText = TODO()
+    private lateinit var mLayout : ConstraintLayout
+    private lateinit var mToolbar : Toolbar
+    private lateinit var mView : TextView
+    private lateinit var mSave : Button
+    private lateinit var mBack : Button
+    private lateinit var mTitle : EditText
+    private lateinit var mText : EditText
+    private lateinit var mSongName : EditText
+    private lateinit var mLink : EditText
+    private lateinit var mBand : EditText
+    private lateinit var mGenre : EditText
 
     private var night : String = ""
-    private var auth : FirebaseAuth
-    private var currUser : FirebaseUser
+    private lateinit var auth : FirebaseAuth
+    private lateinit var currUser : FirebaseUser
 
     /**
      * This method creates the activity layout
@@ -67,19 +67,16 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
         mGenre = findViewById(R.id.new_review_genre)
 
         setSupportActionBar(mToolbar)
-        supportActionBar!!.setTitle("")
+        supportActionBar!!.title = ""
 
-        var getIntent = intent
-
-        if (getIntent != null) {
-            night = getIntent.getStringExtra("night mode").toString()
-        }
+        val getIntent = intent
+        night = getIntent.getStringExtra("night mode").toString()
 
         auth = FirebaseAuth.getInstance()
         currUser = auth.currentUser!!
 
         mBack.setOnClickListener {
-            var backIntent = Intent(this@NewReviewActivity, SongsListActivity::class.java)
+            val backIntent = Intent(this@NewReviewActivity, SongsListActivity::class.java)
             backIntent.putExtra("night mode", night)
 
             startActivity(backIntent)
@@ -104,12 +101,12 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
      * This method saves the review into the database
      */
     private fun saveReview() {
-        var revTitle : String = mTitle.text.toString()
-        var revText : String = mText.text.toString()
-        var songName : String = mSongName.text.toString()
-        var link : String = mLink.text.toString()
-        var band : String = mBand.text.toString()
-        var genre : String = mGenre.text.toString()
+        val revTitle : String = mTitle.text.toString()
+        val revText : String = mText.text.toString()
+        val songName : String = mSongName.text.toString()
+        val link : String = mLink.text.toString()
+        val band : String = mBand.text.toString()
+        val genre : String = mGenre.text.toString()
 
         when {
             revTitle.isEmpty() -> mTitle.error = resources.getString(R.string.new_review_title_error)
@@ -119,14 +116,14 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
             band.isEmpty() -> mBand.error = resources.getString(R.string.new_review_band_name_error)
             genre.isEmpty() -> mGenre.error = resources.getString(R.string.new_review_genre_error)
             else -> {
-                var firestore = FirebaseFirestore.getInstance()
+                val firestore = FirebaseFirestore.getInstance()
                 val songCollection = firestore.collection("songs")
                 val reviewCollection = firestore.collection("reviews")
 
                 songCollection.get().addOnCompleteListener { it ->
                     if (it.isSuccessful) {
-                        var songId : String = "${mSongName.text.toString()} - ${mBand.text.toString()}"
-                        var check : Boolean = false
+                        val songId = "${mSongName.text} - ${mBand.text}"
+                        var check = false
 
                         for (snapshot : QueryDocumentSnapshot in it.result) {
                             if (snapshot.id == songId) {
@@ -136,8 +133,8 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
                         }
 
                         if (!check) {
-                            var song = Song(songName, link, band, genre)
-                            var songInfo = HashMap<String, String>()
+                            val song = Song(songName, link, band, genre)
+                            val songInfo = HashMap<String, String>()
 
                             songInfo["Name"] = song.getName()
                             songInfo["Link"] = song.getYoutubeLink()
@@ -151,8 +148,8 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
                             }
                         }
 
-                        var review = Review("", currUser.email.toString(), revTitle, revText, songName)
-                        var reviewInfo = HashMap<String, String>()
+                        val review = Review("", currUser.email.toString(), revTitle, revText, songName)
+                        val reviewInfo = HashMap<String, String>()
 
                         reviewInfo["Title"] = review.getTitle()
                         reviewInfo["Email"] = review.getCreator()
@@ -167,7 +164,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
                     }
                 }
 
-                var dialog : AddReviewDialog = AddReviewDialog()
+                val dialog = AddReviewDialog()
                 dialog.show(supportFragmentManager, "new review")
             }
         }

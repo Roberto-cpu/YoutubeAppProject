@@ -29,19 +29,19 @@ import roberto.garzone.youtubereviews.models.Song
 class ReviewsListActivity : AppCompatActivity() {
 
     // Instance variables
-    private var mLayout : ConstraintLayout = TODO()
-    private var mToolbar : Toolbar = TODO()
-    private var mBack : Button = TODO()
-    private var mName : TextView = TODO()
-    private var mList : ListView = TODO()
-    private var mMenu : Menu = TODO()
+    private lateinit var mLayout : ConstraintLayout
+    private lateinit var mToolbar : Toolbar
+    private lateinit var mBack : Button
+    private lateinit var mName : TextView
+    private lateinit var mList : ListView
+    private lateinit var mMenu : Menu
 
-    private var review : Review? = null
+    private lateinit var review : Review
     private var name : String = ""
     private var night : String = ""
-    private var song : Song? = null
-    private var adapter : ReviewsListAdapter
-    private var songs : ArrayList<Song>
+    private lateinit var song : Song
+    private lateinit var adapter : ReviewsListAdapter
+    private lateinit var songs : ArrayList<Song>
 
     /**
      * This method creates the activity layout
@@ -62,11 +62,9 @@ class ReviewsListActivity : AppCompatActivity() {
         setSupportActionBar(this.mToolbar)
         supportActionBar!!.title = ""
 
-        if (getIntent != null) {
-            name = getIntent.getStringExtra("song").toString()
-            songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
-            night = getIntent.getStringExtra("night mode").toString()
-        }
+        name = getIntent.getStringExtra("song").toString()
+        songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
+        night = getIntent.getStringExtra("night mode").toString()
     }
 
     /**
@@ -88,7 +86,7 @@ class ReviewsListActivity : AppCompatActivity() {
 
         docReference.get().addOnSuccessListener {
             song = Song(it.get("Name").toString(), it.get("Link").toString(), it.get("Band").toString(), it.get("Genre").toString())
-            mName.text = song!!.getName()
+            mName.text = song.getName()
 
             val firestore1 = FirebaseFirestore.getInstance()
 
@@ -98,12 +96,12 @@ class ReviewsListActivity : AppCompatActivity() {
                         val review = Review(sn.id, sn.get("Email").toString(), sn.get("Title").toString(), sn.get("Text").toString(), sn.get("Song").toString())
 
                         if (name == review.getSongReference()) {
-                            song!!.addReview(review)
+                            song.addReview(review)
                         }
                     }
 
                     mList = findViewById(R.id.reviews_list)
-                    adapter = ReviewsListAdapter(this@ReviewsListActivity, song!!.getReviews())
+                    adapter = ReviewsListAdapter(this@ReviewsListActivity, song.getReviews())
 
                     if (night == "checked") {
                         mList.setBackgroundColor(resources.getColor(R.color.colorWhite))
@@ -111,10 +109,10 @@ class ReviewsListActivity : AppCompatActivity() {
 
                     mList.adapter = adapter
                     mList.setOnItemClickListener { _, _, i, _ ->
-                        this.review = song!!.getReviews()[i]
+                        this.review = song.getReviews()[i]
                         val reviewIntent = Intent(this@ReviewsListActivity, ReviewActivity::class.java)
 
-                        reviewIntent.putExtra("song name", song!!.getName())
+                        reviewIntent.putExtra("song name", song.getName())
                         reviewIntent.putExtra("review", this.review)
                         reviewIntent.putExtra("songs", songs)
                         reviewIntent.putExtra("night mode", night)

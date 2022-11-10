@@ -8,12 +8,8 @@ package roberto.garzone.youtubereviews.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
@@ -30,18 +26,17 @@ class SettingsActivity : AppCompatActivity() {
     // Instance variables
     companion object {
         const val NIGHT_MODE : String = "night_mode"
-        const val TEXT_SIZE : String = "text_size"
     }
 
-    private var mToolbar : Toolbar = TODO()
-    private var mLayout : ConstraintLayout = TODO()
-    private var mNightText : TextView = TODO()
-    private var mEmail : Button = TODO()
-    private var mPassword : Button = TODO()
-    private var mPfImage : Button = TODO()
-    private var mBack : Button = TODO()
-    private var mSave : Button = TODO()
-    private var mNight : ToggleButton = TODO()
+    private lateinit var mToolbar : Toolbar 
+    private lateinit var mLayout : ConstraintLayout 
+    private lateinit var mNightText : TextView 
+    private lateinit var mEmail : Button 
+    private lateinit var mPassword : Button 
+    private lateinit var mPfImage : Button 
+    private lateinit var mBack : Button 
+    private lateinit var mSave : Button 
+    private lateinit var mNight : ToggleButton 
 
     private var night : String = ""
     private var originalNight : String = ""

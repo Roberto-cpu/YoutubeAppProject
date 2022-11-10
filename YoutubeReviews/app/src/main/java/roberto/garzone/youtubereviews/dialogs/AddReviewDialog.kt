@@ -25,7 +25,7 @@ class AddReviewDialog : AppCompatDialogFragment() {
      * @param savedInstanceState : Bundle
      */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        var builder : AlertDialog.Builder = AlertDialog.Builder(activity)
+        val builder : AlertDialog.Builder = AlertDialog.Builder(activity)
 
         builder.setTitle(resources.getString(R.string.new_review_dialog_title))
             .setMessage(resources.getString(R.string.new_review_dialog_message))
@@ -39,7 +39,7 @@ class AddReviewDialog : AppCompatDialogFragment() {
     /**
      * This method links the dialog to the relative activity
      */
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
 
         try {

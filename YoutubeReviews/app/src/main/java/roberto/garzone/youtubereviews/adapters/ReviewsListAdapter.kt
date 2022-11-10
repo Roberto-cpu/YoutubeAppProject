@@ -25,14 +25,14 @@ import roberto.garzone.youtubereviews.models.Review
 class ReviewsListAdapter(ctx : Context, reviews : ArrayList<Review>) : BaseAdapter() {
 
     // Instance variables
-    private lateinit var mContenxt : Context
-    private lateinit var mReviews : ArrayList<Review>
+    private var mContext : Context
+    private var mReviews : ArrayList<Review>
 
     /**
      * Constructor
      */
     init {
-        this.mContenxt = ctx
+        this.mContext = ctx
         this.mReviews = reviews
     }
 
@@ -47,7 +47,8 @@ class ReviewsListAdapter(ctx : Context, reviews : ArrayList<Review>) : BaseAdapt
      * @param p0 : Int
      * @return Any
      */
-    override fun getItem(p0: Int): Any { return this.mReviews.get(p0) }
+    override fun getItem(p0: Int): Any { return this.mReviews[p0]
+    }
 
     /**
      * This method return the position of an item
@@ -67,37 +68,39 @@ class ReviewsListAdapter(ctx : Context, reviews : ArrayList<Review>) : BaseAdapt
 
         var convertView : View? = p1
         if (convertView == null) {
-            convertView = LayoutInflater.from(this.mContenxt).inflate(R.layout.reviews_list_item, p2, false)
+            convertView = LayoutInflater.from(this.mContext).inflate(R.layout.reviews_list_item, p2, false)
         }
 
-        var mTitle : TextView = convertView!!.findViewById(R.id.review_title)
-        var mCreator : TextView = convertView!!.findViewById(R.id.review_creator)
-        var mText : TextView = convertView!!.findViewById(R.id.review_message)
-        val mComments : TextView = convertView!!.findViewById(R.id.review_number_comments)
-        var db = FirebaseFirestore.getInstance()
+        val mTitle : TextView = convertView!!.findViewById(R.id.review_title)
+        val mCreator : TextView = convertView.findViewById(R.id.review_creator)
+        val mText : TextView = convertView.findViewById(R.id.review_message)
+        val mComments : TextView = convertView.findViewById(R.id.review_number_comments)
+        val db = FirebaseFirestore.getInstance()
 
         mTitle.text = this.mReviews[p0].getTitle()
         mCreator.text = this.mReviews[p0].getCreator()
         mText.text = this.mReviews[p0].getText()
-        mComments.text = "${this.mContenxt.resources.getString(R.string.reviews_list_number_comments)} -"
+        mComments.text = "${this.mContext.resources.getString(R.string.reviews_list_number_comments)} -"
 
-        Thread(Runnable {
+        Thread {
             db.collection("comments").get().addOnCompleteListener {
                 if (it.isSuccessful) {
-                    var count : Int = 0
-                    for (snapshot : QueryDocumentSnapshot in it.result) {
-                        var comment : Comment = Comment(snapshot.get("Email").toString(), snapshot.get("Text").toString(),
-                        snapshot.get("Review").toString())
+                    var count = 0
+                    for (snapshot: QueryDocumentSnapshot in it.result) {
+                        val comment = Comment(
+                            snapshot.get("Email").toString(), snapshot.get("Text").toString(),
+                            snapshot.get("Review").toString()
+                        )
 
                         if (comment.getReviewReference() == this.mReviews[p0].getId()) {
                             count++
                         }
                     }
 
-                    mComments.text = "${this.mContenxt.resources.getString(R.string.reviews_list_number_comments)} $count"
+                    mComments.text = "${this.mContext.resources.getString(R.string.reviews_list_number_comments)} $count"
                 }
             }
-        })
+        }
 
         return convertView
     }

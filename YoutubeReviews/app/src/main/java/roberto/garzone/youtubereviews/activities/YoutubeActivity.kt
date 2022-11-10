@@ -27,13 +27,13 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
         private const val YOUTUBE_REQUEST_CODE : Int = 100
     }
 
-    private var mYoutube : YouTubePlayerView = TODO()
+    private lateinit var mYoutube : YouTubePlayerView
 
     private var songId : String = ""
     private var night : String = ""
     private var songs : ArrayList<Song> = ArrayList()
-    private var song : Song
-    private var getIntent : Intent
+    private lateinit var song : Song
+    private lateinit var getIntent : Intent
 
     /**
      * This method creates the activity's layout
@@ -66,13 +66,11 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
      */
     override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, p1: YouTubePlayer?, p2: Boolean) {
         if (!p2) {
-            if (getIntent != null) {
-                songId = getIntent.getStringExtra("song").toString()
-                songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
-                night = getIntent.getStringExtra("night mode").toString()
-            }
+            songId = getIntent.getStringExtra("song").toString()
+            songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
+            night = getIntent.getStringExtra("night mode").toString()
 
-            var splitted = songId.split(" - ")
+            val splitted = songId.split(" - ")
 
             for (s : Song in songs) {
                 if (s.getName() == splitted[0] && song.getBand() == splitted[1]) {
@@ -80,9 +78,9 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
                 }
             }
 
-            var idVideo : String = getYoutubeId(song.getYoutubeLink())
+            val idVideo : String = getYoutubeId(song.getYoutubeLink())
             p1!!.setShowFullscreenButton(false)
-            p1!!.cueVideo(idVideo)
+            p1.cueVideo(idVideo)
         }
     }
 
@@ -91,7 +89,7 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
      * @param link : String
      */
     private fun getYoutubeId(link : String) : String {
-        var split = link.split("/")
+        val split = link.split("/")
         return split[3]
     }
 
@@ -102,9 +100,9 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
      */
     override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
         if (p1!!.isUserRecoverableError) {
-            p1!!.getErrorDialog(this@YoutubeActivity, YOUTUBE_REQUEST_CODE).show()
+            p1.getErrorDialog(this@YoutubeActivity, YOUTUBE_REQUEST_CODE).show()
         } else {
-            var error : String = String.format(resources.getString(R.string.youtbe_player_error), p1!!.toString())
+            val error : String = String.format(resources.getString(R.string.youtbe_player_error), p1.toString())
             Toast.makeText(this@YoutubeActivity, error, Toast.LENGTH_LONG).show()
         }
     }

@@ -5,6 +5,7 @@ package roberto.garzone.youtubereviews.activities
  * @date 01/10/2022
  */
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.widget.Toast
@@ -12,6 +13,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.multidex.MultiDex
 import roberto.garzone.youtubereviews.R
 import java.util.*
 import kotlin.collections.ArrayList
@@ -34,15 +36,15 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        /*permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+        permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
             isReadPermissionGranted = permissions[android.Manifest.permission.READ_EXTERNAL_STORAGE] ?: isReadPermissionGranted
             isWritePermissionGranted = permissions[android.Manifest.permission.WRITE_EXTERNAL_STORAGE] ?: isWritePermissionGranted
             isCameraPermissionGranted = permissions[android.Manifest.permission.CAMERA] ?: isCameraPermissionGranted
         }
 
-        val granted = requestPermission()*/
+        val granted = requestPermission()
 
-        //if (granted) {
+        if (granted) {
             // The timer class manages the splash screen durability
             Timer().schedule(object : TimerTask() {
                 override fun run() {
@@ -51,9 +53,9 @@ class SplashScreenActivity : AppCompatActivity() {
                     finish()
                 }
             }, 900)
-        /*} else {
+        } else {
             Toast.makeText(this@SplashScreenActivity, R.string.permission_request, Toast.LENGTH_SHORT).show()
-        }*/
+        }
     }
 
     private fun requestPermission() : Boolean {
@@ -90,5 +92,10 @@ class SplashScreenActivity : AppCompatActivity() {
         }
 
         return granted
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(newBase)
+        MultiDex.install(this)
     }
 }

@@ -18,7 +18,7 @@ import roberto.garzone.youtubereviews.R
 class LoginGuestDialog : AppCompatDialogFragment() {
 
     // Instance variable
-    var listener : LoginGuestDialogInterface? = null
+    private var listener : LoginGuestDialogInterface? = null
 
     /**
      * This method creates the dialog layout (-, - = dialog, which)
@@ -26,7 +26,7 @@ class LoginGuestDialog : AppCompatDialogFragment() {
      * @return Dialog
      */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        var builder : AlertDialog.Builder = AlertDialog.Builder(activity)
+        val builder : AlertDialog.Builder = AlertDialog.Builder(activity)
         builder.setTitle(resources.getString(R.string.login_guest_dialog_title))
             .setMessage(resources.getString(R.string.login_guest_dialog_message))
             .setPositiveButton(resources.getString(R.string.dialog_yes)) { _, _ ->
@@ -41,7 +41,7 @@ class LoginGuestDialog : AppCompatDialogFragment() {
      * This method links the dialog page to the relative context
      * @param context : Context
      */
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context : Context) {
         super.onAttach(context)
 
         try {

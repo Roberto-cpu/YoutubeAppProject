@@ -16,8 +16,8 @@ import roberto.garzone.youtubereviews.R
 class ProfileImageEmailDialog : AppCompatDialogFragment() {
 
     // Instance variables
-    private var mEmail : EditText = TODO()
-    private var listener : EmailDialogInterface
+    private lateinit var mEmail : EditText
+    private lateinit var listener : EmailDialogInterface
 
     /**
      * This method creates the dialog layout

@@ -11,8 +11,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.firebase.auth.FirebaseAuth
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.LoginGuestDialog
+import roberto.garzone.youtubereviews.models.User
 
 /**
  * This class manages the login activity behaviour
@@ -28,24 +27,24 @@ import roberto.garzone.youtubereviews.dialogs.LoginGuestDialog
 class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInterface {
 
     // Instance variables
-    private var mLayout : ConstraintLayout = TODO()
-    private var mTitle : TextView = TODO()
-    private var mEmail : EditText = TODO()
-    private var mPassword : EditText = TODO()
-    private var mLogin : Button = TODO()
-    private var mSignin : Button = TODO()
-    private var mGuest : Button = TODO()
-    private var mToolbar : Toolbar = TODO()
-    private var mRememberMe : CheckBox = TODO()
-    private var mNightMode : CheckBox = TODO()
-    private var mLoginText : TextView = TODO()
-    private var mSignInText : TextView = TODO()
+    private lateinit var mLayout : ConstraintLayout 
+    private lateinit var mTitle : TextView 
+    private lateinit var mEmail : EditText 
+    private lateinit var mPassword : EditText 
+    private lateinit var mLogin : Button 
+    private lateinit var mSignin : Button 
+    private lateinit var mGuest : Button 
+    private lateinit var mToolbar : Toolbar 
+    private lateinit var mRememberMe : CheckBox 
+    private lateinit var mNightMode : CheckBox 
+    private lateinit var mLoginText : TextView 
+    private lateinit var mSignInText : TextView 
 
     private var night : String = ""
-    private var auth : FirebaseAuth
+    private lateinit var auth : FirebaseAuth
 
-    private var preferences : SharedPreferences
-    private var editor : SharedPreferences.Editor
+    private lateinit var preferences : SharedPreferences
+    private lateinit var editor : SharedPreferences.Editor
 
     /**
      * This method creates the activity layout
@@ -99,7 +98,7 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         }
 
         setSupportActionBar(mToolbar)
-        actionBar!!.title = ""
+        supportActionBar!!.title = ""
 
         auth = FirebaseAuth.getInstance()
     }
@@ -120,6 +119,7 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         val signInIntent = Intent(this@LoginActivity, SignInActivity::class.java)
         signInIntent.putExtra("night mode", night)
         signInIntent.putExtra("image uri", "")
+        signInIntent.putExtra("user", User("", "", ""))
 
         startActivity(signInIntent)
         finish()

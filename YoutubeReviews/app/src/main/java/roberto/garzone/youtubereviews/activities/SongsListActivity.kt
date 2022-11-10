@@ -5,7 +5,6 @@ package roberto.garzone.youtubereviews.activities
  * @date 01/10/2022
  */
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -37,24 +36,24 @@ import roberto.garzone.youtubereviews.services.NotificationService
 class SongsListActivity : AppCompatActivity() {
 
     // Instance variables
-    private var mLayout : ConstraintLayout = TODO()
-    private var mTitle : TextView = TODO()
-    private var mSongs : ListView = TODO()
-    private var mToolbar : Toolbar = TODO()
-    private var mSpinner : Spinner = TODO()
-    private var mSettings : Button = TODO()
-    private var mMenu : Menu = TODO()
+    private lateinit var mLayout : ConstraintLayout 
+    private lateinit var mTitle : TextView 
+    private lateinit var mSongs : ListView 
+    private lateinit var mToolbar : Toolbar 
+    private lateinit var mSpinner : Spinner 
+    private lateinit var mSettings : Button 
+    private lateinit var mMenu : Menu 
 
-    private var songs : ArrayList<Song>
-    private var names : ArrayList<String>
-    private var genres : ArrayList<String>
-    private var listAdapter : ArrayAdapter<Any>
-    private var spinnerAdapter : ArrayAdapter<Any>
+    private lateinit var songs : ArrayList<Song>
+    private lateinit var names : ArrayList<String>
+    private lateinit var genres : ArrayList<String>
+    private lateinit var listAdapter : ArrayAdapter<Any>
+    private lateinit var spinnerAdapter : ArrayAdapter<Any>
     private var night : String = ""
     private var count : Int = 0
-    private var auth : FirebaseAuth
-    private var currUser : FirebaseUser
-    private var getIntent : Intent
+    private lateinit var auth : FirebaseAuth
+    private lateinit var currUser : FirebaseUser
+    private lateinit var getIntent : Intent
 
     /**
      * This method creates the activity layout
@@ -72,9 +71,7 @@ class SongsListActivity : AppCompatActivity() {
 
         getIntent = intent
 
-        if (getIntent != null) {
-            night = getIntent.getStringExtra("night mode").toString()
-        }
+        night = getIntent.getStringExtra("night mode").toString()
 
         mSettings.setOnClickListener {
             val settingsIntent = Intent(this@SongsListActivity, SettingsActivity::class.java)

@@ -71,9 +71,9 @@ class NotificationService : Service() {
 
         timer!!.schedule(object : TimerTask() {
                 override fun run() {
-                    handler.post(Runnable {
+                    handler.post {
                         createNotification()
-                    })
+                    }
                 }
             }, millisec)
     }
@@ -94,8 +94,8 @@ class NotificationService : Service() {
     private fun createNotification() {
         val intent = Intent(applicationContext, SplashScreenActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this@NotificationService, 0, intent, 0)
-        var manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        var builder = NotificationCompat.Builder(applicationContext, default_notification_channel_id)
+        val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        val builder = NotificationCompat.Builder(applicationContext, default_notification_channel_id)
 
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         builder.setContentTitle(resources.getString(R.string.channel_2_name))
@@ -106,7 +106,7 @@ class NotificationService : Service() {
             .setContentIntent(pendingIntent)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            var channel = NotificationChannel(NOTIFICATION_CHANNEL_ID, resources.getString(R.string.channel_2_name), NotificationManager.IMPORTANCE_DEFAULT)
+            val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID, resources.getString(R.string.channel_2_name), NotificationManager.IMPORTANCE_DEFAULT)
 
             if (manager != null) {
                 manager.createNotificationChannel(channel)

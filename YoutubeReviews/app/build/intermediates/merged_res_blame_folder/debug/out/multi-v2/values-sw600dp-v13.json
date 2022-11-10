@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "roberto.garzone.youtubereviews.app-mergeDebugResources-16:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "roberto.garzone.youtubereviews.app-mergeDebugResources-30:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\abe4a65e6dfd4dac3368895510a0eec4\\transformed\\material-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\592da6bd8daf9e2d9969c7d8cbf2daeb\\transformed\\material-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\e7f738d0d30cd4c5899b982b97cc866d\\transformed\\appcompat-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\e7d8ebb8c12f86496c990ee64fb2e100\\transformed\\appcompat-1.5.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

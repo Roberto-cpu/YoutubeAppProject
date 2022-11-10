@@ -5,7 +5,6 @@ package roberto.garzone.youtubereviews.receivers
  * @date 01/10/2022
  */
 
-import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -18,7 +17,7 @@ import android.net.NetworkInfo
 class InternetConnectionReceiver : BroadcastReceiver() {
 
     // Instance variables
-    private var listener : InternetConnectionReceiverInterface = TODO()
+    private lateinit var listener : InternetConnectionReceiverInterface
 
     /**
      * Constructor

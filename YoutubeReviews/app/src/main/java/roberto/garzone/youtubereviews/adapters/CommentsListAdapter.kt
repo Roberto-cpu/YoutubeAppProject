@@ -22,8 +22,8 @@ import roberto.garzone.youtubereviews.models.Comment
 class CommentsListAdapter(ctx : Context, comments : ArrayList<Comment>) : BaseAdapter() {
 
     // Instance variables
-    private lateinit var mContext : Context
-    private lateinit var mComments : ArrayList<Comment>
+    private var mContext : Context
+    private var mComments : ArrayList<Comment>
 
     /**
      * Constructor
@@ -69,7 +69,7 @@ class CommentsListAdapter(ctx : Context, comments : ArrayList<Comment>) : BaseAd
         }
 
         val mCreator : TextView = convertView!!.findViewById(R.id.comments_list_creator)
-        val mText : TextView = convertView!!.findViewById(R.id.comments_list_text)
+        val mText : TextView = convertView.findViewById(R.id.comments_list_text)
 
         mCreator.text = this.mComments[p0].getEmailCreator()
         mText.text = this.mComments[p0].getText()
