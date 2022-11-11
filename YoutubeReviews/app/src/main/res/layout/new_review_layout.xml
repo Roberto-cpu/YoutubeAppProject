@@ -18,16 +18,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <Button
-            android:id="@+id/new_review_back_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/homeAsUpIndicator"
-            tools:ignore="SpeakableTextPresentCheck"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="4dp" />
-
     </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/new_review_back_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/homeAsUpIndicator"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/new_review_view"
@@ -169,5 +167,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.92"
         tools:ignore="TextContrastCheck" />
+
+    <RatingBar
+        android:id="@+id/new_review_song_ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="400dp"
+        android:progressTint="@color/colorBlue"
+        android:numStars="5"
+        android:rating="3"
+        android:stepSize="1"
+        android:background="@color/colorCoolMint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

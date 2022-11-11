@@ -10,11 +10,13 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -41,6 +43,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
     private lateinit var mLink : EditText
     private lateinit var mBand : EditText
     private lateinit var mGenre : EditText
+    private lateinit var mRating : RatingBar
 
     private var night : String = ""
     private lateinit var auth : FirebaseAuth
@@ -65,6 +68,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
         mLink = findViewById(R.id.new_review_link)
         mBand = findViewById(R.id.new_review_band_name)
         mGenre = findViewById(R.id.new_review_genre)
+        mRating = findViewById(R.id.new_review_song_ratingBar)
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
@@ -107,6 +111,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
         val link : String = mLink.text.toString()
         val band : String = mBand.text.toString()
         val genre : String = mGenre.text.toString()
+        var rating : String = (mRating.rating.toInt()).toString()
 
         when {
             revTitle.isEmpty() -> mTitle.error = resources.getString(R.string.new_review_title_error)
@@ -115,6 +120,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
             link.isEmpty() -> mLink.error = resources.getString(R.string.new_review_song_link_error)
             band.isEmpty() -> mBand.error = resources.getString(R.string.new_review_band_name_error)
             genre.isEmpty() -> mGenre.error = resources.getString(R.string.new_review_genre_error)
+            rating == "0" -> rating = "1"
             else -> {
                 val firestore = FirebaseFirestore.getInstance()
                 val songCollection = firestore.collection("songs")
@@ -133,13 +139,14 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
                         }
 
                         if (!check) {
-                            val song = Song(songName, link, band, genre)
+                            val song = Song(songName, link, band, genre, rating)
                             val songInfo = HashMap<String, String>()
 
                             songInfo["Name"] = song.getName()
                             songInfo["Link"] = song.getYoutubeLink()
                             songInfo["Band"] = song.getBand()
                             songInfo["Genre"] = song.getGenre()
+                            songInfo["Rating"] = song.getRating()
 
                             songCollection.document(songId).set(songInfo).addOnCompleteListener {
                                 if (it.isSuccessful) {
@@ -199,41 +206,41 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
      */
     private fun darkMode() {
         if (night == "checked") {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-            mView.setTextColor(resources.getColor(R.color.colorRed))
-            mView.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
-            mTitle.setTextColor(resources.getColor(R.color.colorWhite))
-            mTitle.setHintTextColor(resources.getColor(R.color.colorWhite))
-            mText.setTextColor(resources.getColor(R.color.colorWhite))
-            mText.setHintTextColor(resources.getColor(R.color.colorWhite))
-            mSongName.setTextColor(resources.getColor(R.color.colorWhite))
-            mSongName.setHintTextColor(resources.getColor(R.color.colorWhite))
-            mBand.setTextColor(resources.getColor(R.color.colorWhite))
-            mBand.setHintTextColor(resources.getColor(R.color.colorWhite))
-            mGenre.setTextColor(resources.getColor(R.color.colorWhite))
-            mGenre.setHintTextColor(resources.getColor(R.color.colorWhite))
-            mLink.setTextColor(resources.getColor(R.color.colorWhite))
-            mLink.setHintTextColor(resources.getColor(R.color.colorWhite))
-            mSave.setTextColor(resources.getColor(R.color.colorWhite))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mView.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mView.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_dark_mode, null)
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mTitle.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mText.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSongName.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSongName.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mBand.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mBand.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mGenre.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mGenre.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mLink.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mLink.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
         } else {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-            mView.setTextColor(resources.getColor(R.color.colorRed))
-            mView.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
-            mTitle.setTextColor(resources.getColor(R.color.colorBlack))
-            mTitle.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mText.setTextColor(resources.getColor(R.color.colorBlack))
-            mText.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mSongName.setTextColor(resources.getColor(R.color.colorBlack))
-            mSongName.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mBand.setTextColor(resources.getColor(R.color.colorBlack))
-            mBand.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mGenre.setTextColor(resources.getColor(R.color.colorBlack))
-            mGenre.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mLink.setTextColor(resources.getColor(R.color.colorBlack))
-            mLink.setHintTextColor(resources.getColor(R.color.colorBlack))
-            mSave.setTextColor(resources.getColor(R.color.colorBlack))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null))
+            mView.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mView.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_light_mode, null)
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mTitle.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mText.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSongName.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSongName.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mBand.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mBand.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mGenre.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mGenre.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mLink.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mLink.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
         }
     }
 }
