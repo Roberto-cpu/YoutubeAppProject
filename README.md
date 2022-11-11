@@ -10,3 +10,5 @@ After the log in, the user will see the list of songs saved. This list can be fi
 The user can add a new song, and so a new review, or can open a song.
 If the user wants to add a new song, he must enter the information about it, including the youtube link to play the song.
 Instead, if he opens a song, he can play it on youtube and/or add a new comment as an answer to the principal review.
+
+This is a test from MacBook. After delete it.
