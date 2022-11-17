@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "521477315396",
+    "firebase_url": "https://reviews-12a54.firebaseio.com",
+    "project_id": "reviews-12a54",
+    "storage_bucket": "reviews-12a54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521477315396:android:91fe7f128490b1994e5511",
+        "android_client_info": {
+          "package_name": "roberto.garzone.youtubereview2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521477315396-nv0jjgj569ojssp59gricii6i32gddkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrp5Ef3QfKgoX1mB5yRbFF7Ntc6Pr68m4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521477315396-nv0jjgj569ojssp59gricii6i32gddkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521477315396:android:ebe9df666b4380ec4e5511",
+        "android_client_info": {
+          "package_name": "roberto.garzone.youtubereviews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521477315396-nv0jjgj569ojssp59gricii6i32gddkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrp5Ef3QfKgoX1mB5yRbFF7Ntc6Pr68m4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521477315396-nv0jjgj569ojssp59gricii6i32gddkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

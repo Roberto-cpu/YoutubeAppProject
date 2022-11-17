@@ -1,0 +1,35 @@
+roberto.garzone.youtubereviews.app-lifecycle-runtime-2.5.1-0 C:\Users\utente\.gradle\caches\transforms-3\13f883e264bc921b33e2d49a3bcc5049\transformed\lifecycle-runtime-2.5.1\res
+roberto.garzone.youtubereviews.app-lifecycle-viewmodel-2.5.1-1 C:\Users\utente\.gradle\caches\transforms-3\1f0d910ffa8113f855b9d057a5d73040\transformed\lifecycle-viewmodel-2.5.1\res
+roberto.garzone.youtubereviews.app-jetified-emoji2-views-helper-1.2.0-2 C:\Users\utente\.gradle\caches\transforms-3\281487921b2a3d7b8247f1ca5b08272e\transformed\jetified-emoji2-views-helper-1.2.0\res
+roberto.garzone.youtubereviews.app-jetified-play-services-base-18.0.1-3 C:\Users\utente\.gradle\caches\transforms-3\393b03d47444b6e7fcad89cab211a8fe\transformed\jetified-play-services-base-18.0.1\res
+roberto.garzone.youtubereviews.app-browser-1.4.0-4 C:\Users\utente\.gradle\caches\transforms-3\446ea24d546a9abbfaba582120d16844\transformed\browser-1.4.0\res
+roberto.garzone.youtubereviews.app-coordinatorlayout-1.0.0-5 C:\Users\utente\.gradle\caches\transforms-3\49941da5f99b6d322b77f7aa569c63e9\transformed\coordinatorlayout-1.0.0\res
+roberto.garzone.youtubereviews.app-material-1.0.0-6 C:\Users\utente\.gradle\caches\transforms-3\592da6bd8daf9e2d9969c7d8cbf2daeb\transformed\material-1.0.0\res
+roberto.garzone.youtubereviews.app-jetified-emoji2-1.2.0-7 C:\Users\utente\.gradle\caches\transforms-3\5bc0e003e0184c49324f4554f98725b0\transformed\jetified-emoji2-1.2.0\res
+roberto.garzone.youtubereviews.app-core-1.8.0-8 C:\Users\utente\.gradle\caches\transforms-3\70be6eecd0ef7670ae5341c7e6379fa2\transformed\core-1.8.0\res
+roberto.garzone.youtubereviews.app-jetified-appcompat-resources-1.5.1-9 C:\Users\utente\.gradle\caches\transforms-3\77fd1ad6c1a120af5c4a5a8d11923dc3\transformed\jetified-appcompat-resources-1.5.1\res
+roberto.garzone.youtubereviews.app-transition-1.0.0-10 C:\Users\utente\.gradle\caches\transforms-3\92724addf115a4921ffc4fb0a7d35e7d\transformed\transition-1.0.0\res
+roberto.garzone.youtubereviews.app-jetified-savedstate-1.2.0-11 C:\Users\utente\.gradle\caches\transforms-3\a56891f5818dfcdc13395fc701242b64\transformed\jetified-savedstate-1.2.0\res
+roberto.garzone.youtubereviews.app-cardview-1.0.0-12 C:\Users\utente\.gradle\caches\transforms-3\ab328cc09810c8d25337de636b57a411\transformed\cardview-1.0.0\res
+roberto.garzone.youtubereviews.app-jetified-startup-runtime-1.1.1-13 C:\Users\utente\.gradle\caches\transforms-3\b474f9a02e68bd691aea192c61372ed2\transformed\jetified-startup-runtime-1.1.1\res
+roberto.garzone.youtubereviews.app-jetified-activity-1.5.1-14 C:\Users\utente\.gradle\caches\transforms-3\b550e59fec8f24f315bce0c761ee2c54\transformed\jetified-activity-1.5.1\res
+roberto.garzone.youtubereviews.app-jetified-lifecycle-process-2.4.1-15 C:\Users\utente\.gradle\caches\transforms-3\baa46df8fcab012c5951e5b69145e782\transformed\jetified-lifecycle-process-2.4.1\res
+roberto.garzone.youtubereviews.app-jetified-play-services-basement-18.1.0-16 C:\Users\utente\.gradle\caches\transforms-3\c427008a8fbc059868a465e61671d382\transformed\jetified-play-services-basement-18.1.0\res
+roberto.garzone.youtubereviews.app-constraintlayout-2.1.4-17 C:\Users\utente\.gradle\caches\transforms-3\c6f454eeb904d59103b5dc94f8d00525\transformed\constraintlayout-2.1.4\res
+roberto.garzone.youtubereviews.app-jetified-annotation-experimental-1.1.0-18 C:\Users\utente\.gradle\caches\transforms-3\cfb44b628f8d282cbc5190f1ecec0155\transformed\jetified-annotation-experimental-1.1.0\res
+roberto.garzone.youtubereviews.app-fragment-1.3.6-19 C:\Users\utente\.gradle\caches\transforms-3\d4a526500d88c9adcb4f1cea25c5797a\transformed\fragment-1.3.6\res
+roberto.garzone.youtubereviews.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-20 C:\Users\utente\.gradle\caches\transforms-3\e357b90fbaab2f2a10254e715f0a5eeb\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+roberto.garzone.youtubereviews.app-lifecycle-livedata-core-2.5.1-21 C:\Users\utente\.gradle\caches\transforms-3\e7c6d11983f83cd8da809430ea5c8262\transformed\lifecycle-livedata-core-2.5.1\res
+roberto.garzone.youtubereviews.app-appcompat-1.5.1-22 C:\Users\utente\.gradle\caches\transforms-3\e7d8ebb8c12f86496c990ee64fb2e100\transformed\appcompat-1.5.1\res
+roberto.garzone.youtubereviews.app-jetified-core-ktx-1.8.0-23 C:\Users\utente\.gradle\caches\transforms-3\fa99fc506a3d78703f8c21799046e3c2\transformed\jetified-core-ktx-1.8.0\res
+roberto.garzone.youtubereviews.app-recyclerview-1.0.0-24 C:\Users\utente\.gradle\caches\transforms-3\fbebff4a1af9945ec6ff0470c858c775\transformed\recyclerview-1.0.0\res
+roberto.garzone.youtubereviews.app-jetified-firebase-common-20.1.2-25 C:\Users\utente\.gradle\caches\transforms-3\fe931df71afdd2180cee899deab7e82a\transformed\jetified-firebase-common-20.1.2\res
+roberto.garzone.youtubereviews.app-google-services-26 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\build\generated\res\google-services\debug
+roberto.garzone.youtubereviews.app-pngs-27 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\build\generated\res\pngs\debug
+roberto.garzone.youtubereviews.app-resValues-28 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\build\generated\res\resValues\debug
+roberto.garzone.youtubereviews.app-rs-29 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\build\generated\res\rs\debug
+roberto.garzone.youtubereviews.app-packageDebugResources-30 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+roberto.garzone.youtubereviews.app-packageDebugResources-31 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+roberto.garzone.youtubereviews.app-merged_res-32 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\build\intermediates\merged_res\debug
+roberto.garzone.youtubereviews.app-debug-33 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\src\debug\res
+roberto.garzone.youtubereviews.app-main-34 C:\Users\utente\Desktop\App projects\YoutubeAppProject\YoutubeReviews\app\src\main\res
