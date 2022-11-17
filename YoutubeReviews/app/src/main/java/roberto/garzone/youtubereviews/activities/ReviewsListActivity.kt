@@ -7,6 +7,7 @@ package roberto.garzone.youtubereviews.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
@@ -46,6 +47,7 @@ class ReviewsListActivity : AppCompatActivity() {
     private lateinit var song : Song
     private lateinit var adapter : ReviewsListAdapter
     private lateinit var songs : ArrayList<Song>
+    private var feeds : HashMap<String, Int> = HashMap()
 
     /**
      * This method creates the activity layout
@@ -106,6 +108,15 @@ class ReviewsListActivity : AppCompatActivity() {
 
                         if (name == review.getSongReference()) {
                             song.addReview(review)
+
+                            when(review.getRating()) {
+                                "1" -> feeds["1"]!!.plus(1)
+                                "2" -> feeds["2"]!!.plus(1)
+                                "3" -> feeds["3"]!!.plus(1)
+                                "4" -> feeds["4"]!!.plus(1)
+                                "5" -> feeds["5"]!!.plus(1)
+                                else -> Log.e("Rating Error", "The rating value is out of bind")
+                            }
 
                             sum += review.getRating().toInt()
                             count++
@@ -178,6 +189,7 @@ class ReviewsListActivity : AppCompatActivity() {
                 graphIntent.putExtra("song", song)
                 graphIntent.putExtra("songs", songs)
                 graphIntent.putExtra("night mode", night)
+                graphIntent.putExtra("feeds", feeds)
 
                 startActivity(graphIntent)
                 finish()

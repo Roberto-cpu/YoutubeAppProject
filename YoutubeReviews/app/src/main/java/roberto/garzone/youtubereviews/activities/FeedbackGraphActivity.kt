@@ -32,6 +32,7 @@ class FeedbackGraphActivity : AppCompatActivity() {
     private var night = ""
     private lateinit var song : Song
     private lateinit var songs : ArrayList<Song>
+    private lateinit var feeds : HashMap<String, Int>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +58,7 @@ class FeedbackGraphActivity : AppCompatActivity() {
         song = getIntent.getSerializableExtra("song") as Song
         night = getIntent.getStringExtra("night mode").toString()
         songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
+        feeds = getIntent.getSerializableExtra("feeds") as HashMap<String, Int>
 
         mBackBtn.setOnClickListener {
             val backIntent = Intent(this@FeedbackGraphActivity, ReviewsListActivity::class.java)
@@ -71,16 +73,18 @@ class FeedbackGraphActivity : AppCompatActivity() {
         setUpPieChart()
     }
 
+
+
     private fun setUpPieChart() {
         var entries : ArrayList<PieEntry> = ArrayList()
         var typeMap : HashMap<String, Int> = HashMap()
         var label = "Type"
 
-        typeMap[resources.getString(R.string.graph_view_one_star)] = 1
-        typeMap[resources.getString(R.string.graph_view_two_stars)] = 2
-        typeMap[resources.getString(R.string.graph_view_three_stars)] = 3
-        typeMap[resources.getString(R.string.graph_view_four_stars)] = 4
-        typeMap[resources.getString(R.string.graph_view_five_stars)] = 5
+        typeMap[resources.getString(R.string.graph_view_one_star)]  = feeds["1"]!!
+        typeMap[resources.getString(R.string.graph_view_two_stars)] = feeds["2"]!!
+        typeMap[resources.getString(R.string.graph_view_three_stars)] = feeds["3"]!!
+        typeMap[resources.getString(R.string.graph_view_four_stars)] = feeds["4"]!!
+        typeMap[resources.getString(R.string.graph_view_five_stars)] = feeds["5"]!!
 
         var colors : ArrayList<Int> = ArrayList()
         colors.add(ResourcesCompat.getColor(resources, R.color.colorRed, null))
