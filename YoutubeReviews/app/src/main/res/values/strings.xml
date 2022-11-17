@@ -114,6 +114,14 @@
     <string name="settings_toggle_button_on">On</string>
     <string name="settings_toggle_button_off">Off</string>
     <string name="settings_saving_complete">Settings saved</string>
+    <string name="settings_chg_pwd_title">Change password</string>
+    <string name="settings_chg_pwd_msg">Define new password</string>
+    <string name="settings_chg_pwd_old">Write the old password</string>
+    <string name="settings_chg_pwd_new">Write the new password</string>
+    <string name="settings_chg_pwd_conf">Confirm the new password</string>
+    <string name="settings_new_email">The new email must be different the old one</string>
+
+
 
     <string name="profile_image_take_photo">Take</string>
     <string name="profile_image_gallery">Gallery</string>

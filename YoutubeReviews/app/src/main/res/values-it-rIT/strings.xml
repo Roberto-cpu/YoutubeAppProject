@@ -119,4 +119,10 @@
     <string name="graph_view_three_stars">3 stelle</string>
     <string name="graph_view_two_stars">2 stelle</string>
     <string name="graph_view_one_star">1 stella</string>
+    <string name="settings_new_email">La nuova email non può essere uguale alla precedente</string>
+    <string name="settings_chg_pwd_title">Cambia password</string>
+    <string name="settings_chg_pwd_msg">Imposta una nuova password</string>
+    <string name="settings_chg_pwd_old">Scrivi la vecchia password</string>
+    <string name="settings_chg_pwd_new">Scrivi la nuova password</string>
+    <string name="settings_chg_pwd_conf">Riscrivi la nuova password</string>
 </resources>

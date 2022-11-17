@@ -10,6 +10,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
@@ -17,6 +18,7 @@ import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import roberto.garzone.youtubereviews.R
+import roberto.garzone.youtubereviews.dialogs.ChangePasswordDialog
 
 /**
  * This class manages the settings activity
@@ -36,10 +38,14 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var mPfImage : Button 
     private lateinit var mBack : Button 
     private lateinit var mSave : Button 
-    private lateinit var mNight : ToggleButton 
+    private lateinit var mNight : ToggleButton
+    private lateinit var mEmailText : EditText
 
     private var night : String = ""
     private var originalNight : String = ""
+    private var originalEmail : String = ""
+    private var newPassword : String = ""
+
 
     /**
      * This method creates the activity layout
@@ -58,12 +64,12 @@ class SettingsActivity : AppCompatActivity() {
         mBack = findViewById(R.id.settings_back_button)
         mSave = findViewById(R.id.settings_save)
         mNight = findViewById(R.id.settings_toggle_button)
+        mEmailText = findViewById(R.id.settings_chg_email_text)
 
         val getIntent = intent
 
-        if (getIntent != null) {
-            originalNight = getIntent.getStringExtra("night mode").toString()
-        }
+        originalNight = getIntent.getStringExtra("night mode").toString()
+        originalEmail = getIntent.getStringExtra("oldEmail").toString()
 
         night = originalNight
 
@@ -89,6 +95,11 @@ class SettingsActivity : AppCompatActivity() {
                 mNightText.setTextColor(resources.getColor(R.color.colorBlack))
                 mSave.setTextColor(resources.getColor(R.color.colorBlack))
             }
+        }
+
+        mPassword.setOnClickListener {
+            val dialog = ChangePasswordDialog()
+            dialog.show(supportFragmentManager, "Change password")
         }
 
         mSave.setOnClickListener {
@@ -127,6 +138,23 @@ class SettingsActivity : AppCompatActivity() {
         startActivity(backIntent)
         finish()
     }
+
+    private fun changeEmail() : Boolean {
+        val newEmail : String = mEmailText.text.toString().trim { it <= ' ' }
+
+        return if (newEmail.isNotEmpty()) {
+            return if (originalEmail != newEmail) {
+                originalEmail = newEmail
+                true
+            } else {
+                mEmail.error = resources.getString(R.string.settings_new_email)
+                false
+            }
+            true
+        } else
+            false
+    }
+
 
     /**
      * This method manages the dark/light mode
