@@ -2,7 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/reviews_list_item"
-        android:title="@string/reviews_list_option_item" />
+        android:id="@+id/reviews_list_item_yt"
+        android:title="@string/reviews_list_option_item_yt" />
+
+    <item
+        android:id="@+id/reviews_list_item_graph"
+        android:title="@string/reviews_list_option_item_graph" />
 
 </menu>

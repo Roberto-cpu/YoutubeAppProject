@@ -33,23 +33,23 @@ import roberto.garzone.youtubereviews.models.Song
 class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInterface {
 
     // Instance variables
-    private var mLayout : LinearLayout = TODO()
-    private var mTitle : TextView = TODO()
-    private var mCreator : TextView = TODO()
-    private var mText : TextView = TODO()
-    private var mToolbar : Toolbar = TODO()
-    private var mBack : Button = TODO()
-    private var mMenu : Menu = TODO()
-    private var mComments : ListView = TODO()
-    private var mView : TextView = TODO()
+    private lateinit var mLayout : LinearLayout
+    private lateinit var mTitle : TextView
+    private lateinit var mCreator : TextView
+    private lateinit var mText : TextView
+    private lateinit var mToolbar : Toolbar
+    private lateinit var mBack : Button
+    private lateinit var mMenu : Menu
+    private lateinit var mComments : ListView
+    private lateinit var mView : TextView
 
-    private var songs : ArrayList<Song>
+    private lateinit var songs : ArrayList<Song>
     private var name : String = ""
     private var night : String = ""
-    private var review : Review
-    private var adapter : CommentsListAdapter
-    private var auth : FirebaseAuth
-    private var currUser : FirebaseUser
+    private lateinit var review : Review
+    private lateinit var adapter : CommentsListAdapter
+    private lateinit var auth : FirebaseAuth
+    private lateinit var currUser : FirebaseUser
 
     /**
      * This method creates the activity layout
@@ -68,15 +68,12 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
         mText = findViewById(R.id.text_message)
         mBack = findViewById(R.id.review_back_button)
 
-        var getIntent : Intent = intent
+        val getIntent : Intent = intent
 
-        if (getIntent != null) {
-            songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
-            name = getIntent.getStringExtra("song name").toString()
-            review = getIntent.getSerializableExtra("review") as Review
-            night = getIntent.getStringExtra("night mode").toString()
-
-        }
+        songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
+        name = getIntent.getStringExtra("song name").toString()
+        review = getIntent.getSerializableExtra("review") as Review
+        night = getIntent.getStringExtra("night mode").toString()
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
@@ -89,7 +86,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
         currUser = auth.currentUser!!
 
         mBack.setOnClickListener {
-            var backIntent = Intent(this@ReviewActivity, ReviewsListActivity::class.java)
+            val backIntent = Intent(this@ReviewActivity, ReviewsListActivity::class.java)
 
             backIntent.putExtra("songs", songs)
             backIntent.putExtra("song", name)
@@ -114,14 +111,14 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
      * This method reads the comments saved into firebase firestore
      */
     private fun readCommentsFromFirestore() {
-        var firestore = FirebaseFirestore.getInstance()
+        val firestore = FirebaseFirestore.getInstance()
 
         firestore.collection("comments").get().addOnCompleteListener {
             if (it.isSuccessful) {
                 review.getCommentsList().clear()
 
                 for (sn : QueryDocumentSnapshot in it.result) {
-                    var comment = Comment(sn["Email"].toString(), sn["Text"].toString(), sn["Review"].toString())
+                    val comment = Comment(sn["Email"].toString(), sn["Text"].toString(), sn["Review"].toString())
 
                     if (comment.getReviewReference() == review.getId()) {
                         review.addComment(comment)

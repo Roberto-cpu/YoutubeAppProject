@@ -120,7 +120,11 @@
     <string name="settings_chg_pwd_new">Write the new password</string>
     <string name="settings_chg_pwd_conf">Confirm the new password</string>
     <string name="settings_new_email">The new email must be different the old one</string>
-
+    <string name="settings_chg_pwd_error_old">The old password must be entered</string>
+    <string name="settings_chg_pwd_error_new">The new password must be entered</string>
+    <string name="settings_chg_pwd_error_old_new">The new password must be different from the old</string>
+    <string name="settings_chg_pwd_error_new_conf">The passwords are different</string>
+    <string name="settings_chg_pwd_success">The password is updated</string>
 
 
     <string name="profile_image_take_photo">Take</string>

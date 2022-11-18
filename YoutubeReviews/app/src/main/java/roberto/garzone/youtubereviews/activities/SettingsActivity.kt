@@ -17,13 +17,15 @@ import android.widget.ToggleButton
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.firebase.ktx.Firebase
 import roberto.garzone.youtubereviews.R
+import roberto.garzone.youtubereviews.databinding.ChangePasswordDialogLayoutBinding
 import roberto.garzone.youtubereviews.dialogs.ChangePasswordDialog
 
 /**
  * This class manages the settings activity
  */
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswordDialogInterface {
 
     // Instance variables
     companion object {
@@ -111,6 +113,10 @@ class SettingsActivity : AppCompatActivity() {
 
             Toast.makeText(this@SettingsActivity, resources.getString(R.string.settings_saving_complete), Toast.LENGTH_SHORT).show()
 
+            if(changeEmail()) {
+                updateFirebase()
+            }
+
             val backIntent = Intent(this@SettingsActivity, SongsListActivity::class.java)
             backIntent.putExtra("night mode", night)
 
@@ -151,10 +157,17 @@ class SettingsActivity : AppCompatActivity() {
                 false
             }
             true
-        } else
-            false
+        } else false
     }
 
+    override fun onOkClicked(new: String) {
+        newPassword = new
+    }
+
+    private fun updateFirebase() {
+        val email = mEmailText.text.toString()
+        TODO("Firebase must be updated with the new information" )
+    }
 
     /**
      * This method manages the dark/light mode

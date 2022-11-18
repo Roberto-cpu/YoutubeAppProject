@@ -76,9 +76,9 @@ class FeedbackGraphActivity : AppCompatActivity() {
 
 
     private fun setUpPieChart() {
-        var entries : ArrayList<PieEntry> = ArrayList()
-        var typeMap : HashMap<String, Int> = HashMap()
-        var label = "Type"
+        val entries : ArrayList<PieEntry> = ArrayList()
+        val typeMap : HashMap<String, Int> = HashMap()
+        val label = "Type"
 
         typeMap[resources.getString(R.string.graph_view_one_star)]  = feeds["1"]!!
         typeMap[resources.getString(R.string.graph_view_two_stars)] = feeds["2"]!!
@@ -86,7 +86,7 @@ class FeedbackGraphActivity : AppCompatActivity() {
         typeMap[resources.getString(R.string.graph_view_four_stars)] = feeds["4"]!!
         typeMap[resources.getString(R.string.graph_view_five_stars)] = feeds["5"]!!
 
-        var colors : ArrayList<Int> = ArrayList()
+        val colors : ArrayList<Int> = ArrayList()
         colors.add(ResourcesCompat.getColor(resources, R.color.colorRed, null))
         colors.add(ResourcesCompat.getColor(resources, R.color.colorBlue, null))
         colors.add(ResourcesCompat.getColor(resources, R.color.colorGreen, null))
@@ -96,11 +96,11 @@ class FeedbackGraphActivity : AppCompatActivity() {
         for (type : String in typeMap.keys)
             entries.add(PieEntry(typeMap[type]!!.toFloat(), type))
 
-        var pieDataSet = PieDataSet(entries, label)
+        val pieDataSet = PieDataSet(entries, label)
         pieDataSet.valueTextSize = 16f
         pieDataSet.colors = colors
 
-        var pieData = PieData(pieDataSet)
+        val pieData = PieData(pieDataSet)
         pieData.setDrawValues(true)
 
         mPieChart.data = pieData

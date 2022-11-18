@@ -11,6 +11,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.LoginGuestDialog
 import roberto.garzone.youtubereviews.models.User
@@ -125,10 +127,11 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
      * This method sends to the sign in activity
      */
     private fun signInClicked() {
+        val user = User("", "", "")
         val signInIntent = Intent(this@LoginActivity, SignInActivity::class.java)
         signInIntent.putExtra("night mode", night)
         signInIntent.putExtra("image uri", "")
-        signInIntent.putExtra("user", User("", "", ""))
+        signInIntent.putExtra("user", user)
 
         startActivity(signInIntent)
         finish()
@@ -140,35 +143,39 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
     private fun loginClicked() {
         val email : String = mEmail.text.toString()
         val pwd : String = mPassword.text.toString()
+        val firestore = FirebaseFirestore.getInstance()
 
-        when {
-            email.isEmpty() -> mEmail.error = resources.getString(R.string.email_error)
-            pwd.isEmpty() -> mPassword.error = resources.getString(R.string.password_error)
-            else -> {
-                auth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener {
-                    if (it.isSuccessful) {
+        firestore.collection("users").document(email).get()
+            .addOnSuccessListener {
+                if (pwd == it.get("Password")) {
+                    auth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener {
+                        if (it.isSuccessful) {
 
-                        if (mRememberMe.isChecked) {
-                            editor.putString("email", mEmail.text.toString())
-                            editor.putString("password", mPassword.text.toString())
+                            if (mRememberMe.isChecked) {
+                                editor.putString("email", mEmail.text.toString())
+                                editor.putString("password", mPassword.text.toString())
+                            } else {
+                                editor.putString("email", "No Email Stored")
+                                editor.putString("password", "")
+                            }
+
+                            val loginIntent =
+                                Intent(this@LoginActivity, SongsListActivity::class.java)
+                            loginIntent.putExtra("night mode", night)
+
+                            startActivity(loginIntent)
+                            finish()
                         } else {
-                            editor.putString("email", "No Email Stored")
-                            editor.putString("password", "")
+                            Log.e("Auth", "Something goes wrong")
                         }
-
-                        val loginIntent = Intent(this@LoginActivity, SongsListActivity::class.java)
-                        loginIntent.putExtra("night mode", night)
-
-                        startActivity(loginIntent)
-                        finish()
-                    } else {
-                        Toast.makeText(this@LoginActivity, resources.getString(R.string.login_error), Toast.LENGTH_SHORT).show()
-                        mEmail.setText("")
-                        mPassword.setText("")
                     }
                 }
             }
-        }
+            .addOnFailureListener {
+                Toast.makeText(this@LoginActivity, resources.getString(R.string.login_error), Toast.LENGTH_SHORT).show()
+                mEmail.setText("")
+                mPassword.setText("")
+            }
     }
 
     /**

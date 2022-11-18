@@ -4,7 +4,7 @@
             "outputFile": "roberto.garzone.youtubereviews.app-mergeDebugResources-30:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\e7d8ebb8c12f86496c990ee64fb2e100\\transformed\\appcompat-1.5.1\\res\\values-land\\values-land.xml",
+                    "source": "/Users/robertogarzone/.gradle/caches/transforms-3/e7d8ebb8c12f86496c990ee64fb2e100/transformed/appcompat-1.5.1/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\592da6bd8daf9e2d9969c7d8cbf2daeb\\transformed\\material-1.0.0\\res\\values-land\\values-land.xml",
+                    "source": "/Users/robertogarzone/.gradle/caches/transforms-3/592da6bd8daf9e2d9969c7d8cbf2daeb/transformed/material-1.0.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

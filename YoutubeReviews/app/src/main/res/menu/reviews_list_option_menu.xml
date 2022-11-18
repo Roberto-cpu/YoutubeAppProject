@@ -3,10 +3,10 @@
 
     <item
         android:id="@+id/reviews_list_item_yt"
-        android:title="@string/reviews_list_option_item" />
+        android:title="@string/reviews_list_option_item_yt" />
 
     <item
         android:id="@+id/reviews_list_item_graph"
-        android:title="" />
+        android:title="@string/reviews_list_option_item_graph" />
 
 </menu>

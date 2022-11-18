@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -30,7 +31,10 @@ public final class SettingsLayoutBinding implements ViewBinding {
   public final Button settingsBackButton;
 
   @NonNull
-  public final Button settingsChgEmail;
+  public final TextView settingsChgEmail;
+
+  @NonNull
+  public final EditText settingsChgEmailText;
 
   @NonNull
   public final Button settingsChgPi;
@@ -55,14 +59,16 @@ public final class SettingsLayoutBinding implements ViewBinding {
 
   private SettingsLayoutBinding(@NonNull ConstraintLayout rootView,
       @NonNull LinearLayout linearLayout, @NonNull Button settingsBackButton,
-      @NonNull Button settingsChgEmail, @NonNull Button settingsChgPi,
-      @NonNull Button settingsChgPwd, @NonNull ConstraintLayout settingsLayout,
-      @NonNull Button settingsSave, @NonNull TextView settingsTextNight,
-      @NonNull ToggleButton settingsToggleButton, @NonNull Toolbar settingsToolbar) {
+      @NonNull TextView settingsChgEmail, @NonNull EditText settingsChgEmailText,
+      @NonNull Button settingsChgPi, @NonNull Button settingsChgPwd,
+      @NonNull ConstraintLayout settingsLayout, @NonNull Button settingsSave,
+      @NonNull TextView settingsTextNight, @NonNull ToggleButton settingsToggleButton,
+      @NonNull Toolbar settingsToolbar) {
     this.rootView = rootView;
     this.linearLayout = linearLayout;
     this.settingsBackButton = settingsBackButton;
     this.settingsChgEmail = settingsChgEmail;
+    this.settingsChgEmailText = settingsChgEmailText;
     this.settingsChgPi = settingsChgPi;
     this.settingsChgPwd = settingsChgPwd;
     this.settingsLayout = settingsLayout;
@@ -112,8 +118,14 @@ public final class SettingsLayoutBinding implements ViewBinding {
       }
 
       id = R.id.settings_chg_email;
-      Button settingsChgEmail = ViewBindings.findChildViewById(rootView, id);
+      TextView settingsChgEmail = ViewBindings.findChildViewById(rootView, id);
       if (settingsChgEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.settings_chg_email_text;
+      EditText settingsChgEmailText = ViewBindings.findChildViewById(rootView, id);
+      if (settingsChgEmailText == null) {
         break missingId;
       }
 
@@ -156,8 +168,8 @@ public final class SettingsLayoutBinding implements ViewBinding {
       }
 
       return new SettingsLayoutBinding((ConstraintLayout) rootView, linearLayout,
-          settingsBackButton, settingsChgEmail, settingsChgPi, settingsChgPwd, settingsLayout,
-          settingsSave, settingsTextNight, settingsToggleButton, settingsToolbar);
+          settingsBackButton, settingsChgEmail, settingsChgEmailText, settingsChgPi, settingsChgPwd,
+          settingsLayout, settingsSave, settingsTextNight, settingsToggleButton, settingsToolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

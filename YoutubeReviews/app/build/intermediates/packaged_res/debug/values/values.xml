@@ -43,6 +43,11 @@
     <string name="google_app_id" translatable="false">1:521477315396:android:ebe9df666b4380ec4e5511</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCrp5Ef3QfKgoX1mB5yRbFF7Ntc6Pr68m4</string>
     <string name="google_storage_bucket" translatable="false">reviews-12a54.appspot.com</string>
+    <string name="graph_view_five_stars">5 stars</string>
+    <string name="graph_view_four_stars">4 stars</string>
+    <string name="graph_view_one_star">1 star</string>
+    <string name="graph_view_three_stars">3 stars</string>
+    <string name="graph_view_two_stars">2 stars</string>
     <string name="guest_button">Guest</string>
     <string name="login_as">Who do you want to be?</string>
     <string name="login_button">Auth</string>
@@ -91,11 +96,23 @@
     <string name="review_item">Add comment</string>
     <string name="reviews_list_link">Click the link to listen the song</string>
     <string name="reviews_list_number_comments">Number of comments: </string>
-    <string name="reviews_list_option_item">Watch on Youtube</string>
+    <string name="reviews_list_option_item_graph">Show feedbacks graph</string>
+    <string name="reviews_list_option_item_yt">Watch on Youtube</string>
     <string name="settings_change_email">Change Email</string>
     <string name="settings_change_pfImage">Change Profile Image</string>
     <string name="settings_change_pwd">Change Password</string>
+    <string name="settings_chg_pwd_conf">Confirm the new password</string>
+    <string name="settings_chg_pwd_error_new">The new password must be entered</string>
+    <string name="settings_chg_pwd_error_new_conf">The passwords are different</string>
+    <string name="settings_chg_pwd_error_old">The old password must be entered</string>
+    <string name="settings_chg_pwd_error_old_new">The new password must be different from the old</string>
+    <string name="settings_chg_pwd_msg">Define new password</string>
+    <string name="settings_chg_pwd_new">Write the new password</string>
+    <string name="settings_chg_pwd_old">Write the old password</string>
+    <string name="settings_chg_pwd_success">The password is updated</string>
+    <string name="settings_chg_pwd_title">Change password</string>
     <string name="settings_dark_mode">Dark mode</string>
+    <string name="settings_new_email">The new email must be different the old one</string>
     <string name="settings_save">Save</string>
     <string name="settings_saving_complete">Settings saved</string>
     <string name="settings_text_size">Text size</string>

@@ -91,7 +91,7 @@ class ProfileImageActivity : AppCompatActivity() {
         supportActionBar!!.title = ""
 
         mTake.setOnClickListener {
-            var cameraIntent : Intent = Intent()
+            val cameraIntent = Intent()
             cameraIntent.action = MediaStore.ACTION_IMAGE_CAPTURE
 
             var photoFile : File? = null

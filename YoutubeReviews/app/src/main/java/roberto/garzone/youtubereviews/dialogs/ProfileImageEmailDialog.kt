@@ -33,6 +33,7 @@ class ProfileImageEmailDialog : AppCompatDialogFragment() {
 
         builder.setTitle(resources.getString(R.string.profile_image_title_text))
             .setMessage(resources.getString(R.string.profile_image_dialog_text))
+            .setView(view)
             .setPositiveButton(resources.getString(R.string.profile_image_dialog_button)) { _, _ ->
                 listener.onContinueClicked(mEmail.text.toString())
             }

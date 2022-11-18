@@ -114,7 +114,7 @@ class SongsListActivity : AppCompatActivity() {
         firestore.collection("songs").get().addOnCompleteListener {
             if (it.isSuccessful) {
                 for (sn : QueryDocumentSnapshot in it.result) {
-                    val song = Song(sn["Name"].toString(), sn["Link"].toString(), sn["Band"].toString(), sn["Genre"].toString(), sn["Rating"].toString())
+                    val song = Song(sn["Name"].toString(), sn["Link"].toString(), sn["Band"].toString(), sn["Genre"].toString())
 
                     songs.add(song)
                     if (!genres.contains(song.getGenre().uppercase())) {

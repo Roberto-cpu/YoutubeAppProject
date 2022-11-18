@@ -4,7 +4,7 @@
             "outputFile": "roberto.garzone.youtubereviews.app-mergeDebugResources-30:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\e7d8ebb8c12f86496c990ee64fb2e100\\transformed\\appcompat-1.5.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "/Users/robertogarzone/.gradle/caches/transforms-3/e7d8ebb8c12f86496c990ee64fb2e100/transformed/appcompat-1.5.1/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

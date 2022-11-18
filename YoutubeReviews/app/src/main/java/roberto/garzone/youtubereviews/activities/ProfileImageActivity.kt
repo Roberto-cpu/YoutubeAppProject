@@ -6,7 +6,6 @@ package roberto.garzone.youtubereviews.activities
  */
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -20,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.FileProvider
+import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import roberto.garzone.youtubereviews.BuildConfig
@@ -91,7 +91,7 @@ class ProfileImageActivity : AppCompatActivity() {
 
         night = getIntent.getStringExtra("night mode").toString()
         email = getIntent.getStringExtra("email").toString()
-        user = getIntent.getSerializableExtra("user") as User
+        user = (getIntent.getSerializableExtra("user") as? User)!!
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
@@ -207,17 +207,17 @@ class ProfileImageActivity : AppCompatActivity() {
      */
     private fun darkMode() {
         if (night == "checked") {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-            mTake.setTextColor(resources.getColor(R.color.colorWhite))
-            mGallery.setTextColor(resources.getColor(R.color.colorWhite))
-            mSave.setTextColor(resources.getColor(R.color.colorWhite))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mTake.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mGallery.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
         } else {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-            mTake.setTextColor(resources.getColor(R.color.colorBlack))
-            mGallery.setTextColor(resources.getColor(R.color.colorBlack))
-            mSave.setTextColor(resources.getColor(R.color.colorBlack))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null))
+            mTake.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mGallery.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
         }
     }
 }

@@ -6,7 +6,6 @@ package roberto.garzone.youtubereviews.activities
  */
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -63,7 +62,7 @@ class CheckingConnectionActivity : AppCompatActivity(), InternetConnectionReceiv
      * This method starts the broadcast to verify of internet connection
      */
     private fun checkingConnection() {
-        var isConnected : Boolean = InternetConnectionReceiver.isConnected(this)
+        val isConnected : Boolean = InternetConnectionReceiver.isConnected(this)
         connectionResult(isConnected)
     }
 

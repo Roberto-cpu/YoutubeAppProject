@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,6 +45,9 @@ public final class NewReviewLayoutBinding implements ViewBinding {
   public final EditText newReviewSongName;
 
   @NonNull
+  public final RatingBar newReviewSongRatingBar;
+
+  @NonNull
   public final EditText newReviewText;
 
   @NonNull
@@ -59,9 +63,9 @@ public final class NewReviewLayoutBinding implements ViewBinding {
       @NonNull Button newReviewBackButton, @NonNull EditText newReviewBandName,
       @NonNull EditText newReviewGenre, @NonNull ConstraintLayout newReviewLayout,
       @NonNull EditText newReviewLink, @NonNull Button newReviewSave,
-      @NonNull EditText newReviewSongName, @NonNull EditText newReviewText,
-      @NonNull EditText newReviewTitle, @NonNull Toolbar newReviewToolbar,
-      @NonNull TextView newReviewView) {
+      @NonNull EditText newReviewSongName, @NonNull RatingBar newReviewSongRatingBar,
+      @NonNull EditText newReviewText, @NonNull EditText newReviewTitle,
+      @NonNull Toolbar newReviewToolbar, @NonNull TextView newReviewView) {
     this.rootView = rootView;
     this.newReviewBackButton = newReviewBackButton;
     this.newReviewBandName = newReviewBandName;
@@ -70,6 +74,7 @@ public final class NewReviewLayoutBinding implements ViewBinding {
     this.newReviewLink = newReviewLink;
     this.newReviewSave = newReviewSave;
     this.newReviewSongName = newReviewSongName;
+    this.newReviewSongRatingBar = newReviewSongRatingBar;
     this.newReviewText = newReviewText;
     this.newReviewTitle = newReviewTitle;
     this.newReviewToolbar = newReviewToolbar;
@@ -141,6 +146,12 @@ public final class NewReviewLayoutBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.new_review_song_ratingBar;
+      RatingBar newReviewSongRatingBar = ViewBindings.findChildViewById(rootView, id);
+      if (newReviewSongRatingBar == null) {
+        break missingId;
+      }
+
       id = R.id.new_review_text;
       EditText newReviewText = ViewBindings.findChildViewById(rootView, id);
       if (newReviewText == null) {
@@ -167,7 +178,8 @@ public final class NewReviewLayoutBinding implements ViewBinding {
 
       return new NewReviewLayoutBinding((ConstraintLayout) rootView, newReviewBackButton,
           newReviewBandName, newReviewGenre, newReviewLayout, newReviewLink, newReviewSave,
-          newReviewSongName, newReviewText, newReviewTitle, newReviewToolbar, newReviewView);
+          newReviewSongName, newReviewSongRatingBar, newReviewText, newReviewTitle,
+          newReviewToolbar, newReviewView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

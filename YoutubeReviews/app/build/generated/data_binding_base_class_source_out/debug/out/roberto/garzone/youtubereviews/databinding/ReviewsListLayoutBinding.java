@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +33,12 @@ public final class ReviewsListLayoutBinding implements ViewBinding {
   public final ConstraintLayout reviewsListLayout;
 
   @NonNull
+  public final RatingBar reviewsListRating;
+
+  @NonNull
+  public final TextView reviewsListRatingText;
+
+  @NonNull
   public final TextView reviewsListSongName;
 
   @NonNull
@@ -39,12 +46,15 @@ public final class ReviewsListLayoutBinding implements ViewBinding {
 
   private ReviewsListLayoutBinding(@NonNull ConstraintLayout rootView,
       @NonNull ListView reviewsList, @NonNull Button reviewsListBackButton,
-      @NonNull ConstraintLayout reviewsListLayout, @NonNull TextView reviewsListSongName,
+      @NonNull ConstraintLayout reviewsListLayout, @NonNull RatingBar reviewsListRating,
+      @NonNull TextView reviewsListRatingText, @NonNull TextView reviewsListSongName,
       @NonNull Toolbar reviewsListToolbar) {
     this.rootView = rootView;
     this.reviewsList = reviewsList;
     this.reviewsListBackButton = reviewsListBackButton;
     this.reviewsListLayout = reviewsListLayout;
+    this.reviewsListRating = reviewsListRating;
+    this.reviewsListRatingText = reviewsListRatingText;
     this.reviewsListSongName = reviewsListSongName;
     this.reviewsListToolbar = reviewsListToolbar;
   }
@@ -90,6 +100,18 @@ public final class ReviewsListLayoutBinding implements ViewBinding {
 
       ConstraintLayout reviewsListLayout = (ConstraintLayout) rootView;
 
+      id = R.id.reviews_list_rating;
+      RatingBar reviewsListRating = ViewBindings.findChildViewById(rootView, id);
+      if (reviewsListRating == null) {
+        break missingId;
+      }
+
+      id = R.id.reviews_list_rating_text;
+      TextView reviewsListRatingText = ViewBindings.findChildViewById(rootView, id);
+      if (reviewsListRatingText == null) {
+        break missingId;
+      }
+
       id = R.id.reviews_list_song_name;
       TextView reviewsListSongName = ViewBindings.findChildViewById(rootView, id);
       if (reviewsListSongName == null) {
@@ -103,7 +125,8 @@ public final class ReviewsListLayoutBinding implements ViewBinding {
       }
 
       return new ReviewsListLayoutBinding((ConstraintLayout) rootView, reviewsList,
-          reviewsListBackButton, reviewsListLayout, reviewsListSongName, reviewsListToolbar);
+          reviewsListBackButton, reviewsListLayout, reviewsListRating, reviewsListRatingText,
+          reviewsListSongName, reviewsListToolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

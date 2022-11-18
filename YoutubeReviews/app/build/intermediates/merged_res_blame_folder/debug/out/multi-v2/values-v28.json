@@ -4,7 +4,7 @@
             "outputFile": "roberto.garzone.youtubereviews.app-mergeDebugResources-30:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\utente\\.gradle\\caches\\transforms-3\\e7d8ebb8c12f86496c990ee64fb2e100\\transformed\\appcompat-1.5.1\\res\\values-v28\\values-v28.xml",
+                    "source": "/Users/robertogarzone/.gradle/caches/transforms-3/e7d8ebb8c12f86496c990ee64fb2e100/transformed/appcompat-1.5.1/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

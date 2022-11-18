@@ -125,4 +125,9 @@
     <string name="settings_chg_pwd_old">Scrivi la vecchia password</string>
     <string name="settings_chg_pwd_new">Scrivi la nuova password</string>
     <string name="settings_chg_pwd_conf">Riscrivi la nuova password</string>
+    <string name="settings_chg_pwd_error_old">La vecchia password è richiesta</string>
+    <string name="settings_chg_pwd_error_new">La nuova password è richiesta</string>
+    <string name="settings_chg_pwd_error_old_new">La nuova password non può essere uguale alla vecchia</string>
+    <string name="settings_chg_pwd_error_new_conf">Le password sono diverse</string>
+    <string name="settings_chg_pwd_success">Password aggiornata</string>
 </resources>
