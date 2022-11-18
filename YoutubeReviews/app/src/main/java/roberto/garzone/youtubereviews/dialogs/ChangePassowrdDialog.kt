@@ -1,5 +1,10 @@
 package roberto.garzone.youtubereviews.dialogs
 
+/**
+ * @authors: Roberto Garzone 1991589, Emanuele Bettacchi 1749865
+ * @date: 18/11/2022
+ */
+
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
@@ -12,7 +17,12 @@ import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.core.content.res.ResourcesCompat
 import roberto.garzone.youtubereviews.R
 
+/**
+ * This class manages the change password dialog's functionalities
+ */
 class ChangePasswordDialog : AppCompatDialogFragment() {
+
+    // Instance variables
     private lateinit var mOldPwd : EditText
     private lateinit var mNewPwd : EditText
     private lateinit var mConfPwd : EditText
@@ -26,6 +36,10 @@ class ChangePasswordDialog : AppCompatDialogFragment() {
     private var new = false
     private var conf  = false
 
+    /**
+     * This method creates the dialog layout
+     * @param savedInstanceState : Bundle?
+     */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity)
         val inflater = requireActivity().layoutInflater
@@ -58,11 +72,16 @@ class ChangePasswordDialog : AppCompatDialogFragment() {
                     listener.onOkClicked(mNewPwd.text.toString())
                 }
             }
-            .setNegativeButton(resources.getString(R.string.dialog_deny)) {_,_ ->}
+            .setNegativeButton(resources.getString(R.string.dialog_deny)) {_,_ ->
+                listener.onDeleteClicked()
+            }
 
         return builder.create()
     }
 
+    /**
+     * This method shows or hides password
+     */
     private fun showHidePassword (check : Boolean, edit : EditText, btn : Button) : Boolean {
         var check2 = check
         if (!check2) {
@@ -78,10 +97,13 @@ class ChangePasswordDialog : AppCompatDialogFragment() {
         return check2
     }
 
-    interface ChangePasswordDialogInterface {
-        fun onOkClicked(new : String)
-    }
-
+    /**
+     * This method checks the new password's correctness
+     * @param old : String
+     * @param new : String
+     * @param conf : String
+     * @return Boolean
+     */
     private fun checkPassword(old : String, new : String, conf : String) : Boolean {
         return when {
             old.isEmpty() -> {
@@ -110,6 +132,9 @@ class ChangePasswordDialog : AppCompatDialogFragment() {
         }
     }
 
+    /**
+     * This method attaches the dialog to the activity that invokes it
+     */
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
@@ -118,5 +143,13 @@ class ChangePasswordDialog : AppCompatDialogFragment() {
         catch (e: java.lang.ClassCastException) {
             throw java.lang.ClassCastException ("$context must be implemented ChangePasswordDialogInterface")
         }
+    }
+
+    /**
+     * This interface manages what functions must be called when the dialog's buttons are clicked
+     */
+    interface ChangePasswordDialogInterface {
+        fun onOkClicked(new : String)
+        fun onDeleteClicked()
     }
 }

@@ -148,6 +148,7 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         firestore.collection("users").document(email).get()
             .addOnSuccessListener {
                 if (pwd == it.get("Password")) {
+                    val user = User(it.get("Username").toString(), email, pwd)
                     auth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener {
                         if (it.isSuccessful) {
 
@@ -159,9 +160,9 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
                                 editor.putString("password", "")
                             }
 
-                            val loginIntent =
-                                Intent(this@LoginActivity, SongsListActivity::class.java)
+                            val loginIntent = Intent(this@LoginActivity, SongsListActivity::class.java)
                             loginIntent.putExtra("night mode", night)
+                            loginIntent.putExtra("user", user)
 
                             startActivity(loginIntent)
                             finish()

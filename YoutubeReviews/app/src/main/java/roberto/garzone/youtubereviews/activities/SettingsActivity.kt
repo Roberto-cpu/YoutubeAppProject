@@ -17,9 +17,10 @@ import android.widget.ToggleButton
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.firebase.ktx.Firebase
+import androidx.core.content.res.ResourcesCompat
+import com.google.firebase.firestore.FirebaseFirestore
+import roberto.garzone.youtubereviews.models.User
 import roberto.garzone.youtubereviews.R
-import roberto.garzone.youtubereviews.databinding.ChangePasswordDialogLayoutBinding
 import roberto.garzone.youtubereviews.dialogs.ChangePasswordDialog
 
 /**
@@ -45,8 +46,9 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
 
     private var night : String = ""
     private var originalNight : String = ""
-    private var originalEmail : String = ""
+    private var newPasswordClicked = false
     private var newPassword : String = ""
+    private lateinit var user : User
 
 
     /**
@@ -71,7 +73,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
         val getIntent = intent
 
         originalNight = getIntent.getStringExtra("night mode").toString()
-        originalEmail = getIntent.getStringExtra("oldEmail").toString()
+        user = getIntent.getSerializableExtra("user") as User
 
         night = originalNight
 
@@ -83,23 +85,33 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
             finish()
         }
 
+        mEmailText.hint = user.getEmail()
+
         mNight.setOnClickListener {
             if (mNight.isChecked) {
                 night = "checked"
-                mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-                mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-                mNightText.setTextColor(resources.getColor(R.color.colorWhite))
-                mSave.setTextColor(resources.getColor(R.color.colorWhite))
+                mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null))
+                mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+                mNightText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+                mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+                mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+                mEmailText.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+                mEmailText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
             } else {
                 night = "unchecked"
-                mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-                mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-                mNightText.setTextColor(resources.getColor(R.color.colorBlack))
-                mSave.setTextColor(resources.getColor(R.color.colorBlack))
+                mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null))
+                mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null))
+                mNightText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+                mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+                mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+                mEmailText.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+                mEmailText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
             }
         }
 
         mPassword.setOnClickListener {
+            newPasswordClicked = true
+
             val dialog = ChangePasswordDialog()
             dialog.show(supportFragmentManager, "Change password")
         }
@@ -113,12 +125,14 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
 
             Toast.makeText(this@SettingsActivity, resources.getString(R.string.settings_saving_complete), Toast.LENGTH_SHORT).show()
 
-            if(changeEmail()) {
+            if(changeEmail())
                 updateFirebase()
-            }
 
             val backIntent = Intent(this@SettingsActivity, SongsListActivity::class.java)
             backIntent.putExtra("night mode", night)
+            backIntent.putExtra("user", user)
+
+            Toast.makeText(this@SettingsActivity, R.string.settings_save, Toast.LENGTH_SHORT).show()
 
             startActivity(backIntent)
             finish()
@@ -140,33 +154,67 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
         super.onBackPressed()
         val backIntent = Intent(this@SettingsActivity, SongsListActivity::class.java)
         backIntent.putExtra("night mode", originalNight)
+        backIntent.putExtra("user", user)
 
         startActivity(backIntent)
         finish()
     }
 
+    /**
+     * This method checks if the email is correct
+     * @return Boolean
+     */
     private fun changeEmail() : Boolean {
-        val newEmail : String = mEmailText.text.toString().trim { it <= ' ' }
+        val emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+        var newEmail : String = mEmailText.text.toString()
 
-        return if (newEmail.isNotEmpty()) {
-            return if (originalEmail != newEmail) {
-                originalEmail = newEmail
+        return when {
+            newEmail.isEmpty() -> {
+                newEmail = user.getEmail()
                 true
-            } else {
-                mEmail.error = resources.getString(R.string.settings_new_email)
+            }
+            newEmail == user.getEmail() -> {
+                mEmailText.error = resources.getString(R.string.settings_new_email)
                 false
             }
-            true
-        } else false
+            !newEmail.matches(Regex(emailRegex)) -> {
+                mEmailText.error = resources.getString(R.string.sign_in_email_format_error)
+                false
+            }
+            else -> true
+        }
     }
 
+    /**
+     * This method defines what the activity must do when the user clicks ok button on dialog
+     * @param new : String
+     */
     override fun onOkClicked(new: String) {
         newPassword = new
     }
 
+    /**
+     * This method defines what the activity must do when the user clicks delete dialog's button
+     */
+    override fun onDeleteClicked() {
+        newPasswordClicked = false
+    }
+
     private fun updateFirebase() {
         val email = mEmailText.text.toString()
-        TODO("Firebase must be updated with the new information" )
+        val firestore = FirebaseFirestore.getInstance()
+        val documentRef = firestore.collection("users").document(user.getUsername())
+
+        if (email != user.getEmail()) {
+            documentRef.update("Email", email)
+            user.setEmail(email)
+        }
+
+        if (newPasswordClicked) {
+            documentRef.update("Password", newPassword)
+            user.setPassword(newPassword)
+        }
+
     }
 
     /**
@@ -175,16 +223,22 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
     private fun darkMode() {
         if (originalNight == "checked") {
             mNight.isChecked = true
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-            mNightText.setTextColor(resources.getColor(R.color.colorWhite))
-            mSave.setTextColor(resources.getColor(R.color.colorWhite))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mNightText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mEmailText.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
+            mEmailText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
         } else {
             mNight.isChecked = false
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-            mNightText.setTextColor(resources.getColor(R.color.colorBlack))
-            mSave.setTextColor(resources.getColor(R.color.colorBlack))
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null))
+            mNightText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mSave.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmail.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmailText.setHintTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mEmailText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
         }
     }
 }

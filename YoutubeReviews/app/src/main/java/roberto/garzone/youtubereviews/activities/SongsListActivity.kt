@@ -28,6 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.models.Song
+import roberto.garzone.youtubereviews.models.User
 import roberto.garzone.youtubereviews.services.NotificationService
 
 /**
@@ -54,6 +55,7 @@ class SongsListActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
     private lateinit var currUser : FirebaseUser
     private lateinit var getIntent : Intent
+    private lateinit var user : User
 
     /**
      * This method creates the activity layout
@@ -72,10 +74,12 @@ class SongsListActivity : AppCompatActivity() {
         getIntent = intent
 
         night = getIntent.getStringExtra("night mode").toString()
+        user = getIntent.getSerializableExtra("user") as User
 
         mSettings.setOnClickListener {
             val settingsIntent = Intent(this@SongsListActivity, SettingsActivity::class.java)
             settingsIntent.putExtra("night mode", night)
+            settingsIntent.putExtra("user", user)
 
             startActivity(settingsIntent)
             finish()
