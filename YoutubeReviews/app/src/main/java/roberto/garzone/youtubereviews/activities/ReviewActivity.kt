@@ -16,6 +16,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -129,7 +130,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
                 adapter = CommentsListAdapter(this@ReviewActivity, review.getCommentsList())
 
                 if (night == "checked") {
-                    mComments.setBackgroundColor(resources.getColor(R.color.colorWhite))
+                    mComments.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null)) 
                 }
 
                 mComments.adapter = adapter
@@ -155,7 +156,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
      * @return Boolean
      */
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-        var item : MenuItem = menu!!.findItem(R.id.add_comment_item)
+        val item : MenuItem = menu!!.findItem(R.id.add_comment_item)
         if (currUser.isAnonymous) { item.isVisible = false }
         return true
     }
@@ -167,7 +168,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.add_comment_item) {
-            var dialog : AddCommentDialog = AddCommentDialog()
+            val dialog = AddCommentDialog()
             dialog.show(supportFragmentManager, "add comment")
             return true
         } else {
@@ -179,10 +180,10 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
      * This method implements the interface's method
      */
     override fun onAllowClicked(text: String) {
-        var comment : Comment = Comment(currUser.email!!, text, review.getId())
-        var firestore = FirebaseFirestore.getInstance()
-        var docReference = firestore.collection("comments").document()
-        var commentInfo = HashMap<String, String>()
+        val comment = Comment(currUser.email!!, text, review.getId())
+        val firestore = FirebaseFirestore.getInstance()
+        val docReference = firestore.collection("comments").document()
+        val commentInfo = HashMap<String, String>()
 
         commentInfo["Email"] = comment.getEmailCreator()
         commentInfo["Text"] = comment.getText()
@@ -198,7 +199,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
     override fun onBackPressed() {
         super.onBackPressed()
 
-        var backIntent = Intent(this@ReviewActivity, ReviewsListActivity::class.java)
+        val backIntent = Intent(this@ReviewActivity, ReviewsListActivity::class.java)
 
         backIntent.putExtra("songs", songs)
         backIntent.putExtra("song", name)
@@ -213,23 +214,23 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
      */
     private fun darkMode() {
         if (night == "checked") {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-            mView.setTextColor(resources.getColor(R.color.colorRed))
-            mView.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
-            mTitle.setTextColor(resources.getColor(R.color.colorWhite))
-            mCreator.setTextColor(resources.getColor(R.color.colorWhite))
-            mText.setTextColor(resources.getColor(R.color.colorWhite))
-            mComments.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null)) 
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null)) 
+            mView.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null)) 
+            mView.background = ResourcesCompat.getDrawable(resources,  R.drawable.text_view_border_dark_mode, null)
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null)) 
+            mCreator.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null)) 
+            mText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null)) 
+            mComments.background = ResourcesCompat.getDrawable(resources,  R.drawable.text_view_border_dark_mode, null)
         } else {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-            mView.setTextColor(resources.getColor(R.color.colorRed))
-            mView.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
-            mTitle.setTextColor(resources.getColor(R.color.colorBlack))
-            mCreator.setTextColor(resources.getColor(R.color.colorBlack))
-            mText.setTextColor(resources.getColor(R.color.colorBlack))
-            mComments.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null)) 
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null)) 
+            mView.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null)) 
+            mView.background = ResourcesCompat.getDrawable(resources,  R.drawable.text_view_border_light_mode, null)
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null)) 
+            mCreator.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null)) 
+            mText.setTextColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null)) 
+            mComments.background = ResourcesCompat.getDrawable(resources,  R.drawable.text_view_border_light_mode, null)
         }
     }
 }

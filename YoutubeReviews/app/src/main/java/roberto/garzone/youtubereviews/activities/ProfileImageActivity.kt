@@ -27,7 +27,6 @@ import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.models.User
 import java.io.File
 import java.io.IOException
-import java.util.UUID
 
 /**
  * This class manages the activity functionalities
@@ -57,6 +56,7 @@ class ProfileImageActivity : AppCompatActivity() {
     private lateinit var storage : FirebaseStorage
     private lateinit var mStorageRef : StorageReference
     private lateinit var user : User
+    private var activity : String = ""
 
     /**
      * This method defines the activity actions at its start
@@ -92,26 +92,13 @@ class ProfileImageActivity : AppCompatActivity() {
         night = getIntent.getStringExtra("night mode").toString()
         email = getIntent.getStringExtra("email").toString()
         user = (getIntent.getSerializableExtra("user") as? User)!!
+        activity = getIntent.getStringExtra("activity").toString()
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
 
         mTake.setOnClickListener {
-            val cameraIntent = Intent()
-            cameraIntent.action = MediaStore.ACTION_IMAGE_CAPTURE
-
-            //photoFile = null
-            try {
-                photoFile = createImageFile()
-            } catch (e : IOException) {
-                e.printStackTrace()
-            }
-
-            outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "${BuildConfig.APPLICATION_ID}.provider", photoFile)
-
-            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri)
-            cameraIntent.flags = Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION
-            startActivityForResult(cameraIntent, START_CAMERA)
+            startCamera()
         }
 
         mGallery.setOnClickListener {
@@ -150,6 +137,27 @@ class ProfileImageActivity : AppCompatActivity() {
     }
 
     /**
+     * This function starts the intent for the camera app
+     */
+    private fun startCamera() {
+        val cameraIntent = Intent()
+        cameraIntent.action = MediaStore.ACTION_IMAGE_CAPTURE
+
+        //photoFile = null
+        try {
+            photoFile = createImageFile()
+        } catch (e : IOException) {
+            e.printStackTrace()
+        }
+
+        outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "${BuildConfig.APPLICATION_ID}.provider", photoFile)
+
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri)
+        cameraIntent.flags = Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION
+        startActivityForResult(cameraIntent, START_CAMERA)
+    }
+
+    /**
      * This method creates a file name for the photo
      * @return File
      */
@@ -174,12 +182,28 @@ class ProfileImageActivity : AppCompatActivity() {
      */
     private fun uploadImageOnStorage() {
         if (outputUri != null) {
-            val reference : StorageReference = mStorageRef.child("images/${email}/${UUID.randomUUID()}")
+
+            val reference : StorageReference = mStorageRef.child("images/${email}/pfImage.jpg")
+
+            if (activity == "settings") {
+                reference.delete()
+                    .addOnSuccessListener { Toast.makeText(this@ProfileImageActivity, R.string.update_performed, Toast.LENGTH_SHORT).show() }
+                    .addOnFailureListener { Toast.makeText(this@ProfileImageActivity, R.string.update_failed, Toast.LENGTH_SHORT).show() }
+            }
+
             reference.putFile(outputUri).addOnSuccessListener {
                 Toast.makeText(this@ProfileImageActivity, R.string.profile_image_upload_success, Toast.LENGTH_LONG).show()
 
-                val backIntent = Intent(this@ProfileImageActivity, SignInActivity::class.java)
-                backIntent.putExtra("image uri", outputUri.toString())
+                val backIntent = Intent()
+
+                if (activity == "signIn") {
+                    backIntent.setClass(this@ProfileImageActivity, SignInActivity::class.java)
+                    backIntent.putExtra("image uri", outputUri.toString())
+                }
+                else
+                    backIntent.setClass(this@ProfileImageActivity, SettingsActivity::class.java)
+
+
                 backIntent.putExtra("night mode", night)
                 backIntent.putExtra("user", user)
                 startActivity(backIntent)

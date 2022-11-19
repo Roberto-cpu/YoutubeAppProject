@@ -8,6 +8,7 @@ package roberto.garzone.youtubereviews.activities
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -22,6 +23,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -229,9 +231,7 @@ class SongsListActivity : AppCompatActivity() {
 
         if (count == 1) {
             Toast.makeText(this@SongsListActivity, resources.getString(R.string.songs_list_back_pressed_message), Toast.LENGTH_SHORT).show()
-            val handler = Handler()
-
-            handler.postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed({
                 count = 0
             }, 2000)
         } else if (count == 2) {
@@ -249,9 +249,7 @@ class SongsListActivity : AppCompatActivity() {
      */
     override fun onDestroy() {
         super.onDestroy()
-        val handler = Handler()
-
-        handler.postDelayed( {
+        Handler(Looper.getMainLooper()).postDelayed( {
             startService(Intent(this@SongsListActivity, NotificationService::class.java))
         }, 86400000)
     }
@@ -261,19 +259,19 @@ class SongsListActivity : AppCompatActivity() {
      */
     private fun darkMode() {
         if (night == "checked") {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorViolet))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorBlack))
-            mTitle.setTextColor(resources.getColor(R.color.colorRed))
-            mTitle.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
-            mSpinner.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
-            mSongs.background = resources.getDrawable(R.drawable.text_view_border_dark_mode)
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorViolet, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorBlack, null))
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mTitle.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_dark_mode, null)
+            mSpinner.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_dark_mode, null)
+            mSongs.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_dark_mode, null)
         } else {
-            mToolbar.setBackgroundColor(resources.getColor(R.color.colorLightGray))
-            mLayout.setBackgroundColor(resources.getColor(R.color.colorCoolMint))
-            mTitle.setTextColor(resources.getColor(R.color.colorRed))
-            mTitle.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
-            mSpinner.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
-            mSongs.background = resources.getDrawable(R.drawable.text_view_border_light_mode)
+            mToolbar.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorLightGray, null))
+            mLayout.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorCoolMint, null))
+            mTitle.setTextColor(ResourcesCompat.getColor(resources, R.color.colorRed, null))
+            mTitle.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_light_mode, null)
+            mSpinner.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_light_mode, null)
+            mSongs.background = ResourcesCompat.getDrawable(resources, R.drawable.text_view_border_light_mode, null)
         }
     }
 }

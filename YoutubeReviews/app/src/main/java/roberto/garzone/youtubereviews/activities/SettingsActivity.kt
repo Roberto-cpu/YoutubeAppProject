@@ -46,6 +46,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
 
     private var night : String = ""
     private var originalNight : String = ""
+    private var originalEmail : String = ""
     private var newPasswordClicked = false
     private var newPassword : String = ""
     private lateinit var user : User
@@ -76,6 +77,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
         user = getIntent.getSerializableExtra("user") as User
 
         night = originalNight
+        originalEmail = user.getEmail()
 
         mBack.setOnClickListener {
             val backIntent = Intent(this@SettingsActivity, SongsListActivity::class.java)
@@ -85,7 +87,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
             finish()
         }
 
-        mEmailText.hint = user.getEmail()
+        mEmailText.hint = originalEmail
 
         mNight.setOnClickListener {
             if (mNight.isChecked) {
@@ -114,6 +116,16 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
 
             val dialog = ChangePasswordDialog()
             dialog.show(supportFragmentManager, "Change password")
+        }
+
+        mPfImage.setOnClickListener {
+            val pfIntent = Intent(this@SettingsActivity, ProfileImageActivity::class.java)
+            pfIntent.putExtra("activity", "settings")
+            pfIntent.putExtra("night mode", night)
+            pfIntent.putExtra("user", user)
+
+            startActivity(pfIntent)
+            finish()
         }
 
         mSave.setOnClickListener {
@@ -166,13 +178,10 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
      */
     private fun changeEmail() : Boolean {
         val emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
-        var newEmail : String = mEmailText.text.toString()
+        val newEmail = mEmailText.text.toString()
 
         return when {
-            newEmail.isEmpty() -> {
-                newEmail = user.getEmail()
-                true
-            }
+            newEmail.isEmpty() -> true
             newEmail == user.getEmail() -> {
                 mEmailText.error = resources.getString(R.string.settings_new_email)
                 false
@@ -181,7 +190,10 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
                 mEmailText.error = resources.getString(R.string.sign_in_email_format_error)
                 false
             }
-            else -> true
+            else -> {
+                user.setEmail(newEmail)
+                true
+            }
         }
     }
 
@@ -201,11 +213,11 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
     }
 
     private fun updateFirebase() {
-        val email = mEmailText.text.toString()
+        val email = user.getEmail()
         val firestore = FirebaseFirestore.getInstance()
         val documentRef = firestore.collection("users").document(user.getUsername())
 
-        if (email != user.getEmail()) {
+        if (user.getEmail() != originalEmail) {
             documentRef.update("Email", email)
             user.setEmail(email)
         }

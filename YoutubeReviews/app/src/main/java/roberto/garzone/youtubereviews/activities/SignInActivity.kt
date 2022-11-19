@@ -110,6 +110,7 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
                 val piIntent = Intent(this@SignInActivity, ProfileImageActivity::class.java)
                 piIntent.putExtra("email", mEmail.text.toString())
                 piIntent.putExtra("user", user)
+                piIntent.putExtra("activity", "signIn")
                 startActivity(piIntent)
                 finish()
             }
