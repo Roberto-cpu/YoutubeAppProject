@@ -25,6 +25,7 @@ import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.adapters.ReviewsListAdapter
 import roberto.garzone.youtubereviews.models.Review
 import roberto.garzone.youtubereviews.models.Song
+import roberto.garzone.youtubereviews.models.User
 
 /**
  * This class manages the reviews list activity functionalities
@@ -48,6 +49,7 @@ class ReviewsListActivity : AppCompatActivity() {
     private lateinit var adapter : ReviewsListAdapter
     private lateinit var songs : ArrayList<Song>
     private var feeds : HashMap<String, Int> = HashMap()
+    private lateinit var user : User
 
     /**
      * This method creates the activity layout
@@ -73,6 +75,7 @@ class ReviewsListActivity : AppCompatActivity() {
         name = getIntent.getStringExtra("song").toString()
         songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
         night = getIntent.getStringExtra("night mode").toString()
+        user = getIntent.getSerializableExtra("user") as User
     }
 
     /**
@@ -140,6 +143,7 @@ class ReviewsListActivity : AppCompatActivity() {
                         reviewIntent.putExtra("review", this.review)
                         reviewIntent.putExtra("songs", songs)
                         reviewIntent.putExtra("night mode", night)
+                        reviewIntent.putExtra("user", user)
 
                         startActivity(reviewIntent)
                         finish()
@@ -177,6 +181,7 @@ class ReviewsListActivity : AppCompatActivity() {
                 youtubeIntent.putExtra("song", name)
                 youtubeIntent.putExtra("songs", songs)
                 youtubeIntent.putExtra("night mode", night)
+                youtubeIntent.putExtra("user", user)
 
                 startActivity(youtubeIntent)
                 finish()
@@ -190,6 +195,7 @@ class ReviewsListActivity : AppCompatActivity() {
                 graphIntent.putExtra("songs", songs)
                 graphIntent.putExtra("night mode", night)
                 graphIntent.putExtra("feeds", feeds)
+                graphIntent.putExtra("user", user)
 
                 startActivity(graphIntent)
                 finish()
@@ -209,7 +215,7 @@ class ReviewsListActivity : AppCompatActivity() {
 
         val backIntent = Intent(this@ReviewsListActivity, SongsListActivity::class.java)
         backIntent.putExtra("night mode", night)
-
+        backIntent.putExtra("user", user)
         startActivity(backIntent)
         finish()
     }

@@ -16,6 +16,7 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.models.Song
+import roberto.garzone.youtubereviews.models.User
 
 class FeedbackGraphActivity : AppCompatActivity() {
 
@@ -33,6 +34,7 @@ class FeedbackGraphActivity : AppCompatActivity() {
     private lateinit var song : Song
     private lateinit var songs : ArrayList<Song>
     private lateinit var feeds : HashMap<String, Int>
+    private lateinit var user : User
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,12 +61,14 @@ class FeedbackGraphActivity : AppCompatActivity() {
         night = getIntent.getStringExtra("night mode").toString()
         songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
         feeds = getIntent.getSerializableExtra("feeds") as HashMap<String, Int>
+        user = getIntent.getSerializableExtra("user") as User
 
         mBackBtn.setOnClickListener {
             val backIntent = Intent(this@FeedbackGraphActivity, ReviewsListActivity::class.java)
             backIntent.putExtra("name", song.getName())
             backIntent.putExtra("night mode", night)
             backIntent.putExtra("songs", songs)
+            backIntent.putExtra("user", user)
             startActivity(backIntent)
             finish()
         }

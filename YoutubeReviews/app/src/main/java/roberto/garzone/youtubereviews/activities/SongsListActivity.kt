@@ -58,7 +58,6 @@ class SongsListActivity : AppCompatActivity() {
     private lateinit var currUser : FirebaseUser
     private lateinit var getIntent : Intent
     private lateinit var user : User
-    private var authType : String = ""
 
     /**
      * This method creates the activity layout
@@ -84,7 +83,6 @@ class SongsListActivity : AppCompatActivity() {
             val settingsIntent = Intent(this@SongsListActivity, SettingsActivity::class.java)
             settingsIntent.putExtra("night mode", night)
             settingsIntent.putExtra("user", user)
-            settingsIntent.putExtra("currUser", currUser.isAnonymous)
 
             startActivity(settingsIntent)
             finish()
@@ -167,6 +165,7 @@ class SongsListActivity : AppCompatActivity() {
                 songIntent.putExtra("song", mSongs.getItemAtPosition(i).toString())
                 songIntent.putExtra("songs", songs)
                 songIntent.putExtra("night mode", night)
+                songIntent.putExtra("user", user)
 
                 startActivity(songIntent)
                 finish()
@@ -241,7 +240,9 @@ class SongsListActivity : AppCompatActivity() {
             auth.signOut()
             super.onBackPressed()
 
-            startActivity(Intent(this@SongsListActivity, LoginActivity::class.java))
+            val backIntent = Intent(this@SongsListActivity, LoginActivity::class.java)
+            backIntent.putExtra("night mode", night)
+            startActivity(backIntent)
             finish()
         }
     }

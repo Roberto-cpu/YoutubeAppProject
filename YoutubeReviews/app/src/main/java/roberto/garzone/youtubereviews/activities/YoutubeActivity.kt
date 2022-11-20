@@ -16,6 +16,7 @@ import com.google.android.youtube.player.YouTubePlayerView
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.configurations.YoutubeConfiguration
 import roberto.garzone.youtubereviews.models.Song
+import roberto.garzone.youtubereviews.models.User
 
 /**
  * This class manages the youtube video playing
@@ -34,6 +35,7 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
     private var songs : ArrayList<Song> = ArrayList()
     private lateinit var song : Song
     private lateinit var getIntent : Intent
+    private lateinit var user : User
 
     /**
      * This method creates the activity's layout
@@ -69,6 +71,7 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
             songId = getIntent.getStringExtra("song").toString()
             songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
             night = getIntent.getStringExtra("night mode").toString()
+            user = getIntent.getSerializableExtra("user") as User
 
             val splitted = songId.split(" - ")
 
@@ -85,7 +88,7 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
     }
 
     /**
-     * This method return the youtube id for the song
+     * This method returns the youtube id for the song
      * @param link : String
      */
     private fun getYoutubeId(link : String) : String {
@@ -125,5 +128,19 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
         if (requestCode == YOUTUBE_REQUEST_CODE) {
             getYoutubePlayerProvider().initialize(YoutubeConfiguration.YOUTUBE_API_KEY, this@YoutubeActivity)
         }
+    }
+
+    /**
+     * This methods defines what to do when back screen button is pressed
+     */
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val backIntent = Intent(this@YoutubeActivity, ReviewsListActivity::class.java)
+        backIntent.putExtra("song", songId)
+        backIntent.putExtra("songs", songs)
+        backIntent.putExtra("night mode", night)
+        backIntent.putExtra("user", user)
+        startActivity(backIntent)
+        finish()
     }
 }

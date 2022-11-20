@@ -44,6 +44,7 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
     private lateinit var mSignInText : TextView 
 
     private var night : String = ""
+    private var nightFromIntent : String = ""
     private lateinit var auth : FirebaseAuth
 
     private lateinit var preferences : SharedPreferences
@@ -70,6 +71,10 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         mNightMode = findViewById(R.id.night_mode_btn)
         mLoginText = findViewById(R.id.login_as_text)
         mSignInText = findViewById(R.id.sign_in_text)
+
+        val getIntent = intent
+
+        nightFromIntent = getIntent.getStringExtra("night mode").toString()
 
         // Initialize Shared Preferences
         preferences = getSharedPreferences("LoginPreferences", MODE_PRIVATE)
@@ -163,7 +168,6 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
                             val loginIntent = Intent(this@LoginActivity, SongsListActivity::class.java)
                             loginIntent.putExtra("night mode", night)
                             loginIntent.putExtra("user", user)
-
                             startActivity(loginIntent)
                             finish()
                         } else {

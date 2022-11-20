@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.ProfileImageEmailDialog
@@ -72,6 +73,8 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
         mUsername = findViewById(R.id.sign_in_user)
 
         val getIntent = intent
+
+        val firebaseAuth = FirebaseAuth.getInstance()
 
         if (getIntent != null) {
             night = getIntent.getStringExtra("night mode").toString()

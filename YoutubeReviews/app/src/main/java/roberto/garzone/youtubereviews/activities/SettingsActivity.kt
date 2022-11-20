@@ -19,6 +19,8 @@ import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import roberto.garzone.youtubereviews.models.User
 import roberto.garzone.youtubereviews.R
@@ -51,8 +53,8 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
     private var newPasswordClicked = false
     private var newPassword : String = ""
     private lateinit var user : User
-    private var currUser : Boolean = false
-
+    private lateinit var auth : FirebaseAuth
+    private lateinit var currUser : FirebaseUser
 
     /**
      * This method creates the activity layout
@@ -77,7 +79,9 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
 
         originalNight = getIntent.getStringExtra("night mode").toString()
         user = getIntent.getSerializableExtra("user") as User
-        currUser = getIntent.getBooleanExtra("currUser", false)
+
+        auth = FirebaseAuth.getInstance()
+        currUser = auth.currentUser!!
 
         night = originalNight
         originalEmail = user.getEmail()
@@ -90,7 +94,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
             finish()
         }
 
-        if(currUser) {
+        if(currUser.isAnonymous) {
             mEmail.visibility = View.INVISIBLE
             mEmailText.visibility = View.INVISIBLE
             mEmailText.isEnabled = false
@@ -233,13 +237,14 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
         if (user.getEmail() != originalEmail) {
             documentRef.update("Email", email)
             user.setEmail(email)
+            currUser.updateEmail(user.getEmail())
         }
 
         if (newPasswordClicked) {
             documentRef.update("Password", newPassword)
             user.setPassword(newPassword)
+            currUser.updatePassword(user.getPassword())
         }
-
     }
 
     /**

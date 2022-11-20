@@ -27,6 +27,7 @@ import roberto.garzone.youtubereviews.dialogs.AddCommentDialog
 import roberto.garzone.youtubereviews.models.Comment
 import roberto.garzone.youtubereviews.models.Review
 import roberto.garzone.youtubereviews.models.Song
+import roberto.garzone.youtubereviews.models.User
 
 /**
  * This class manages the review activity
@@ -51,6 +52,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
     private lateinit var adapter : CommentsListAdapter
     private lateinit var auth : FirebaseAuth
     private lateinit var currUser : FirebaseUser
+    private lateinit var user : User
 
     /**
      * This method creates the activity layout
@@ -75,6 +77,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
         name = getIntent.getStringExtra("song name").toString()
         review = getIntent.getSerializableExtra("review") as Review
         night = getIntent.getStringExtra("night mode").toString()
+        user = getIntent.getSerializableExtra("user") as User
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
@@ -92,6 +95,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
             backIntent.putExtra("songs", songs)
             backIntent.putExtra("song", name)
             backIntent.putExtra("night mode", night)
+            backIntent.putExtra("user", user)
 
             startActivity(backIntent)
             finish()
@@ -204,6 +208,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
         backIntent.putExtra("songs", songs)
         backIntent.putExtra("song", name)
         backIntent.putExtra("night mode", night)
+        backIntent.putExtra("user", user)
 
         startActivity(backIntent)
         finish()
