@@ -74,7 +74,9 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
 
         val getIntent = intent
 
-        nightFromIntent = getIntent.getStringExtra("night mode").toString()
+        if (getIntent != null) {
+            nightFromIntent = getIntent.getStringExtra("night mode").toString()
+        }
 
         // Initialize Shared Preferences
         preferences = getSharedPreferences("LoginPreferences", MODE_PRIVATE)
@@ -124,7 +126,8 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
      */
     override fun onStart() {
         super.onStart()
-        getSharedPreferences()
+        if (nightFromIntent != "") night = nightFromIntent
+        else getSharedPreferences()
         setPageStyle()
     }
 
