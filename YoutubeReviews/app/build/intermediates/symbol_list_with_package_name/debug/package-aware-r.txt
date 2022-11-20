@@ -2786,3 +2786,4 @@ styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
 xml image_share_filepaths
+xml provider_paths

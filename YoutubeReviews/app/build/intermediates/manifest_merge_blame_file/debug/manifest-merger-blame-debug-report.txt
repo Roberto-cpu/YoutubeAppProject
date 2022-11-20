@@ -51,7 +51,7 @@
 27-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:26:22-107
 28
 29    <application
-29-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:18:5-107:19
+29-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:18:5-117:19
 30        android:allowBackup="true"
 30-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:19:9-35
 31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -92,344 +92,362 @@
 49            </intent-filter>
 50        </service>
 51
-52        <activity
-52-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:41:9-51:20
-53            android:name="roberto.garzone.youtubereviews.activities.SplashScreenActivity"
-53-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:42:13-60
-54            android:exported="true"
-54-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:45:13-36
-55            android:label="@string/app_name"
-55-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:43:13-45
-56            android:theme="@style/SplashTheme" >
-56-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:44:13-47
-57            <intent-filter>
-57-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:46:13-50:29
-58                <action android:name="android.intent.action.MAIN" />
-58-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:47:17-69
-58-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:47:25-66
-59
-60                <category android:name="android.intent.category.LAUNCHER" />
-60-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:49:17-77
-60-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:49:27-74
-61            </intent-filter>
-62        </activity>
-63        <activity
-63-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:53:9-56:58
-64            android:name="roberto.garzone.youtubereviews.activities.CheckingConnectionActivity"
-64-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:54:13-66
+52        <provider
+52-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:41:9-49:20
+53            android:name="androidx.core.content.FileProvider"
+53-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:43:13-62
+54            android:authorities="roberto.garzone.youtubereviews.provider"
+54-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:42:13-74
+55            android:exported="false"
+55-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:44:13-37
+56            android:grantUriPermissions="true" >
+56-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:45:13-47
+57            <meta-data
+57-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:46:13-48:57
+58                android:name="android.support.FILE_PROVIDER_PATHS"
+58-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:47:17-67
+59                android:resource="@xml/provider_paths" />
+59-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:48:17-55
+60        </provider>
+61
+62        <activity
+62-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:51:9-61:20
+63            android:name="roberto.garzone.youtubereviews.activities.SplashScreenActivity"
+63-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:52:13-60
+64            android:exported="true"
+64-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:55:13-36
 65            android:label="@string/app_name"
-65-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:55:13-45
-66            android:theme="@style/AppTheme.NoActionBar" />
-66-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:56:13-56
-67        <activity
-67-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:58:9-61:59
-68            android:name="roberto.garzone.youtubereviews.activities.LoginActivity"
-68-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:59:13-53
-69            android:label="@string/app_name"
-69-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:60:13-45
-70            android:theme="@style/AppTheme.NoActionBar" />
-70-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:61:13-56
-71        <activity
-71-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:63:9-66:59
-72            android:name="roberto.garzone.youtubereviews.activities.SignInActivity"
-72-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:64:13-54
-73            android:label="@string/app_name"
-73-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:65:13-45
-74            android:theme="@style/AppTheme.NoActionBar" />
-74-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:66:13-56
-75        <activity
-75-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:68:9-71:59
-76            android:name="roberto.garzone.youtubereviews.activities.ProfileImageActivity"
-76-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:69:13-60
-77            android:label="@string/app_name"
-77-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:70:13-45
-78            android:theme="@style/AppTheme.NoActionBar" />
-78-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:71:13-56
-79        <activity
-79-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:73:9-76:59
-80            android:name="roberto.garzone.youtubereviews.activities.SongsListActivity"
-80-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:74:13-57
-81            android:label="@string/app_name"
-81-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:75:13-45
-82            android:theme="@style/AppTheme.NoActionBar" />
-82-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:76:13-56
-83        <activity
-83-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:78:9-81:59
-84            android:name="roberto.garzone.youtubereviews.activities.SettingsActivity"
-84-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:79:13-56
-85            android:label="@string/app_name"
-85-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:80:13-45
-86            android:theme="@style/AppTheme.NoActionBar" />
-86-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:81:13-56
-87        <activity
-87-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:83:9-86:59
-88            android:name="roberto.garzone.youtubereviews.activities.ReviewsListActivity"
-88-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:84:13-59
-89            android:label="@string/app_name"
-89-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:85:13-45
-90            android:theme="@style/AppTheme.NoActionBar" />
-90-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:86:13-56
-91        <activity
-91-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:88:9-91:59
-92            android:name="roberto.garzone.youtubereviews.activities.ReviewActivity"
-92-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:89:13-54
-93            android:label="@string/app_name"
-93-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:90:13-45
-94            android:theme="@style/AppTheme.NoActionBar" />
-94-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:91:13-56
-95        <activity
-95-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:93:9-96:59
-96            android:name="roberto.garzone.youtubereviews.activities.NewReviewActivity"
-96-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:94:13-57
-97            android:label="@string/app_name"
-97-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:95:13-45
-98            android:theme="@style/AppTheme.NoActionBar" />
-98-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:96:13-56
-99        <activity
-99-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:98:9-101:59
-100            android:name="roberto.garzone.youtubereviews.activities.YoutubeActivity"
-100-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:99:13-55
-101            android:label="@string/app_name"
-101-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:100:13-45
-102            android:theme="@style/AppTheme.NoActionBar" />
-102-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:101:13-56
-103        <activity
-103-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:103:9-106:59
-104            android:name="roberto.garzone.youtubereviews.activities.FeedbackGraphActivity"
-104-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:104:13-61
-105            android:label="@string/app_name"
-105-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:105:13-45
-106            android:theme="@style/AppTheme.NoActionBar" />
-106-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:106:13-56
-107
-108        <service
-108-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:8:9-14:19
-109            android:name="com.google.firebase.components.ComponentDiscoveryService"
-109-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:9:13-84
-110            android:directBootAware="true"
-110-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:35:13-43
-111            android:exported="false" >
-111-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:10:13-37
-112            <meta-data
-112-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:11:13-13:85
-113                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-113-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:12:17-116
-114                android:value="com.google.firebase.components.ComponentRegistrar" />
-114-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:13:17-82
-115            <meta-data
-115-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:67:13-69:85
-116                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-116-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:68:17-109
-117                android:value="com.google.firebase.components.ComponentRegistrar" />
-117-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:69:17-82
-118            <meta-data
-118-->[com.google.firebase:firebase-firestore-ktx:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/013368f2677b96888d8049de96b44027/transformed/jetified-firebase-firestore-ktx-24.3.1/AndroidManifest.xml:15:13-17:85
-119                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-119-->[com.google.firebase:firebase-firestore-ktx:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/013368f2677b96888d8049de96b44027/transformed/jetified-firebase-firestore-ktx-24.3.1/AndroidManifest.xml:16:17-126
-120                android:value="com.google.firebase.components.ComponentRegistrar" />
-120-->[com.google.firebase:firebase-firestore-ktx:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/013368f2677b96888d8049de96b44027/transformed/jetified-firebase-firestore-ktx-24.3.1/AndroidManifest.xml:17:17-82
-121            <meta-data
-121-->[com.google.firebase:firebase-storage-ktx:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/cf37adb75df253ad2550ccafe7b67af0/transformed/jetified-firebase-storage-ktx-20.0.2/AndroidManifest.xml:15:13-17:85
-122                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-122-->[com.google.firebase:firebase-storage-ktx:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/cf37adb75df253ad2550ccafe7b67af0/transformed/jetified-firebase-storage-ktx-20.0.2/AndroidManifest.xml:16:17-122
-123                android:value="com.google.firebase.components.ComponentRegistrar" />
-123-->[com.google.firebase:firebase-storage-ktx:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/cf37adb75df253ad2550ccafe7b67af0/transformed/jetified-firebase-storage-ktx-20.0.2/AndroidManifest.xml:17:17-82
-124            <meta-data
-124-->[com.google.firebase:firebase-analytics-ktx:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/540c7548e6a4dc7763404c495efb6350/transformed/jetified-firebase-analytics-ktx-21.1.1/AndroidManifest.xml:11:13-13:85
-125                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
-125-->[com.google.firebase:firebase-analytics-ktx:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/540c7548e6a4dc7763404c495efb6350/transformed/jetified-firebase-analytics-ktx-21.1.1/AndroidManifest.xml:12:17-126
-126                android:value="com.google.firebase.components.ComponentRegistrar" />
-126-->[com.google.firebase:firebase-analytics-ktx:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/540c7548e6a4dc7763404c495efb6350/transformed/jetified-firebase-analytics-ktx-21.1.1/AndroidManifest.xml:13:17-82
-127            <meta-data
-127-->[com.google.firebase:firebase-common-ktx:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/62e5eacc61308ed007a429d32e3c2532/transformed/jetified-firebase-common-ktx-20.1.2/AndroidManifest.xml:15:13-17:85
-128                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-128-->[com.google.firebase:firebase-common-ktx:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/62e5eacc61308ed007a429d32e3c2532/transformed/jetified-firebase-common-ktx-20.1.2/AndroidManifest.xml:16:17-113
-129                android:value="com.google.firebase.components.ComponentRegistrar" />
-129-->[com.google.firebase:firebase-common-ktx:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/62e5eacc61308ed007a429d32e3c2532/transformed/jetified-firebase-common-ktx-20.1.2/AndroidManifest.xml:17:17-82
-130            <meta-data
-130-->[com.google.firebase:firebase-storage:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/5d92dd7f17f3bee2a1702530d9cb0675/transformed/jetified-firebase-storage-20.0.2/AndroidManifest.xml:33:13-35:85
-131                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-131-->[com.google.firebase:firebase-storage:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/5d92dd7f17f3bee2a1702530d9cb0675/transformed/jetified-firebase-storage-20.0.2/AndroidManifest.xml:34:17-107
-132                android:value="com.google.firebase.components.ComponentRegistrar" />
-132-->[com.google.firebase:firebase-storage:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/5d92dd7f17f3bee2a1702530d9cb0675/transformed/jetified-firebase-storage-20.0.2/AndroidManifest.xml:35:17-82
-133            <meta-data
-133-->[com.google.firebase:firebase-firestore:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/ad39c349554d118608fb7a25d3dfdbbf/transformed/jetified-firebase-firestore-24.3.1/AndroidManifest.xml:20:13-22:85
-134                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-134-->[com.google.firebase:firebase-firestore:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/ad39c349554d118608fb7a25d3dfdbbf/transformed/jetified-firebase-firestore-24.3.1/AndroidManifest.xml:21:17-111
-135                android:value="com.google.firebase.components.ComponentRegistrar" />
-135-->[com.google.firebase:firebase-firestore:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/ad39c349554d118608fb7a25d3dfdbbf/transformed/jetified-firebase-firestore-24.3.1/AndroidManifest.xml:22:17-82
-136            <meta-data
-136-->[com.google.android.gms:play-services-measurement-api:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/2a7370f7b969cde40528da29b4c64be2/transformed/jetified-play-services-measurement-api-21.1.1/AndroidManifest.xml:31:13-33:85
-137                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-137-->[com.google.android.gms:play-services-measurement-api:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/2a7370f7b969cde40528da29b4c64be2/transformed/jetified-play-services-measurement-api-21.1.1/AndroidManifest.xml:32:17-139
-138                android:value="com.google.firebase.components.ComponentRegistrar" />
-138-->[com.google.android.gms:play-services-measurement-api:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/2a7370f7b969cde40528da29b4c64be2/transformed/jetified-play-services-measurement-api-21.1.1/AndroidManifest.xml:33:17-82
-139            <meta-data
-139-->[com.google.firebase:firebase-installations:17.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/1eb35bcbfdf1ffcd3700bdcf058e01c7/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:18:13-20:85
-140                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-140-->[com.google.firebase:firebase-installations:17.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/1eb35bcbfdf1ffcd3700bdcf058e01c7/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:19:17-127
-141                android:value="com.google.firebase.components.ComponentRegistrar" />
-141-->[com.google.firebase:firebase-installations:17.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/1eb35bcbfdf1ffcd3700bdcf058e01c7/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:20:17-82
-142        </service>
-143
-144        <activity
-144-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:27:9-44:20
-145            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-145-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:28:13-80
-146            android:excludeFromRecents="true"
-146-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:29:13-46
-147            android:exported="true"
-147-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:30:13-36
-148            android:launchMode="singleTask"
-148-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:31:13-44
-149            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-149-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:32:13-72
-150            <intent-filter>
-150-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:33:13-43:29
-151                <action android:name="android.intent.action.VIEW" />
-151-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:17-69
-151-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:25-66
-152
-153                <category android:name="android.intent.category.DEFAULT" />
-153-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:17-76
-153-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:27-73
-154                <category android:name="android.intent.category.BROWSABLE" />
-154-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:17-78
-154-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:27-75
-155
-156                <data
-156-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:39:17-42:51
-157                    android:host="firebase.auth"
-157-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:40:21-49
-158                    android:path="/"
-158-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:41:21-37
-159                    android:scheme="genericidp" />
-159-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:42:21-48
-160            </intent-filter>
-161        </activity>
-162        <activity
-162-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:45:9-62:20
-163            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-163-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:46:13-79
-164            android:excludeFromRecents="true"
-164-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:47:13-46
-165            android:exported="true"
-165-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:48:13-36
-166            android:launchMode="singleTask"
-166-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:49:13-44
-167            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-167-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:50:13-72
-168            <intent-filter>
-168-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:51:13-61:29
-169                <action android:name="android.intent.action.VIEW" />
-169-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:17-69
-169-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:25-66
-170
-171                <category android:name="android.intent.category.DEFAULT" />
-171-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:17-76
-171-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:27-73
-172                <category android:name="android.intent.category.BROWSABLE" />
-172-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:17-78
-172-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:27-75
-173
-174                <data
-174-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:39:17-42:51
-175                    android:host="firebase.auth"
-175-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:40:21-49
-176                    android:path="/"
-176-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:41:21-37
-177                    android:scheme="recaptcha" />
-177-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:42:21-48
-178            </intent-filter>
-179        </activity>
+65-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:53:13-45
+66            android:theme="@style/SplashTheme" >
+66-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:54:13-47
+67            <intent-filter>
+67-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:56:13-60:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:57:17-69
+68-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:57:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:59:17-77
+70-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:59:27-74
+71            </intent-filter>
+72        </activity>
+73        <activity
+73-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:63:9-66:58
+74            android:name="roberto.garzone.youtubereviews.activities.CheckingConnectionActivity"
+74-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:64:13-66
+75            android:label="@string/app_name"
+75-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:65:13-45
+76            android:theme="@style/AppTheme.NoActionBar" />
+76-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:66:13-56
+77        <activity
+77-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:68:9-71:59
+78            android:name="roberto.garzone.youtubereviews.activities.LoginActivity"
+78-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:69:13-53
+79            android:label="@string/app_name"
+79-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:70:13-45
+80            android:theme="@style/AppTheme.NoActionBar" />
+80-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:71:13-56
+81        <activity
+81-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:73:9-76:59
+82            android:name="roberto.garzone.youtubereviews.activities.SignInActivity"
+82-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:74:13-54
+83            android:label="@string/app_name"
+83-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:75:13-45
+84            android:theme="@style/AppTheme.NoActionBar" />
+84-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:76:13-56
+85        <activity
+85-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:78:9-81:59
+86            android:name="roberto.garzone.youtubereviews.activities.ProfileImageActivity"
+86-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:79:13-60
+87            android:label="@string/app_name"
+87-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:80:13-45
+88            android:theme="@style/AppTheme.NoActionBar" />
+88-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:81:13-56
+89        <activity
+89-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:83:9-86:59
+90            android:name="roberto.garzone.youtubereviews.activities.SongsListActivity"
+90-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:84:13-57
+91            android:label="@string/app_name"
+91-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:85:13-45
+92            android:theme="@style/AppTheme.NoActionBar" />
+92-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:86:13-56
+93        <activity
+93-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:88:9-91:59
+94            android:name="roberto.garzone.youtubereviews.activities.SettingsActivity"
+94-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:89:13-56
+95            android:label="@string/app_name"
+95-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:90:13-45
+96            android:theme="@style/AppTheme.NoActionBar" />
+96-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:91:13-56
+97        <activity
+97-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:93:9-96:59
+98            android:name="roberto.garzone.youtubereviews.activities.ReviewsListActivity"
+98-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:94:13-59
+99            android:label="@string/app_name"
+99-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:95:13-45
+100            android:theme="@style/AppTheme.NoActionBar" />
+100-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:96:13-56
+101        <activity
+101-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:98:9-101:59
+102            android:name="roberto.garzone.youtubereviews.activities.ReviewActivity"
+102-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:99:13-54
+103            android:label="@string/app_name"
+103-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:100:13-45
+104            android:theme="@style/AppTheme.NoActionBar" />
+104-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:101:13-56
+105        <activity
+105-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:103:9-106:59
+106            android:name="roberto.garzone.youtubereviews.activities.NewReviewActivity"
+106-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:104:13-57
+107            android:label="@string/app_name"
+107-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:105:13-45
+108            android:theme="@style/AppTheme.NoActionBar" />
+108-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:106:13-56
+109        <activity
+109-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:108:9-111:59
+110            android:name="roberto.garzone.youtubereviews.activities.YoutubeActivity"
+110-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:109:13-55
+111            android:label="@string/app_name"
+111-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:110:13-45
+112            android:theme="@style/AppTheme.NoActionBar" />
+112-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:111:13-56
+113        <activity
+113-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:113:9-116:59
+114            android:name="roberto.garzone.youtubereviews.activities.FeedbackGraphActivity"
+114-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:114:13-61
+115            android:label="@string/app_name"
+115-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:115:13-45
+116            android:theme="@style/AppTheme.NoActionBar" />
+116-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:116:13-56
+117
+118        <service
+118-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:8:9-14:19
+119            android:name="com.google.firebase.components.ComponentDiscoveryService"
+119-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:9:13-84
+120            android:directBootAware="true"
+120-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:35:13-43
+121            android:exported="false" >
+121-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:10:13-37
+122            <meta-data
+122-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:11:13-13:85
+123                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+123-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:12:17-116
+124                android:value="com.google.firebase.components.ComponentRegistrar" />
+124-->[com.google.firebase:firebase-auth-ktx:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/101577563eccf37d73fbc4a7d9e3b34f/transformed/jetified-firebase-auth-ktx-21.0.8/AndroidManifest.xml:13:17-82
+125            <meta-data
+125-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:67:13-69:85
+126                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+126-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:68:17-109
+127                android:value="com.google.firebase.components.ComponentRegistrar" />
+127-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:69:17-82
+128            <meta-data
+128-->[com.google.firebase:firebase-firestore-ktx:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/013368f2677b96888d8049de96b44027/transformed/jetified-firebase-firestore-ktx-24.3.1/AndroidManifest.xml:15:13-17:85
+129                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+129-->[com.google.firebase:firebase-firestore-ktx:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/013368f2677b96888d8049de96b44027/transformed/jetified-firebase-firestore-ktx-24.3.1/AndroidManifest.xml:16:17-126
+130                android:value="com.google.firebase.components.ComponentRegistrar" />
+130-->[com.google.firebase:firebase-firestore-ktx:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/013368f2677b96888d8049de96b44027/transformed/jetified-firebase-firestore-ktx-24.3.1/AndroidManifest.xml:17:17-82
+131            <meta-data
+131-->[com.google.firebase:firebase-storage-ktx:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/cf37adb75df253ad2550ccafe7b67af0/transformed/jetified-firebase-storage-ktx-20.0.2/AndroidManifest.xml:15:13-17:85
+132                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+132-->[com.google.firebase:firebase-storage-ktx:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/cf37adb75df253ad2550ccafe7b67af0/transformed/jetified-firebase-storage-ktx-20.0.2/AndroidManifest.xml:16:17-122
+133                android:value="com.google.firebase.components.ComponentRegistrar" />
+133-->[com.google.firebase:firebase-storage-ktx:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/cf37adb75df253ad2550ccafe7b67af0/transformed/jetified-firebase-storage-ktx-20.0.2/AndroidManifest.xml:17:17-82
+134            <meta-data
+134-->[com.google.firebase:firebase-analytics-ktx:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/540c7548e6a4dc7763404c495efb6350/transformed/jetified-firebase-analytics-ktx-21.1.1/AndroidManifest.xml:11:13-13:85
+135                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+135-->[com.google.firebase:firebase-analytics-ktx:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/540c7548e6a4dc7763404c495efb6350/transformed/jetified-firebase-analytics-ktx-21.1.1/AndroidManifest.xml:12:17-126
+136                android:value="com.google.firebase.components.ComponentRegistrar" />
+136-->[com.google.firebase:firebase-analytics-ktx:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/540c7548e6a4dc7763404c495efb6350/transformed/jetified-firebase-analytics-ktx-21.1.1/AndroidManifest.xml:13:17-82
+137            <meta-data
+137-->[com.google.firebase:firebase-common-ktx:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/62e5eacc61308ed007a429d32e3c2532/transformed/jetified-firebase-common-ktx-20.1.2/AndroidManifest.xml:15:13-17:85
+138                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+138-->[com.google.firebase:firebase-common-ktx:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/62e5eacc61308ed007a429d32e3c2532/transformed/jetified-firebase-common-ktx-20.1.2/AndroidManifest.xml:16:17-113
+139                android:value="com.google.firebase.components.ComponentRegistrar" />
+139-->[com.google.firebase:firebase-common-ktx:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/62e5eacc61308ed007a429d32e3c2532/transformed/jetified-firebase-common-ktx-20.1.2/AndroidManifest.xml:17:17-82
+140            <meta-data
+140-->[com.google.firebase:firebase-storage:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/5d92dd7f17f3bee2a1702530d9cb0675/transformed/jetified-firebase-storage-20.0.2/AndroidManifest.xml:33:13-35:85
+141                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+141-->[com.google.firebase:firebase-storage:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/5d92dd7f17f3bee2a1702530d9cb0675/transformed/jetified-firebase-storage-20.0.2/AndroidManifest.xml:34:17-107
+142                android:value="com.google.firebase.components.ComponentRegistrar" />
+142-->[com.google.firebase:firebase-storage:20.0.2] /Users/robertogarzone/.gradle/caches/transforms-3/5d92dd7f17f3bee2a1702530d9cb0675/transformed/jetified-firebase-storage-20.0.2/AndroidManifest.xml:35:17-82
+143            <meta-data
+143-->[com.google.firebase:firebase-firestore:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/ad39c349554d118608fb7a25d3dfdbbf/transformed/jetified-firebase-firestore-24.3.1/AndroidManifest.xml:20:13-22:85
+144                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+144-->[com.google.firebase:firebase-firestore:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/ad39c349554d118608fb7a25d3dfdbbf/transformed/jetified-firebase-firestore-24.3.1/AndroidManifest.xml:21:17-111
+145                android:value="com.google.firebase.components.ComponentRegistrar" />
+145-->[com.google.firebase:firebase-firestore:24.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/ad39c349554d118608fb7a25d3dfdbbf/transformed/jetified-firebase-firestore-24.3.1/AndroidManifest.xml:22:17-82
+146            <meta-data
+146-->[com.google.android.gms:play-services-measurement-api:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/2a7370f7b969cde40528da29b4c64be2/transformed/jetified-play-services-measurement-api-21.1.1/AndroidManifest.xml:31:13-33:85
+147                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+147-->[com.google.android.gms:play-services-measurement-api:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/2a7370f7b969cde40528da29b4c64be2/transformed/jetified-play-services-measurement-api-21.1.1/AndroidManifest.xml:32:17-139
+148                android:value="com.google.firebase.components.ComponentRegistrar" />
+148-->[com.google.android.gms:play-services-measurement-api:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/2a7370f7b969cde40528da29b4c64be2/transformed/jetified-play-services-measurement-api-21.1.1/AndroidManifest.xml:33:17-82
+149            <meta-data
+149-->[com.google.firebase:firebase-installations:17.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/1eb35bcbfdf1ffcd3700bdcf058e01c7/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:18:13-20:85
+150                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+150-->[com.google.firebase:firebase-installations:17.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/1eb35bcbfdf1ffcd3700bdcf058e01c7/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:19:17-127
+151                android:value="com.google.firebase.components.ComponentRegistrar" />
+151-->[com.google.firebase:firebase-installations:17.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/1eb35bcbfdf1ffcd3700bdcf058e01c7/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:20:17-82
+152        </service>
+153
+154        <activity
+154-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:27:9-44:20
+155            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+155-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:28:13-80
+156            android:excludeFromRecents="true"
+156-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:29:13-46
+157            android:exported="true"
+157-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:30:13-36
+158            android:launchMode="singleTask"
+158-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:31:13-44
+159            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+159-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:32:13-72
+160            <intent-filter>
+160-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:33:13-43:29
+161                <action android:name="android.intent.action.VIEW" />
+161-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:17-69
+161-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:25-66
+162
+163                <category android:name="android.intent.category.DEFAULT" />
+163-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:17-76
+163-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:27-73
+164                <category android:name="android.intent.category.BROWSABLE" />
+164-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:17-78
+164-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:27-75
+165
+166                <data
+166-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:39:17-42:51
+167                    android:host="firebase.auth"
+167-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:40:21-49
+168                    android:path="/"
+168-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:41:21-37
+169                    android:scheme="genericidp" />
+169-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:42:21-48
+170            </intent-filter>
+171        </activity>
+172        <activity
+172-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:45:9-62:20
+173            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+173-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:46:13-79
+174            android:excludeFromRecents="true"
+174-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:47:13-46
+175            android:exported="true"
+175-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:48:13-36
+176            android:launchMode="singleTask"
+176-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:49:13-44
+177            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+177-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:50:13-72
+178            <intent-filter>
+178-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:51:13-61:29
+179                <action android:name="android.intent.action.VIEW" />
+179-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:17-69
+179-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:34:25-66
 180
-181        <provider
-181-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:26:9-31:39
-182            android:name="com.google.firebase.provider.FirebaseInitProvider"
-182-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:27:13-77
-183            android:authorities="roberto.garzone.youtubereviews.firebaseinitprovider"
-183-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:28:13-72
-184            android:directBootAware="true"
-184-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:29:13-43
-185            android:exported="false"
-185-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:30:13-37
-186            android:initOrder="100" />
-186-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:31:13-36
-187
-188        <activity
-188-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-189            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-189-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-190            android:exported="false"
-190-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-191            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-191-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-192
-193        <receiver
-193-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:29:9-33:20
-194            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-194-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:30:13-85
-195            android:enabled="true"
-195-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:31:13-35
-196            android:exported="false" >
-196-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:32:13-37
-197        </receiver>
-198
-199        <service
-199-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:35:9-38:40
-200            android:name="com.google.android.gms.measurement.AppMeasurementService"
-200-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:36:13-84
-201            android:enabled="true"
-201-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:37:13-35
-202            android:exported="false" />
-202-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:38:13-37
-203        <service
-203-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:39:9-43:72
-204            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-204-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:40:13-87
+181                <category android:name="android.intent.category.DEFAULT" />
+181-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:17-76
+181-->/Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:27-73
+182                <category android:name="android.intent.category.BROWSABLE" />
+182-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:17-78
+182-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:37:27-75
+183
+184                <data
+184-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:39:17-42:51
+185                    android:host="firebase.auth"
+185-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:40:21-49
+186                    android:path="/"
+186-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:41:21-37
+187                    android:scheme="recaptcha" />
+187-->[com.google.firebase:firebase-auth:21.0.8] /Users/robertogarzone/.gradle/caches/transforms-3/53a130efa2d25221b7524f1f8e1189b5/transformed/jetified-firebase-auth-21.0.8/AndroidManifest.xml:42:21-48
+188            </intent-filter>
+189        </activity>
+190
+191        <provider
+191-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:26:9-31:39
+192            android:name="com.google.firebase.provider.FirebaseInitProvider"
+192-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:27:13-77
+193            android:authorities="roberto.garzone.youtubereviews.firebaseinitprovider"
+193-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:28:13-72
+194            android:directBootAware="true"
+194-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:29:13-43
+195            android:exported="false"
+195-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:30:13-37
+196            android:initOrder="100" />
+196-->[com.google.firebase:firebase-common:20.1.2] /Users/robertogarzone/.gradle/caches/transforms-3/fe931df71afdd2180cee899deab7e82a/transformed/jetified-firebase-common-20.1.2/AndroidManifest.xml:31:13-36
+197
+198        <activity
+198-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+199            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+199-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+200            android:exported="false"
+200-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+201            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+201-->[com.google.android.gms:play-services-base:18.0.1] /Users/robertogarzone/.gradle/caches/transforms-3/393b03d47444b6e7fcad89cab211a8fe/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+202
+203        <receiver
+203-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:29:9-33:20
+204            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+204-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:30:13-85
 205            android:enabled="true"
-205-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:41:13-35
-206            android:exported="false"
-206-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:42:13-37
-207            android:permission="android.permission.BIND_JOB_SERVICE" />
-207-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:43:13-69
+205-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:31:13-35
+206            android:exported="false" >
+206-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:32:13-37
+207        </receiver>
 208
-209        <meta-data
-209-->[com.google.android.gms:play-services-basement:18.1.0] /Users/robertogarzone/.gradle/caches/transforms-3/c427008a8fbc059868a465e61671d382/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-210            android:name="com.google.android.gms.version"
-210-->[com.google.android.gms:play-services-basement:18.1.0] /Users/robertogarzone/.gradle/caches/transforms-3/c427008a8fbc059868a465e61671d382/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
-211            android:value="@integer/google_play_services_version" />
-211-->[com.google.android.gms:play-services-basement:18.1.0] /Users/robertogarzone/.gradle/caches/transforms-3/c427008a8fbc059868a465e61671d382/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
-212
-213        <provider
-213-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
-214            android:name="com.squareup.picasso.PicassoProvider"
-214-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
-215            android:authorities="roberto.garzone.youtubereviews.com.squareup.picasso"
-215-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
-216            android:exported="false" />
-216-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
-217        <provider
-217-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-218            android:name="androidx.startup.InitializationProvider"
-218-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-219            android:authorities="roberto.garzone.youtubereviews.androidx-startup"
-219-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-220            android:exported="false" >
-220-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-221            <meta-data
-221-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-222                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-222-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-223                android:value="androidx.startup" />
-223-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-224            <meta-data
-224-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/robertogarzone/.gradle/caches/transforms-3/baa46df8fcab012c5951e5b69145e782/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-225                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-225-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/robertogarzone/.gradle/caches/transforms-3/baa46df8fcab012c5951e5b69145e782/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-226                android:value="androidx.startup" />
-226-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/robertogarzone/.gradle/caches/transforms-3/baa46df8fcab012c5951e5b69145e782/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-227        </provider>
-228    </application>
-229
-230</manifest>
+209        <service
+209-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:35:9-38:40
+210            android:name="com.google.android.gms.measurement.AppMeasurementService"
+210-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:36:13-84
+211            android:enabled="true"
+211-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:37:13-35
+212            android:exported="false" />
+212-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:38:13-37
+213        <service
+213-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:39:9-43:72
+214            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+214-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:40:13-87
+215            android:enabled="true"
+215-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:41:13-35
+216            android:exported="false"
+216-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:42:13-37
+217            android:permission="android.permission.BIND_JOB_SERVICE" />
+217-->[com.google.android.gms:play-services-measurement:21.1.1] /Users/robertogarzone/.gradle/caches/transforms-3/ac012625aa324782ef8a9750d45d516a/transformed/jetified-play-services-measurement-21.1.1/AndroidManifest.xml:43:13-69
+218
+219        <meta-data
+219-->[com.google.android.gms:play-services-basement:18.1.0] /Users/robertogarzone/.gradle/caches/transforms-3/c427008a8fbc059868a465e61671d382/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+220            android:name="com.google.android.gms.version"
+220-->[com.google.android.gms:play-services-basement:18.1.0] /Users/robertogarzone/.gradle/caches/transforms-3/c427008a8fbc059868a465e61671d382/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+221            android:value="@integer/google_play_services_version" />
+221-->[com.google.android.gms:play-services-basement:18.1.0] /Users/robertogarzone/.gradle/caches/transforms-3/c427008a8fbc059868a465e61671d382/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+222
+223        <provider
+223-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+224            android:name="com.squareup.picasso.PicassoProvider"
+224-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
+225            android:authorities="roberto.garzone.youtubereviews.com.squareup.picasso"
+225-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+226            android:exported="false" />
+226-->[com.squareup.picasso:picasso:2.71828] /Users/robertogarzone/.gradle/caches/transforms-3/e5efd084542ba4262ee2a1ad18f48007/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+227        <provider
+227-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+228            android:name="androidx.startup.InitializationProvider"
+228-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+229            android:authorities="roberto.garzone.youtubereviews.androidx-startup"
+229-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+230            android:exported="false" >
+230-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+231            <meta-data
+231-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+232                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+232-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+233                android:value="androidx.startup" />
+233-->[androidx.emoji2:emoji2:1.2.0] /Users/robertogarzone/.gradle/caches/transforms-3/5bc0e003e0184c49324f4554f98725b0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+234            <meta-data
+234-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/robertogarzone/.gradle/caches/transforms-3/baa46df8fcab012c5951e5b69145e782/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+235                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+235-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/robertogarzone/.gradle/caches/transforms-3/baa46df8fcab012c5951e5b69145e782/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+236                android:value="androidx.startup" />
+236-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/robertogarzone/.gradle/caches/transforms-3/baa46df8fcab012c5951e5b69145e782/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+237        </provider>
+238    </application>
+239
+240</manifest>

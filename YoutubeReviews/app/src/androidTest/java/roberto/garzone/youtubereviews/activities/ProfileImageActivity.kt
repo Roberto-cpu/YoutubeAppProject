@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
@@ -102,7 +103,7 @@ class ProfileImageActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
 
-                outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "${BuildConfig.APPLICATION_ID}.provider", photoFile!!)
+                outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "roberto.garzone.youtubereviews.provider", photoFile!!)
 
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri)
                 cameraIntent.flags =
@@ -171,7 +172,7 @@ class ProfileImageActivity : AppCompatActivity() {
      * This method saves the image taken to the gallery
      */
     private fun galleryAddPic() {
-        val mediaScanIntent : Intent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
         mediaScanIntent.data = outputUri
         sendBroadcast(mediaScanIntent)
     }

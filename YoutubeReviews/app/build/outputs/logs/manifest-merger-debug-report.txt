@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
+INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
+INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
+INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
 MERGED from [androidx.databinding:viewbinding:7.3.1] /Users/robertogarzone/.gradle/caches/transforms-3/64e9ed9b1bf48529fed96400536e7f94/transformed/jetified-viewbinding-7.3.1/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/robertogarzone/.gradle/caches/transforms-3/c6f454eeb904d59103b5dc94f8d00525/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.0.0] /Users/robertogarzone/.gradle/caches/transforms-3/592da6bd8daf9e2d9969c7d8cbf2daeb/transformed/material-1.0.0/AndroidManifest.xml:17:1-24:12
@@ -85,22 +85,22 @@ MERGED from [androidx.print:print:1.0.0] /Users/robertogarzone/.gradle/caches/tr
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/robertogarzone/.gradle/caches/transforms-3/cfb44b628f8d282cbc5190f1ecec0155/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [io.grpc:grpc-android:1.48.1] /Users/robertogarzone/.gradle/caches/transforms-3/459485d5f5e34e3ff9dda4602238e79a/transformed/jetified-grpc-android-1.48.1/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/robertogarzone/.gradle/caches/transforms-3/03f6384c7851cc1a219454cddc8ea314/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
-INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
+INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
+INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
+INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
 	package
 		INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
 		INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
 		INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:4:5-51
 	android:versionCode
 		INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-109:12
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:2:1-119:12
 		INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:3:5-63
@@ -151,7 +151,7 @@ ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeRev
 	android:name
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:14:21-80
 application
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:18:5-107:19
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:18:5-117:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/robertogarzone/.gradle/caches/transforms-3/c6f454eeb904d59103b5dc94f8d00525/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/robertogarzone/.gradle/caches/transforms-3/c6f454eeb904d59103b5dc94f8d00525/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.0.0] /Users/robertogarzone/.gradle/caches/transforms-3/592da6bd8daf9e2d9969c7d8cbf2daeb/transformed/material-1.0.0/AndroidManifest.xml:22:5-20
@@ -258,114 +258,130 @@ category#android.intent.category.DEFAULT
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:17-76
 	android:name
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:36:27-73
-activity#roberto.garzone.youtubereviews.activities.SplashScreenActivity
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:41:9-51:20
-	android:label
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:43:13-45
+provider#androidx.core.content.FileProvider
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:41:9-49:20
+	android:grantUriPermissions
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:45:13-47
+	android:authorities
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:42:13-74
 	android:exported
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:45:13-36
-	android:theme
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:44:13-47
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:44:13-37
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:42:13-60
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:43:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:46:13-48:57
+	android:resource
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:48:17-55
+	android:name
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:47:17-67
+activity#roberto.garzone.youtubereviews.activities.SplashScreenActivity
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:51:9-61:20
+	android:label
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:53:13-45
+	android:exported
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:55:13-36
+	android:theme
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:54:13-47
+	android:name
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:52:13-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:46:13-50:29
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:56:13-60:29
 action#android.intent.action.MAIN
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:47:17-69
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:57:17-69
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:47:25-66
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:57:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:49:17-77
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:59:17-77
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:49:27-74
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:59:27-74
 activity#roberto.garzone.youtubereviews.activities.CheckingConnectionActivity
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:53:9-56:58
-	android:label
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:55:13-45
-	android:theme
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:56:13-56
-	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:54:13-66
-activity#roberto.garzone.youtubereviews.activities.LoginActivity
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:58:9-61:59
-	android:label
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:60:13-45
-	android:theme
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:61:13-56
-	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:59:13-53
-activity#roberto.garzone.youtubereviews.activities.SignInActivity
-ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:63:9-66:59
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:63:9-66:58
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:65:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:66:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:64:13-54
-activity#roberto.garzone.youtubereviews.activities.ProfileImageActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:64:13-66
+activity#roberto.garzone.youtubereviews.activities.LoginActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:68:9-71:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:70:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:71:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:69:13-60
-activity#roberto.garzone.youtubereviews.activities.SongsListActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:69:13-53
+activity#roberto.garzone.youtubereviews.activities.SignInActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:73:9-76:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:75:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:76:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:74:13-57
-activity#roberto.garzone.youtubereviews.activities.SettingsActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:74:13-54
+activity#roberto.garzone.youtubereviews.activities.ProfileImageActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:78:9-81:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:80:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:81:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:79:13-56
-activity#roberto.garzone.youtubereviews.activities.ReviewsListActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:79:13-60
+activity#roberto.garzone.youtubereviews.activities.SongsListActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:83:9-86:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:85:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:86:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:84:13-59
-activity#roberto.garzone.youtubereviews.activities.ReviewActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:84:13-57
+activity#roberto.garzone.youtubereviews.activities.SettingsActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:88:9-91:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:90:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:91:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:89:13-54
-activity#roberto.garzone.youtubereviews.activities.NewReviewActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:89:13-56
+activity#roberto.garzone.youtubereviews.activities.ReviewsListActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:93:9-96:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:95:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:96:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:94:13-57
-activity#roberto.garzone.youtubereviews.activities.YoutubeActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:94:13-59
+activity#roberto.garzone.youtubereviews.activities.ReviewActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:98:9-101:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:100:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:101:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:99:13-55
-activity#roberto.garzone.youtubereviews.activities.FeedbackGraphActivity
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:99:13-54
+activity#roberto.garzone.youtubereviews.activities.NewReviewActivity
 ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:103:9-106:59
 	android:label
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:105:13-45
 	android:theme
 		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:106:13-56
 	android:name
-		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:104:13-61
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:104:13-57
+activity#roberto.garzone.youtubereviews.activities.YoutubeActivity
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:108:9-111:59
+	android:label
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:110:13-45
+	android:theme
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:111:13-56
+	android:name
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:109:13-55
+activity#roberto.garzone.youtubereviews.activities.FeedbackGraphActivity
+ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:113:9-116:59
+	android:label
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:115:13-45
+	android:theme
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:116:13-56
+	android:name
+		ADDED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml:114:13-61
 uses-sdk
 INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Volumes/Memoria Principale/Applications/YoutubeAppProject/YoutubeReviews/app/src/main/AndroidManifest.xml

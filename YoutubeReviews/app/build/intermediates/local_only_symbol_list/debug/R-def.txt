@@ -308,3 +308,4 @@ style SplashTheme
 style Theme.YoutubeReviews
 xml backup_rules
 xml data_extraction_rules
+xml provider_paths

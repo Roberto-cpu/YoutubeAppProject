@@ -120,12 +120,12 @@
         "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/drawable/text_view_border_light_mode.xml"
     },
     {
-        "merged": "roberto.garzone.youtubereviews.app-merged_res-32:/layout_sign_in_layout.xml.flat",
-        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/sign_in_layout.xml"
-    },
-    {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/xml_data_extraction_rules.xml.flat",
         "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/xml_provider_paths.xml.flat",
+        "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/xml/provider_paths.xml"
     },
     {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/drawable-xxhdpi_hidden_password.png.flat",
@@ -164,12 +164,12 @@
         "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/profile_image_dialog_layout.xml"
     },
     {
-        "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/layout_feedback_graph_layout.xml.flat",
-        "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/feedback_graph_layout.xml"
-    },
-    {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/layout_sign_in_layout.xml.flat",
         "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/sign_in_layout.xml"
+    },
+    {
+        "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/layout_feedback_graph_layout.xml.flat",
+        "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/feedback_graph_layout.xml"
     },
     {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/xml_backup_rules.xml.flat",
@@ -182,6 +182,10 @@
     {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/drawable-mdpi_back_arrow_button_icon.png.flat",
         "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/drawable-mdpi/back_arrow_button_icon.png"
+    },
+    {
+        "merged": "roberto.garzone.youtubereviews.app-merged_res-32:/layout_profile_image_layout.xml.flat",
+        "source": "roberto.garzone.youtubereviews.app-main-34:/layout/profile_image_layout.xml"
     },
     {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-merged_res-32:/drawable-xhdpi_show_password.png.flat",
