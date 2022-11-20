@@ -91,7 +91,7 @@ class ProfileImageActivity : AppCompatActivity() {
 
         night = getIntent.getStringExtra("night mode").toString()
         email = getIntent.getStringExtra("email").toString()
-        user = (getIntent.getSerializableExtra("user") as? User)!!
+        user = getIntent.getSerializableExtra("user") as User
         activity = getIntent.getStringExtra("activity").toString()
 
         setSupportActionBar(mToolbar)

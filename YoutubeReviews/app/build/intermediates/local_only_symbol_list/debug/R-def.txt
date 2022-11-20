@@ -16,6 +16,7 @@ color colorYellow
 drawable app_logo
 drawable back_arrow_button_icon
 drawable button_design
+drawable generic_profile_image
 drawable hidden_password
 drawable ic_launcher_background
 drawable ic_launcher_foreground

@@ -8,6 +8,7 @@ package roberto.garzone.youtubereviews.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
@@ -50,6 +51,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
     private var newPasswordClicked = false
     private var newPassword : String = ""
     private lateinit var user : User
+    private var currUser : Boolean = false
 
 
     /**
@@ -75,6 +77,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
 
         originalNight = getIntent.getStringExtra("night mode").toString()
         user = getIntent.getSerializableExtra("user") as User
+        currUser = getIntent.getBooleanExtra("currUser", false)
 
         night = originalNight
         originalEmail = user.getEmail()
@@ -85,6 +88,16 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
 
             startActivity(backIntent)
             finish()
+        }
+
+        if(currUser) {
+            mEmail.visibility = View.INVISIBLE
+            mEmailText.visibility = View.INVISIBLE
+            mEmailText.isEnabled = false
+            mPassword.visibility = View.INVISIBLE
+            mPassword.isEnabled = false
+            mPfImage.visibility = View.INVISIBLE
+            mPfImage.isEnabled = false
         }
 
         mEmailText.hint = originalEmail

@@ -166,14 +166,14 @@
 
     <ImageView
         android:id="@+id/sign_in_profile_image"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/generic_profile_image" />
 
     <EditText
         android:id="@+id/sign_in_user"

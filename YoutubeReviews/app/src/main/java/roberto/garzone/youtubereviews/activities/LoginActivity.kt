@@ -195,7 +195,7 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
             if(it.isSuccessful) {
                 val guestIntent = Intent(this@LoginActivity, SongsListActivity::class.java)
                 guestIntent.putExtra("night mode", night)
-
+                guestIntent.putExtra("user", User("", "", ""))
                 startActivity(guestIntent)
                 finish()
             }

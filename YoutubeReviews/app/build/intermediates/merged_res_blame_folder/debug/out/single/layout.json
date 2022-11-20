@@ -36,12 +36,12 @@
         "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/profile_image_dialog_layout.xml"
     },
     {
-        "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/sign_in_layout.xml",
-        "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/sign_in_layout.xml"
-    },
-    {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/checking_connection_layout.xml",
         "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/checking_connection_layout.xml"
+    },
+    {
+        "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/sign_in_layout.xml",
+        "source": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-main-34:/layout/sign_in_layout.xml"
     },
     {
         "merged": "/Users/robertogarzone/.gradle/daemon/7.4/roberto.garzone.youtubereviews.app-mergeDebugResources-31:/layout/settings_layout.xml",

@@ -87,7 +87,7 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
         if (user.getEmail() != "") mEmail.setText(user.getEmail())
 
         if (imageUri != null) mImage.setImageURI(imageUri)
-        else mImage.setImageDrawable(ResourcesCompat.getDrawable(resources, R.drawable.app_logo, null))
+        else mImage.setImageDrawable(ResourcesCompat.getDrawable(resources, R.drawable.generic_profile_image, null))
 
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = ""
@@ -108,6 +108,7 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
                 dialog.show(supportFragmentManager, "email dialog")
             } else {
                 val piIntent = Intent(this@SignInActivity, ProfileImageActivity::class.java)
+                piIntent.putExtra("night mode", night)
                 piIntent.putExtra("email", mEmail.text.toString())
                 piIntent.putExtra("user", user)
                 piIntent.putExtra("activity", "signIn")
@@ -204,8 +205,9 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
      */
     override fun onBackPressed() {
         super.onBackPressed()
-
-        startActivity(Intent(this@SignInActivity, LoginActivity::class.java))
+        val backIntent = Intent(this@SignInActivity, LoginActivity::class.java)
+        backIntent.putExtra("night mode", night)
+        startActivity(backIntent)
         finish()
     }
 
@@ -216,6 +218,9 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
     override fun onContinueClicked(email: String) {
         val piIntent = Intent(this@SignInActivity, ProfileImageActivity::class.java)
         piIntent.putExtra("email", email)
+        piIntent.putExtra("night mode", night)
+        piIntent.putExtra("user", user)
+        piIntent.putExtra("activity", "signIn")
         startActivity(piIntent)
         finish()
     }

@@ -18,7 +18,7 @@ import roberto.garzone.youtubereviews.R
 class LoginGuestDialog : AppCompatDialogFragment() {
 
     // Instance variable
-    private var listener : LoginGuestDialogInterface? = null
+    private lateinit var listener : LoginGuestDialogInterface
 
     /**
      * This method creates the dialog layout (-, - = dialog, which)
@@ -30,7 +30,7 @@ class LoginGuestDialog : AppCompatDialogFragment() {
         builder.setTitle(resources.getString(R.string.login_guest_dialog_title))
             .setMessage(resources.getString(R.string.login_guest_dialog_message))
             .setPositiveButton(resources.getString(R.string.dialog_yes)) { _, _ ->
-                listener!!.onYesClicked()
+                listener.onYesClicked()
             }
             .setNegativeButton(resources.getString(R.string.dialog_no)) { _, _ -> }
 

@@ -10,6 +10,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
@@ -91,29 +92,35 @@ class ProfileImageActivity : AppCompatActivity() {
         supportActionBar!!.title = ""
 
         mTake.setOnClickListener {
-            val cameraIntent = Intent()
-            cameraIntent.action = MediaStore.ACTION_IMAGE_CAPTURE
+            var cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (cameraIntent.resolveActivity(packageManager) != null) {
 
-            var photoFile : File? = null
-            try {
-                photoFile = createImageFile()
-            } catch (e : IOException) {
-                e.printStackTrace()
+                var photoFile: File? = null
+                try {
+                    photoFile = createImageFile()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+
+                outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "${BuildConfig.APPLICATION_ID}.provider", photoFile!!)
+
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri)
+                cameraIntent.flags =
+                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION
+                startActivityForResult(cameraIntent, ACTIVITY_START_CAMERA)
             }
-
-            outputUri = FileProvider.getUriForFile(this@ProfileImageActivity, "${BuildConfig.APPLICATION_ID}.provider",
-            photoFile!!)
-
-            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri)
-            cameraIntent.flags = Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION
-            startActivityForResult(cameraIntent, ACTIVITY_START_CAMERA)
         }
 
         mGallery.setOnClickListener {
             val galleryIntent = Intent()
             galleryIntent.type = "image/*"
             galleryIntent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(Intent.createChooser(galleryIntent, resources.getString(R.string.profile_image_gallery_text)), ACTIVITY_GALLERY)
+            startActivityForResult(
+                Intent.createChooser(
+                    galleryIntent,
+                    resources.getString(R.string.profile_image_gallery_text)
+                ), ACTIVITY_GALLERY
+            )
         }
 
         mSave.setOnClickListener {

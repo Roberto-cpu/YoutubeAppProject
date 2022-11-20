@@ -58,6 +58,7 @@ class SongsListActivity : AppCompatActivity() {
     private lateinit var currUser : FirebaseUser
     private lateinit var getIntent : Intent
     private lateinit var user : User
+    private var authType : String = ""
 
     /**
      * This method creates the activity layout
@@ -78,10 +79,12 @@ class SongsListActivity : AppCompatActivity() {
         night = getIntent.getStringExtra("night mode").toString()
         user = getIntent.getSerializableExtra("user") as User
 
+
         mSettings.setOnClickListener {
             val settingsIntent = Intent(this@SongsListActivity, SettingsActivity::class.java)
             settingsIntent.putExtra("night mode", night)
             settingsIntent.putExtra("user", user)
+            settingsIntent.putExtra("currUser", currUser.isAnonymous)
 
             startActivity(settingsIntent)
             finish()
