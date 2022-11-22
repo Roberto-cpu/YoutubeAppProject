@@ -15,8 +15,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import com.google.firebase.auth.FirebaseAuth
@@ -36,10 +36,10 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
         const val NIGHT_MODE : String = "night_mode"
     }
 
-    private lateinit var mToolbar : Toolbar 
+    private lateinit var mToolbar : Toolbar
     private lateinit var mLayout : ConstraintLayout 
     private lateinit var mNightText : TextView 
-    private lateinit var mEmail : Button 
+    private lateinit var mEmail : TextView
     private lateinit var mPassword : Button 
     private lateinit var mPfImage : Button 
     private lateinit var mBack : Button 
@@ -89,7 +89,7 @@ class SettingsActivity : AppCompatActivity(), ChangePasswordDialog.ChangePasswor
         mBack.setOnClickListener {
             val backIntent = Intent(this@SettingsActivity, SongsListActivity::class.java)
             backIntent.putExtra("night mode", originalNight)
-
+            backIntent.putExtra("user", user)
             startActivity(backIntent)
             finish()
         }

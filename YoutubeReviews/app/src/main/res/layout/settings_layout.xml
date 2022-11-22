@@ -99,14 +99,14 @@
 
         <EditText
             android:id="@+id/settings_chg_email_text"
-            android:layout_marginEnd="30dp"
             android:layout_width="wrap_content"
             android:layout_height="49dp"
-            android:hint="write new email"
-            android:textSize="20dp"
+            android:layout_marginEnd="30dp"
             android:layout_weight="1"
+            android:hint="@string/login_email"
             android:textColor="@color/colorBlack"
-            android:textColorHint="@color/colorBlack"/>
+            android:textColorHint="@color/colorBlack"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <Button
