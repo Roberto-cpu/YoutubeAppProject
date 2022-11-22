@@ -72,6 +72,8 @@ class SongsListActivity : AppCompatActivity() {
         mToolbar = findViewById(R.id.songs_list_toolbar)
         mTitle = findViewById(R.id.songs_list_title)
         mSettings = findViewById(R.id.songs_list_settings)
+        mSpinner = findViewById(R.id.songs_list_spinner)
+        mSongs = findViewById(R.id.songs_list)
 
         getIntent = intent
 
@@ -128,9 +130,6 @@ class SongsListActivity : AppCompatActivity() {
                         genres.add(song.getGenre().uppercase())
                     }
                 }
-
-                mSpinner = findViewById(R.id.songs_list_spinner)
-                mSongs = findViewById(R.id.songs_list)
 
                 spinnerAdapter = ArrayAdapter(this@SongsListActivity, android.R.layout.simple_spinner_item, genres as List<Any>)
                 spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

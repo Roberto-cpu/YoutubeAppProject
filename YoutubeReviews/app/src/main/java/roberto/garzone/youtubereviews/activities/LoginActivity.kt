@@ -23,6 +23,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.LoginGuestDialog
 import roberto.garzone.youtubereviews.models.User
+import java.math.BigInteger
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 /**
  * This class manages the login activity behaviour
@@ -153,13 +156,13 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         val pwd : String = mPassword.text.toString()
         val firestore = FirebaseFirestore.getInstance()
 
-        firestore.collection("users").document(email).get()
-            .addOnSuccessListener {
-                if (pwd == it.get("Password")) {
+        val docRef = firestore.collection("users").document(email)
+        docRef.get().addOnSuccessListener { it ->
+            if (md5Hashing(pwd) == it.get("Password")) {
                     val user = User(it.get("Username").toString(), email, pwd)
-                    auth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener {
-                        if (it.isSuccessful) {
 
+                    auth.signInWithEmailAndPassword(user.getEmail(), user.getPassword())
+                        .addOnSuccessListener {
                             if (mRememberMe.isChecked) {
                                 editor.putString("email", mEmail.text.toString())
                                 editor.putString("password", mPassword.text.toString())
@@ -173,10 +176,15 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
                             loginIntent.putExtra("user", user)
                             startActivity(loginIntent)
                             finish()
-                        } else {
-                            Log.e("Auth", "Something goes wrong")
                         }
-                    }
+                        .addOnFailureListener {
+                            Log.e("AUTH", "Somethnigs goes wrong -> ${it.message}")
+                        }
+                }
+                else {
+                    Toast.makeText(this@LoginActivity, resources.getString(R.string.login_error), Toast.LENGTH_SHORT).show()
+                    mEmail.setText("")
+                    mPassword.setText("")
                 }
             }
             .addOnFailureListener {
@@ -215,6 +223,22 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
     private fun getSharedPreferences() {
         val preferences : SharedPreferences = getSharedPreferences("AppSettingsPreferences", Context.MODE_PRIVATE)
         night = preferences.getString("night_mode", "checked").toString()
+    }
+
+    /**
+     * This method encrypts a string with md5 hashing algorithm
+     */
+    private fun md5Hashing(str: String): String {
+        var md5: MessageDigest? = null
+
+        try {
+            md5 = MessageDigest.getInstance("MD5")
+        } catch (e: NoSuchAlgorithmException) {
+            e.printStackTrace()
+        }
+
+        md5!!.update(str.toByteArray(), 0, str.length)
+        return BigInteger(1, md5.digest()).toString(16)
     }
 
     /**

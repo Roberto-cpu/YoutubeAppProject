@@ -26,6 +26,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.ProfileImageEmailDialog
 import roberto.garzone.youtubereviews.models.User
+import java.math.BigInteger
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 /**
  * This class manages the sign in activity
@@ -49,6 +52,7 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
     private var night : String = ""
     private var imageUri : Uri? = null
     private lateinit var user : User
+    private lateinit var firebaseAuth : FirebaseAuth
 
     /**
      * This method creates the activity layout
@@ -74,7 +78,7 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
 
         val getIntent = intent
 
-        val firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
 
         if (getIntent != null) {
             night = getIntent.getStringExtra("night mode").toString()
@@ -189,18 +193,37 @@ class SignInActivity : AppCompatActivity(), ProfileImageEmailDialog.EmailDialogI
 
                 userInfo["Username"] = user.getUsername()
                 userInfo["Email"] = user.getEmail()
-                userInfo["Password"] = user.getPassword()
+                userInfo["Password"] = md5Hashing(user.getPassword())
 
                 firestore.collection("users").document(user.getEmail()).set(userInfo).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        startActivity(Intent(this@SignInActivity, LoginActivity::class.java))
-                        finish()
+                        firebaseAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword())
+                            .addOnSuccessListener {
+                                startActivity(Intent(this@SignInActivity, LoginActivity::class.java))
+                                finish()
+                            }
                     } else {
                         Toast.makeText(this@SignInActivity, resources.getString(R.string.sign_in_failed), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
         }
+    }
+
+    /**
+     * This method encrypts a string with md5 hashing algorithm
+     */
+    private fun md5Hashing(str: String): String {
+        var md5: MessageDigest? = null
+
+        try {
+            md5 = MessageDigest.getInstance("MD5")
+        } catch (e: NoSuchAlgorithmException) {
+            e.printStackTrace()
+        }
+
+        md5!!.update(str.toByteArray(), 0, str.length)
+        return BigInteger(1, md5.digest()).toString(16)
     }
 
     /**
