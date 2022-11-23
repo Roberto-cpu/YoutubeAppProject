@@ -25,6 +25,7 @@ import roberto.garzone.youtubereviews.R
 import roberto.garzone.youtubereviews.dialogs.AddReviewDialog
 import roberto.garzone.youtubereviews.models.Review
 import roberto.garzone.youtubereviews.models.Song
+import roberto.garzone.youtubereviews.models.User
 
 /**
  * This class manages the new review activity's functionalities
@@ -46,6 +47,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
     private lateinit var mRating : RatingBar
 
     private var night : String = ""
+    private lateinit var user : User
     private lateinit var auth : FirebaseAuth
     private lateinit var currUser : FirebaseUser
 
@@ -75,6 +77,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
 
         val getIntent = intent
         night = getIntent.getStringExtra("night mode").toString()
+        user = getIntent.getSerializableExtra("user") as User
 
         auth = FirebaseAuth.getInstance()
         currUser = auth.currentUser!!
@@ -82,7 +85,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
         mBack.setOnClickListener {
             val backIntent = Intent(this@NewReviewActivity, SongsListActivity::class.java)
             backIntent.putExtra("night mode", night)
-
+            backIntent.putExtra("user", user)
             startActivity(backIntent)
             finish()
         }
@@ -183,7 +186,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
     override fun onOkClicked() {
         val intent = Intent(this@NewReviewActivity, SongsListActivity::class.java)
         intent.putExtra("night mode", night)
-
+        intent.putExtra("user", user)
         startActivity(intent)
         finish()
     }
@@ -196,7 +199,7 @@ class NewReviewActivity : AppCompatActivity(), AddReviewDialog.AddReviewDialogIn
 
         val backIntent = Intent(this@NewReviewActivity, SongsListActivity::class.java)
         backIntent.putExtra("night mode", night)
-
+        backIntent.putExtra("user", user)
         startActivity(backIntent)
         finish()
     }

@@ -66,6 +66,7 @@ class ReviewsListActivity : AppCompatActivity() {
         mName = findViewById(R.id.reviews_list_song_name)
         mRating = findViewById(R.id.reviews_list_rating)
         mRatingText = findViewById(R.id.reviews_list_rating_text)
+        mList = findViewById(R.id.reviews_list)
 
         val getIntent : Intent = intent
 
@@ -127,7 +128,6 @@ class ReviewsListActivity : AppCompatActivity() {
                         }
                     }
 
-                    mList = findViewById(R.id.reviews_list)
                     adapter = ReviewsListAdapter(this@ReviewsListActivity, song.getReviews())
 
                     if (night == "checked") {

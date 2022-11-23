@@ -208,7 +208,7 @@ class SongsListActivity : AppCompatActivity() {
             R.id.tracks_list_new_review -> {
                 val newReviewIntent = Intent(this@SongsListActivity, NewReviewActivity::class.java)
                 newReviewIntent.putExtra("night mode", night)
-
+                newReviewIntent.putExtra("user", user)
                 startActivity(newReviewIntent)
                 finish()
                 return true
