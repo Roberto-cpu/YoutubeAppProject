@@ -49,6 +49,10 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
         mYoutube = findViewById(R.id.youtube_view)
 
         getIntent = intent
+        songId = getIntent.getStringExtra("song").toString()
+        songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
+        night = getIntent.getStringExtra("night mode").toString()
+        user = getIntent.getSerializableExtra("user") as User
     }
 
     /**
@@ -68,22 +72,17 @@ open class YoutubeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedL
      */
     override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, p1: YouTubePlayer?, p2: Boolean) {
         if (!p2) {
-            songId = getIntent.getStringExtra("song").toString()
-            songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
-            night = getIntent.getStringExtra("night mode").toString()
-            user = getIntent.getSerializableExtra("user") as User
-
             val splitted = songId.split(" - ")
 
             for (s : Song in songs) {
-                if (s.getName() == splitted[0] && song.getBand() == splitted[1]) {
+                if (s.getName() == splitted[0] && s.getBand() == splitted[1]) {
                     song = s
                 }
             }
 
             val idVideo : String = getYoutubeId(song.getYoutubeLink())
             p1!!.setShowFullscreenButton(false)
-            p1.cueVideo(idVideo)
+            p1.loadVideo(idVideo)
         }
     }
 

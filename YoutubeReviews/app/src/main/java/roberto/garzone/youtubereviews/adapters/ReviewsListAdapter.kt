@@ -99,6 +99,9 @@ class ReviewsListAdapter(ctx : Context, reviews : ArrayList<Review>) : BaseAdapt
 
                     mComments.text = "${this.mContext.resources.getString(R.string.reviews_list_number_comments)} $count"
                 }
+                else {
+                    mComments.text = "0"
+                }
             }
         }
 

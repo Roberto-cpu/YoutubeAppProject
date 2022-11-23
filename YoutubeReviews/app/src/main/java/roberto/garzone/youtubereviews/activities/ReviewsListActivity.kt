@@ -48,7 +48,7 @@ class ReviewsListActivity : AppCompatActivity() {
     private lateinit var song : Song
     private lateinit var adapter : ReviewsListAdapter
     private lateinit var songs : ArrayList<Song>
-    private var feeds : HashMap<String, Int> = HashMap()
+    private lateinit var feeds : HashMap<String, Int>
     private lateinit var user : User
 
     /**
@@ -77,6 +77,14 @@ class ReviewsListActivity : AppCompatActivity() {
         songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
         night = getIntent.getStringExtra("night mode").toString()
         user = getIntent.getSerializableExtra("user") as User
+
+        feeds = hashMapOf(
+            "1" to 0,
+            "2" to 0,
+            "3" to 0,
+            "4" to 0,
+            "5" to 0
+        )
     }
 
     /**
@@ -108,7 +116,7 @@ class ReviewsListActivity : AppCompatActivity() {
                     var sum = 0
                     var count = 0
                     for (sn : QueryDocumentSnapshot in it.result) {
-                        val review = Review(sn.id, sn.get("Email").toString(), sn.get("Title").toString(), sn.get("Text").toString(), sn.get("Song").toString(), sn.get("Rating").toString())
+                        val review = Review(sn.id, sn.get("Email").toString(), sn.get("Title").toString(), sn.get("Text").toString(), "${sn.get("Song").toString()} - ${song.getBand()}", sn.get("Rating").toString())
 
                         if (name == review.getSongReference()) {
                             song.addReview(review)
@@ -140,6 +148,7 @@ class ReviewsListActivity : AppCompatActivity() {
                         val reviewIntent = Intent(this@ReviewsListActivity, ReviewActivity::class.java)
 
                         reviewIntent.putExtra("song name", song.getName())
+                        reviewIntent.putExtra("song band", song.getBand())
                         reviewIntent.putExtra("review", this.review)
                         reviewIntent.putExtra("songs", songs)
                         reviewIntent.putExtra("night mode", night)

@@ -82,7 +82,7 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         }
 
         // Initialize Shared Preferences
-        preferences = getSharedPreferences("LoginPreferences", MODE_PRIVATE)
+        preferences = getSharedPreferences("Login", MODE_PRIVATE)
         editor = preferences.edit()
 
         val email : String = preferences.getString("email", "No Email Stored")!!
@@ -91,6 +91,9 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
         if (email != "No Email Stored" && password != "") {
             mEmail.setText(email)
             mPassword.setText(password)
+            mRememberMe.isChecked = true
+        } else {
+            mRememberMe.isChecked = false
         }
 
         mEmail.setOnClickListener {
@@ -170,6 +173,7 @@ class LoginActivity : AppCompatActivity(), LoginGuestDialog.LoginGuestDialogInte
                                 editor.putString("email", "No Email Stored")
                                 editor.putString("password", "")
                             }
+                            editor.apply()
 
                             val loginIntent = Intent(this@LoginActivity, SongsListActivity::class.java)
                             loginIntent.putExtra("night mode", night)

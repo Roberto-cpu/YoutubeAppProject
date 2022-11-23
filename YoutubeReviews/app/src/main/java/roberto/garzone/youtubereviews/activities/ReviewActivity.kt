@@ -48,6 +48,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
     private lateinit var songs : ArrayList<Song>
     private var name : String = ""
     private var night : String = ""
+    private var band : String = ""
     private lateinit var review : Review
     private lateinit var adapter : CommentsListAdapter
     private lateinit var auth : FirebaseAuth
@@ -70,11 +71,13 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
         mCreator = findViewById(R.id.text_creator)
         mText = findViewById(R.id.text_message)
         mBack = findViewById(R.id.review_back_button)
+        mComments = findViewById(R.id.comments_list)
 
         val getIntent : Intent = intent
 
         songs = getIntent.getSerializableExtra("songs") as ArrayList<Song>
         name = getIntent.getStringExtra("song name").toString()
+        band = getIntent.getStringExtra("song band").toString()
         review = getIntent.getSerializableExtra("review") as Review
         night = getIntent.getStringExtra("night mode").toString()
         user = getIntent.getSerializableExtra("user") as User
@@ -93,7 +96,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
             val backIntent = Intent(this@ReviewActivity, ReviewsListActivity::class.java)
 
             backIntent.putExtra("songs", songs)
-            backIntent.putExtra("song", name)
+            backIntent.putExtra("song", "$name - $band")
             backIntent.putExtra("night mode", night)
             backIntent.putExtra("user", user)
 
@@ -130,7 +133,6 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
                     }
                 }
 
-                mComments = findViewById(R.id.comments_list)
                 adapter = CommentsListAdapter(this@ReviewActivity, review.getCommentsList())
 
                 if (night == "checked") {
@@ -206,7 +208,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
         val backIntent = Intent(this@ReviewActivity, ReviewsListActivity::class.java)
 
         backIntent.putExtra("songs", songs)
-        backIntent.putExtra("song", name)
+        backIntent.putExtra("song", "$name - $band")
         backIntent.putExtra("night mode", night)
         backIntent.putExtra("user", user)
 
