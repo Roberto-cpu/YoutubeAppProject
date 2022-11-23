@@ -136,7 +136,7 @@ class ReviewActivity : AppCompatActivity(), AddCommentDialog.AddCommentDialogInt
                 adapter = CommentsListAdapter(this@ReviewActivity, review.getCommentsList())
 
                 if (night == "checked") {
-                    mComments.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null)) 
+                    mComments.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.colorWhite, null))
                 }
 
                 mComments.adapter = adapter

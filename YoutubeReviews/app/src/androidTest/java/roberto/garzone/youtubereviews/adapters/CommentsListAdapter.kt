@@ -6,6 +6,7 @@ package roberto.garzone.youtubereviews.adapters
  */
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,8 +23,11 @@ import roberto.garzone.youtubereviews.models.Comment
 class CommentsListAdapter(ctx : Context, comments : ArrayList<Comment>) : BaseAdapter() {
 
     // Instance variables
-    private lateinit var mContext : Context
-    private lateinit var mComments : ArrayList<Comment>
+    private var mContext : Context
+    private var mComments : ArrayList<Comment>
+    private lateinit var mCreator : TextView
+    private lateinit var mText : TextView
+    private lateinit var inflater : LayoutInflater
 
     /**
      * Constructor
@@ -31,6 +35,7 @@ class CommentsListAdapter(ctx : Context, comments : ArrayList<Comment>) : BaseAd
     init {
         this.mContext = ctx
         this.mComments = comments
+        inflater = (this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)) as LayoutInflater
     }
 
     /**
@@ -60,20 +65,20 @@ class CommentsListAdapter(ctx : Context, comments : ArrayList<Comment>) : BaseAd
      * @param p2 : ViewGroup
      * @return View
      */
-    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        var convertView : View? = p1
+        var convert = convertView
 
-        if (convertView != null) {
-            convertView = LayoutInflater.from(this.mContext).inflate(R.layout.comments_list_item, p2, false)
+        if (convertView == null) {
+            convert = inflater.inflate(R.layout.comments_list_item, parent, false)
         }
 
-        val mCreator : TextView = convertView!!.findViewById(R.id.comments_list_creator)
-        val mText : TextView = convertView!!.findViewById(R.id.comments_list_text)
+        mCreator = convert!!.findViewById(R.id.comments_list_creator)
+        mText = convert.findViewById(R.id.comments_list_text)
 
-        mCreator.text = this.mComments[p0].getEmailCreator()
-        mText.text = this.mComments[p0].getText()
+        mCreator.text = this.mComments[position].getEmailCreator()
+        mText.text = this.mComments[position].getText()
 
-        return convertView
+        return convert
     }
 }

@@ -81,27 +81,24 @@ class ReviewsListAdapter(ctx : Context, reviews : ArrayList<Review>) : BaseAdapt
         mCreator.text = this.mReviews[p0].getCreator()
         mText.text = this.mReviews[p0].getText()
         mComments.text = "${this.mContext.resources.getString(R.string.reviews_list_number_comments)} -"
+        db.collection("comments").get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                var count = 0
+                for (snapshot: QueryDocumentSnapshot in it.result) {
+                    val comment = Comment(
+                        snapshot.get("Email").toString(), snapshot.get("Text").toString(),
+                        snapshot.get("Review").toString()
+                    )
 
-        Thread {
-            db.collection("comments").get().addOnCompleteListener {
-                if (it.isSuccessful) {
-                    var count = 0
-                    for (snapshot: QueryDocumentSnapshot in it.result) {
-                        val comment = Comment(
-                            snapshot.get("Email").toString(), snapshot.get("Text").toString(),
-                            snapshot.get("Review").toString()
-                        )
-
-                        if (comment.getReviewReference() == this.mReviews[p0].getId()) {
-                            count++
-                        }
+                    if (comment.getReviewReference() == this.mReviews[p0].getId()) {
+                        count++
                     }
+                }
 
-                    mComments.text = "${this.mContext.resources.getString(R.string.reviews_list_number_comments)} $count"
-                }
-                else {
-                    mComments.text = "0"
-                }
+                mComments.text = "${this.mContext.resources.getString(R.string.reviews_list_number_comments)} $count"
+            }
+            else {
+                mComments.text = "0"
             }
         }
 
